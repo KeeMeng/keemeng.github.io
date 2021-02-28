@@ -1,38 +1,97 @@
 <!DOCTYPE html>
 <html>
-	<body style= "font-family: Futura;font-weight: bold;">
-		<h1 style= "font-size: 45px;">
-			Computer Society Points Counter
-		</h1>
-
+	<body style= "text-align: center; font-family: Futura;font-weight: bold;">
 		<script type="text/javascript">
-	    var clicks1 = 100;
-	    function half1() {
-	        clicks1 = Math.floor(clicks1/2);
-	        document.getElementById("clicks1").innerHTML = clicks1;
-	    };
-	    </script>
-	    <button type="button"  style= "font-size: 40px;font-family: Futura;" onclick="half1()">Beginner Challenge Points: <a id="clicks1">100</a></button>
-	    <br>
+			var timer = 30
+			function time() { 
+			    timer -= 1
+			    document.getElementById("timer").innerHTML = timer;
+			}
+			setInterval(time, 60000);
 
-	    <script type="text/javascript">
-	    var clicks2 = 500;
-	    function half2() {
-	        clicks2 = Math.floor(clicks2/2);
-	        document.getElementById("clicks2").innerHTML = clicks2;
-	    };
-	    </script>
-	    <button type="button"  style= "font-size: 40px;font-family: Futura;" onclick="half2()">Intermediate Challenge Points: <a id="clicks2">500</a></button>
-	    <br>
-
+		</script>
 		<script type="text/javascript">
-	    var clicks3 = 1000;
-	    function half3() {
-	        clicks3 = Math.floor(clicks3/2);
-	        document.getElementById("clicks3").innerHTML = clicks3;
-	    };
-	    </script>
-	    <button type="button"  style= "font-size: 40px;font-family: Futura;" onclick="half3()">Advanced Challenge Points: <a id="clicks3">1000</a></button>
-	    <br>
+			var clicks1 = 100;
+			var clicks2 = 500;
+			var clicks3 = 1000;
+			function half(number) {
+				if (number == 1) {
+					clicks1 = Math.floor(clicks1/2);
+					document.getElementById("clicks" + number).innerHTML = clicks1;
+				}
+				else if (number == 2) {
+					clicks2 = Math.floor(clicks2/2);
+					document.getElementById("clicks" + number).innerHTML = clicks2;
+				}
+				else if (number == 3) {
+					clicks3 = Math.floor(clicks3/2);
+					document.getElementById("clicks" + number).innerHTML = clicks3;
+				}
+			}
+			function reset() {
+				document.getElementById("clicks1").innerHTML = 100;
+				document.getElementById("clicks2").innerHTML = 500;
+				document.getElementById("clicks3").innerHTML = 1000;
+			}
+		</script>
+
+		<style>
+		.button {
+			padding: 15px 25px;
+			font-family: Futura;
+			font-size: 32px;
+			cursor: pointer;
+			outline: none;
+			color: #004990;
+			border: none;
+			border-radius: 15px;
+			box-shadow: 0 9px #99A;
+			width: 400px;
+			margin:auto;
+			display:block;
+		}
+
+		.button:hover {background-color: #3e8e41}
+
+		.button:active {
+			background-color: #3e8e41;
+			box-shadow: 0 5px #667;
+			transform: translateY(4px);
+		}
+		</style>
+
+		<center style= "font-size: 45px;">
+			Computer Science Society<br>
+		</center>
+
+		<p style="font-size: 32px;">
+			<a id="timer">30</a> minutes left
+		</p>
+		<hr>
+		<br>
+
+		<button class="button" style="background-color: #b3e6ff;" onclick="half(1)">
+			Beginner Challenge: <br><a id="clicks1">100</a> Points
+		</button>
+		<br>
+		Restriction: <input type="text" style="font-size: 16px; width: 280px;">
+		<br><br><br>
+		<button class="button" style="background-color: #66ccff;" onclick="half(2)">
+			Intermediate Challenge: <br><a id="clicks2">500</a> Points
+		</button>
+		<br>
+		Restriction: <input type="text" style="font-size: 16px; width: 280px;">
+		<br><br><br>
+		<button class="button" style="background-color: #1ab2ff;" onclick="half(3)">
+			Advanced Challenge: <br><a id="clicks3">1000</a> Points
+		</button>
+		<br>
+		Restriction: <input type="text" style="font-size: 16px; width: 280px;">
+		<br><br><br><br><br><br>
+		<button class="button" style="background-color: #ff8080; color: #800000" onclick="reset()">
+			Reset Points
+		</button>
+		<br>
+
 	</body>
 </html>
