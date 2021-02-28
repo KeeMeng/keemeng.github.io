@@ -9,8 +9,6 @@
 			}
 			setInterval(time, 60000);
 
-		</script>
-		<script type="text/javascript">
 			function change(number) {
 				if (number == 1) {
 					var x = document.getElementById("restriction1");
@@ -37,8 +35,7 @@
 					  }
 				}
 			}
-		</script>
-		<script type="text/javascript">
+
 			var clicks1 = 100;
 			var clicks2 = 500;
 			var clicks3 = 1000;
@@ -71,7 +68,14 @@
 					document.getElementById("clicks" + number).innerHTML = clicks33;
 				}
 			}
+
 			function reset() {
+				clicks1 = 100;
+				clicks2 = 500;
+				clicks3 = 1000;
+				clicks11 = 200;
+				clicks22 = 800;
+				clicks33 = 1800;
 				document.getElementById("clicks1").innerHTML = 100;
 				document.getElementById("clicks2").innerHTML = 500;
 				document.getElementById("clicks3").innerHTML = 1000;
