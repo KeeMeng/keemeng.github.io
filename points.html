@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<body style= "text-align: center; font-family: Futura;font-weight: bold;">
+	<body style= "text-align: center; font-family: Futura; font-weight: bold;">
 		<script type="text/javascript">
 			var timer = 30
 			function time() { 
-			    timer -= 1
-			    document.getElementById("timer").innerHTML = timer;
+				timer -= 1
+				document.getElementById("timer").innerHTML = timer;
 			}
 			setInterval(time, 60000);
 
 		</script>
 		<script type="text/javascript">
+			function change(number) {
+				if (number == 1) {
+					var x = document.getElementById("restriction1");
+					  if (x.style.display === "none") {
+					    x.style.display = "block";
+					  } else {
+					    x.style.display = "none";
+					  }
+				}
+				else if (number == 2) {
+					var x = document.getElementById("restriction2");
+					  if (x.style.display === "none") {
+					    x.style.display = "block";
+					  } else {
+					    x.style.display = "none";
+					  }
+				}
+				else if (number == 3) {
+					var x = document.getElementById("restriction3");
+					  if (x.style.display === "none") {
+					    x.style.display = "block";
+					  } else {
+					    x.style.display = "none";
+					  }
+				}
+			}
+		</script>
+		<script type="text/javascript">
 			var clicks1 = 100;
 			var clicks2 = 500;
 			var clicks3 = 1000;
+			var clicks11 = 200;
+			var clicks22 = 800;
+			var clicks33 = 1800;
 			function half(number) {
 				if (number == 1) {
 					clicks1 = Math.floor(clicks1/2);
@@ -27,17 +58,32 @@
 					clicks3 = Math.floor(clicks3/2);
 					document.getElementById("clicks" + number).innerHTML = clicks3;
 				}
+				else if (number == 11) {
+					clicks11 = Math.floor(clicks11/2);
+					document.getElementById("clicks" + number).innerHTML = clicks11;
+				}
+				else if (number == 22) {
+					clicks22 = Math.floor(clicks22/2);
+					document.getElementById("clicks" + number).innerHTML = clicks22;
+				}
+				else if (number == 33) {
+					clicks33 = Math.floor(clicks33/2);
+					document.getElementById("clicks" + number).innerHTML = clicks33;
+				}
 			}
 			function reset() {
 				document.getElementById("clicks1").innerHTML = 100;
 				document.getElementById("clicks2").innerHTML = 500;
 				document.getElementById("clicks3").innerHTML = 1000;
+				document.getElementById("clicks11").innerHTML = 200;
+				document.getElementById("clicks22").innerHTML = 800;
+				document.getElementById("clicks33").innerHTML = 1800;
 			}
 		</script>
 
 		<style>
 		.button {
-			padding: 15px 25px;
+			padding: 10px 10px;
 			font-family: Futura;
 			font-size: 32px;
 			cursor: pointer;
@@ -46,9 +92,9 @@
 			border: none;
 			border-radius: 15px;
 			box-shadow: 0 9px #99A;
-			width: 400px;
-			margin:auto;
-			display:block;
+			width: 750px;
+			margin: auto;
+			display: block;
 		}
 
 		.button:hover {background-color: #3e8e41}
@@ -60,34 +106,57 @@
 		}
 		</style>
 
-		<center style= "font-size: 45px;">
-			Computer Science Society<br>
+		<center style= "font-size: 48px;">
+			Computer Science Society
+		</center>
+		<center style= "font-size: 16px; color: #FFF">
+			page made by kee meng :D
 		</center>
 
-		<p style="font-size: 32px;">
+		<center style="font-size: 32px;">
 			<a id="timer">30</a> minutes left
-		</p>
+		</center>
 		<hr>
-		<br>
 
 		<button class="button" style="background-color: #b3e6ff;" onclick="half(1)">
-			Beginner Challenge: <br><a id="clicks1">100</a> Points
+			Beginner Challenge: <a id="clicks1">100</a> Points
 		</button>
-		<br>
-		Restriction: <input type="text" style="font-size: 16px; width: 280px;">
-		<br><br><br>
+		<div id="restriction1" style="display: none;">
+			<br>
+			<button class="button" style="background-color: #b3e6ff;" onclick="half(11)">
+				Beginner Challenge (Restricted): <a id="clicks11">200</a> Points
+			</button>
+			<br>
+			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
+		</div>
+		<input type="checkbox" onclick="change(1)" style="opacity:0.25">
+		<br><br>
 		<button class="button" style="background-color: #66ccff;" onclick="half(2)">
-			Intermediate Challenge: <br><a id="clicks2">500</a> Points
+			Intermediate Challenge: <a id="clicks2">500</a> Points
 		</button>
-		<br>
-		Restriction: <input type="text" style="font-size: 16px; width: 280px;">
-		<br><br><br>
+		<div id="restriction2" style="display: none;">
+			<br>
+			<button class="button" style="background-color: #66ccff;" onclick="half(22)">
+				Intermediate Challenge (Restricted): <a id="clicks22">800</a> Points
+			</button>
+			<br>
+			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
+		</div>
+		<input type="checkbox" onclick="change(2)" style="opacity:0.25">
+		<br><br>
 		<button class="button" style="background-color: #1ab2ff;" onclick="half(3)">
-			Advanced Challenge: <br><a id="clicks3">1000</a> Points
+			Advanced Challenge: <a id="clicks3">1000</a> Points
 		</button>
-		<br>
-		Restriction: <input type="text" style="font-size: 16px; width: 280px;">
-		<br><br><br><br><br><br>
+		<div id="restriction3" style="display: none;">
+			<br>
+			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onclick="half(33)">
+				Advanced Challenge (Restricted): <a id="clicks33">1800</a> Points
+			</button>
+			<br>
+			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
+		</div>
+		<input type="checkbox" onclick="change(3)" style="opacity:0.25">
+		<br><br>
 		<button class="button" style="background-color: #ff8080; color: #800000" onclick="reset()">
 			Reset Points
 		</button>
