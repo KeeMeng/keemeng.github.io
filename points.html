@@ -12,27 +12,27 @@
 			function change(number) {
 				if (number == 1) {
 					var x = document.getElementById("restriction1");
-					  if (x.style.display === "none") {
-					    x.style.display = "block";
-					  } else {
-					    x.style.display = "none";
-					  }
+						if (x.style.display === "none") {
+							x.style.display = "block";
+						} else {
+							x.style.display = "none";
+						}
 				}
 				else if (number == 2) {
 					var x = document.getElementById("restriction2");
-					  if (x.style.display === "none") {
-					    x.style.display = "block";
-					  } else {
-					    x.style.display = "none";
-					  }
+						if (x.style.display === "none") {
+							x.style.display = "block";
+						} else {
+							x.style.display = "none";
+						}
 				}
 				else if (number == 3) {
 					var x = document.getElementById("restriction3");
-					  if (x.style.display === "none") {
-					    x.style.display = "block";
-					  } else {
-					    x.style.display = "none";
-					  }
+						if (x.style.display === "none") {
+							x.style.display = "block";
+						} else {
+							x.style.display = "none";
+						}
 				}
 			}
 
@@ -90,23 +90,55 @@
 			padding: 10px 10px;
 			font-family: Futura;
 			font-size: 32px;
-			cursor: pointer;
+			/*cursor: none;*/
 			outline: none;
 			color: #004990;
 			border: none;
 			border-radius: 15px;
-			box-shadow: 0 9px #99A;
 			width: 750px;
 			margin: auto;
 			display: block;
+			display: inline-block;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+			-webkit-transition-duration: 0.2s;
+			transition-duration: 0.2s;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+		}
+		@-webkit-keyframes pop {
+			50% {
+				-webkit-transform: scale(1.08);
+				transform: scale(1.08);
+			}
+		}
+		@keyframes pop {
+			50% {
+				-webkit-transform: scale(1.08);
+				transform: scale(1.08);
+			}
+		}
+		.button:hover, .button:focus {
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
 		}
 
-		.button:hover {background-color: #3e8e41}
-
 		.button:active {
-			background-color: #3e8e41;
-			box-shadow: 0 5px #667;
 			transform: translateY(4px);
+			-webkit-transform: scale(1.05);
+			transform: scale(1.05);
+			-webkit-animation-name: pop;
+			animation-name: pop;
+			-webkit-animation-duration: 0.1s;
+			animation-duration: 0.1s;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-animation-iteration-count: 1;
+			animation-iteration-count: 1;
 		}
 		</style>
 
@@ -133,6 +165,7 @@
 			<br>
 			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
 		</div>
+		<p style="font-size: 1px"></p>
 		<input type="checkbox" onclick="change(1)" style="opacity:0.25">
 		<br><br>
 		<button class="button" style="background-color: #66ccff;" onclick="half(2)">
@@ -146,6 +179,7 @@
 			<br>
 			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
 		</div>
+		<p style="font-size: 1px"></p>
 		<input type="checkbox" onclick="change(2)" style="opacity:0.25">
 		<br><br>
 		<button class="button" style="background-color: #1ab2ff;" onclick="half(3)">
@@ -159,6 +193,7 @@
 			<br>
 			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
 		</div>
+		<p style="font-size: 1px"></p>
 		<input type="checkbox" onclick="change(3)" style="opacity:0.25">
 		<br><br>
 		<button class="button" style="background-color: #ff8080; color: #800000" onclick="reset()">
