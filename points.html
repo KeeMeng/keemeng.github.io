@@ -2,12 +2,15 @@
 <html>
 	<body style= "text-align: center; font-family: Futura; font-weight: bold;">
 		<script type="text/javascript">
-			var timer = 30
+			var timer = prompt("Please enter timer (minutes)", "30");
 			function time() { 
 				timer -= 1
 				document.getElementById("timer").innerHTML = timer;
+				if (timer <= 0) {
+					clearInterval(repeat);
+				}
 			}
-			setInterval(time, 60000);
+			var repeat = setInterval(time, 60000);
 
 			function change(number) {
 				if (number == 1) {
@@ -154,12 +157,12 @@
 		</center>
 		<hr>
 
-		<button class="button" style="background-color: #b3e6ff;" onclick="half(1)">
+		<button class="button" style="background-color: #b3e6ff;" onmousedown="half(1)">
 			Beginner Challenge: <a id="clicks1">100</a> Points
 		</button>
 		<div id="restriction1" style="display: none;">
 			<br>
-			<button class="button" style="background-color: #b3e6ff;" onclick="half(11)">
+			<button class="button" style="background-color: #b3e6ff;" onmousedown="half(11)">
 				Beginner Challenge (Restricted): <a id="clicks11">200</a> Points
 			</button>
 			<br>
@@ -168,12 +171,12 @@
 		<p style="font-size: 1px"></p>
 		<input type="checkbox" onclick="change(1)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #66ccff;" onclick="half(2)">
+		<button class="button" style="background-color: #66ccff;" onmousedown="half(2)">
 			Intermediate Challenge: <a id="clicks2">500</a> Points
 		</button>
 		<div id="restriction2" style="display: none;">
 			<br>
-			<button class="button" style="background-color: #66ccff;" onclick="half(22)">
+			<button class="button" style="background-color: #66ccff;" onmousedown="half(22)">
 				Intermediate Challenge (Restricted): <a id="clicks22">800</a> Points
 			</button>
 			<br>
@@ -182,12 +185,12 @@
 		<p style="font-size: 1px"></p>
 		<input type="checkbox" onclick="change(2)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #1ab2ff;" onclick="half(3)">
+		<button class="button" style="background-color: #1ab2ff;" onmousedown="half(3)">
 			Advanced Challenge: <a id="clicks3">1000</a> Points
 		</button>
 		<div id="restriction3" style="display: none;">
 			<br>
-			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onclick="half(33)">
+			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(33)">
 				Advanced Challenge (Restricted): <a id="clicks33">1800</a> Points
 			</button>
 			<br>
@@ -196,7 +199,7 @@
 		<p style="font-size: 1px"></p>
 		<input type="checkbox" onclick="change(3)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #ff8080; color: #800000" onclick="reset()">
+		<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset()">
 			Reset Points
 		</button>
 		<br>
