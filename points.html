@@ -2,6 +2,21 @@
 <html>
 	<body style= "text-align: center; font-family: Futura; font-weight: bold;">
 		<script type="text/javascript">
+
+			var clicks1 = 100;
+			var clicks2 = 500;
+			var clicks3 = 1000;
+			var clicks11 = 200;
+			var clicks22 = 800;
+			var clicks33 = 1800;
+
+			var clicks_1 = 100;
+			var clicks_2 = 500;
+			var clicks_3 = 1000;
+			var clicks_11 = 200;
+			var clicks_22 = 800;
+			var clicks_33 = 1800;
+
 			var timer = prompt("Please enter timer (minutes)", "30");
 			function time() { 
 				timer --;
@@ -10,9 +25,22 @@
 					clearInterval(repeat);
 				}
 			}
-			var repeat = setInterval(time, 60000);
 
-			function change(number) {
+			var repeat = setInterval(time, 60000);
+			function change_time() {
+				var x = prompt("Please enter timer (minutes)", timer);
+				if (x > 0) {
+					timer = x;
+					document.getElementById("timer").innerHTML = timer;
+				}
+			}
+
+			var animate = true;
+			function animation() {
+				animate = !animate;
+			}
+
+			function swap(number) {
 				document.getElementById("checkbox1").checked = false;
 				document.getElementById("checkbox2").checked = false;
 				document.getElementById("checkbox3").checked = false;
@@ -46,103 +74,132 @@
 				}
 			}
 
-			var clicks1 = 100;
-			var clicks2 = 500;
-			var clicks3 = 1000;
-			var clicks11 = 200;
-			var clicks22 = 800;
-			var clicks33 = 1800;
 			function half(number) {
 				if (number == 1) {
 					clicks1 = Math.floor(clicks1/2);
-					document.getElementById("clicks" + number).innerHTML = clicks1;
 				}
 				else if (number == 2) {
 					clicks2 = Math.floor(clicks2/2);
-					document.getElementById("clicks" + number).innerHTML = clicks2;
 				}
 				else if (number == 3) {
 					clicks3 = Math.floor(clicks3/2);
-					document.getElementById("clicks" + number).innerHTML = clicks3;
 				}
 				else if (number == 11) {
 					clicks11 = Math.floor(clicks11/2);
-					document.getElementById("clicks" + number).innerHTML = clicks11;
 				}
 				else if (number == 22) {
 					clicks22 = Math.floor(clicks22/2);
-					document.getElementById("clicks" + number).innerHTML = clicks22;
 				}
 				else if (number == 33) {
 					clicks33 = Math.floor(clicks33/2);
-					document.getElementById("clicks" + number).innerHTML = clicks33;
 				}
 			}
 
-			// function sleep(milliseconds) {
-			// 	const date = Date.now();
-			// 	let currentDate = null;
-			// 	do {
-			// 		currentDate = Date.now();
-			// 	} while (currentDate - date < milliseconds);
-			// }
-
-			function reset1() {
-				if (clicks1 < 100) {
-					clicks1 ++;
-					document.getElementById("clicks1").innerHTML = clicks1;
-				}
-				else if (clicks11 < 200) {
-					clicks11 ++;
-					document.getElementById("clicks11").innerHTML = clicks11;
-				}
-				else if (clicks2 < 500) {
-					clicks2 ++;
-					document.getElementById("clicks2").innerHTML = clicks2;
-				}
-				else if (clicks22 < 800) {
-					clicks22 ++;
-					document.getElementById("clicks22").innerHTML = clicks22;
-				}
-				else if (clicks3 < 1000) {
-					clicks3 ++;
-					document.getElementById("clicks3").innerHTML = clicks3;
-				}
-				else if (clicks33 < 1800) {
-					clicks33 ++;
-					document.getElementById("clicks33").innerHTML = clicks33;
+			function change() {
+				if (animate) {
+					if (clicks_1 > clicks1) {
+						clicks_1 --;
+						document.getElementById("clicks1").innerHTML = clicks_1;
+					}
+					if (clicks_11 > clicks11) {
+						clicks_11 --;
+						document.getElementById("clicks11").innerHTML = clicks_11;
+					}
+					if (clicks_2 > clicks2) {
+						clicks_2 --;
+						document.getElementById("clicks2").innerHTML = clicks_2;
+					}
+					if (clicks_22 > clicks22) {
+						clicks_22 --;
+						document.getElementById("clicks22").innerHTML = clicks_22;
+					}
+					if (clicks_3 > clicks3) {
+						clicks_3 --;
+						document.getElementById("clicks3").innerHTML = clicks_3;
+					}
+					if (clicks_33 > clicks33) {
+						clicks_33 --;
+						document.getElementById("clicks33").innerHTML = clicks_33;
+					}
+					if (clicks_1 < clicks1) {
+						clicks_1 ++;
+						document.getElementById("clicks1").innerHTML = clicks_1;
+					}
+					if (clicks_11 < clicks11) {
+						clicks_11 ++;
+						document.getElementById("clicks11").innerHTML = clicks_11;
+					}
+					if (clicks_2 < clicks2) {
+						clicks_2 ++;
+						document.getElementById("clicks2").innerHTML = clicks_2;
+					}
+					if (clicks_22 < clicks22) {
+						clicks_22 ++;
+						document.getElementById("clicks22").innerHTML = clicks_22;
+					}
+					if (clicks_3 < clicks3) {
+						clicks_3 ++;
+						document.getElementById("clicks3").innerHTML = clicks_3;
+					}
+					if (clicks_33 < clicks33) {
+						clicks_33 ++;
+						document.getElementById("clicks33").innerHTML = clicks_33;
+					}
+					if (clicks_1 == clicks1 && clicks_11 == clicks11 && clicks_2 == clicks2 && clicks_22 == clicks22 && clicks_3 == clicks3 && clicks_33 == clicks33) {
+						document.getElementById("reset_tip").innerHTML = "Reset Points";
+					}
 				}
 				else {
-					clearInterval(repeat_reset);
-					repeat_reset = null;
-					document.getElementById("reset_tip").innerHTML = "Reset Points";
+					clicks_1 = clicks1;
+					document.getElementById("clicks1").innerHTML = clicks_1;
+					clicks_11 = clicks11;
+					document.getElementById("clicks11").innerHTML = clicks_11;
+					clicks_2 = clicks2;
+					document.getElementById("clicks2").innerHTML = clicks_2;
+					clicks_22 = clicks22;
+					document.getElementById("clicks22").innerHTML = clicks_22;
+					clicks_3 = clicks3;
+					document.getElementById("clicks3").innerHTML = clicks_3;
+					clicks_33 = clicks33;
+					document.getElementById("clicks33").innerHTML = clicks_33;
 				}
 			}
-			var repeat_reset = setInterval(reset1);
-			clearInterval(repeat_reset);
-			repeat_reset = null;
-			function reset() {
-				if (!repeat_reset) {
-					document.getElementById("reset_tip").innerHTML = "Click again to quickly reset points";
-					repeat_reset = setInterval(reset1);
-				}
-				else {
+
+			setInterval(change,0);
+
+			function reset(event) {
+				if (event.shiftKey) {
 					clicks1 = 100;
 					clicks2 = 500;
 					clicks3 = 1000;
 					clicks11 = 200;
 					clicks22 = 800;
 					clicks33 = 1800;
+				}
+				if (clicks_1 < clicks1 || clicks_11 < clicks11 || clicks_2 < clicks2 || clicks_22 < clicks22 || clicks_3 < clicks3 || clicks_33 < clicks33) {
 					document.getElementById("clicks1").innerHTML = clicks1;
+					clicks_1 = clicks1
 					document.getElementById("clicks2").innerHTML = clicks2;
+					clicks_2 = clicks2
 					document.getElementById("clicks3").innerHTML = clicks3;
+					clicks_3 = clicks3
 					document.getElementById("clicks11").innerHTML = clicks11;
+					clicks_11 = clicks11
 					document.getElementById("clicks22").innerHTML = clicks22;
+					clicks_22 = clicks22
 					document.getElementById("clicks33").innerHTML = clicks33;
+					clicks_33 = clicks33
 					document.getElementById("reset_tip").innerHTML = "Reset Points";
 				}
-				// while (clicks1 < 100 && clicks11 < 200 && clicks2 < 500 && clicks22 < 800 && clicks3 < 1000 && clicks33 < 1800) {}
-				// clearInterval(repeat_reset);
+				else {
+					document.getElementById("reset_tip").innerHTML = "Click again to quickly reset points";
+					clicks1 = 100;
+					clicks2 = 500;
+					clicks3 = 1000;
+					clicks11 = 200;
+					clicks22 = 800;
+					clicks33 = 1800;
+				}
 			}
 		</script>
 
@@ -151,7 +208,6 @@
 			padding: 10px 10px;
 			font-family: Futura;
 			font-size: 32px;
-			/*cursor: none;*/
 			outline: none;
 			color: #004990;
 			border: none;
@@ -160,9 +216,6 @@
 			margin: auto;
 			display: block;
 			display: inline-block;
-			/*-webkit-transform: perspective(1px) translateZ(0);
-			transform: perspective(1px) translateZ(0);
-			box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
 			-webkit-transform: perspective(1px) translateZ(0);
 			transform: perspective(1px) translateZ(0);
 			-webkit-transition-duration: 0.2s;
@@ -193,85 +246,81 @@
 		}
 
 		.button:active {
-			/*transform: translateY(4px);
-			-webkit-transform: scale(1.05);
-			transform: scale(1.05);*/
 			-webkit-animation-name: pop;
 			animation-name: pop;
 			-webkit-animation-duration: 0.1s;
 			animation-duration: 0.1s;
-
-			/*-webkit-animation-timing-function: linear;
-			animation-timing-function: linear;
-			-webkit-animation-iteration-count: 1;
-			animation-iteration-count: 1;*/
 			-webkit-transform: scale(1.08);
 			transform: scale(1.08);
 		}
+
 		</style>
 
+		<button style="position: absolute; top: 10px; left: 10px;" onmousedown="alert('Top middle checkbox to toggle animation\nClick the time to change the timer\nClick the other checkboxes to show/hide restrictions\nShift click reset button to reset immediately');">Hint</button>
 		<center style= "font-size: 48px;">
 			Computer Science Society
 		</center>
-		<center style= "font-size: 16px; color: #FFF">
-			page made by kee meng :D
-		</center>
+		<input checked type="checkbox" onmousedown="animation()" style="opacity:0.25">
 
-		<center style="font-size: 32px;">
-			<a id="timer">30</a> minutes left
+		<center style="font-size: 32px;" onmousedown="change_time()">
+			<span id="timer">30</span> minutes left
 		</center>
 		<hr>
 		<br>
 
 		<button class="button" style="background-color: #b3e6ff;" onmousedown="half(1)">
-			Beginner Challenge: <a id="clicks1">100</a> Points
+			Beginner Challenge: <span id="clicks1">100</span> Points
 		</button>
 		<div id="restriction1" style="display: none;">
 			<br>
 			<button class="button" style="background-color: #b3e6ff;" onmousedown="half(11)">
-				Beginner Challenge (Restricted): <a id="clicks11">200</a> Points
+				Beginner Challenge (Restricted): <span id="clicks11">200</span> Points
 			</button>
 			<br>
-			<input id="checkbox11" type="checkbox" onclick="change(11)" style="opacity:0.5">
+			<input id="checkbox11" type="checkbox" onmousedown="swap(11)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
 		</div>
 		<p style="font-size: 1px"></p>
-		<input id="checkbox1" type="checkbox" onclick="change(1)" style="opacity:0.25">
+		<input id="checkbox1" type="checkbox" onmousedown="swap(1)" style="opacity:0.25">
 		<br><br>
 		<button class="button" style="background-color: #66ccff;" onmousedown="half(2)">
-			Intermediate Challenge: <a id="clicks2">500</a> Points
+			Intermediate Challenge: <span id="clicks2">500</span> Points
 		</button>
 		<div id="restriction2" style="display: none;">
 			<br>
 			<button class="button" style="background-color: #66ccff;" onmousedown="half(22)">
-				Intermediate Challenge (Restricted): <a id="clicks22">800</a> Points
+				Intermediate Challenge (Restricted): <span id="clicks22">800</span> Points
 			</button>
 			<br>
-			<input id="checkbox22" type="checkbox" onclick="change(22)" style="opacity:0.5">
+			<input id="checkbox22" type="checkbox" onmousedown="swap(22)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
 		</div>
 		<p style="font-size: 1px"></p>
-		<input id="checkbox2" type="checkbox" onclick="change(2)" style="opacity:0.25">
+		<input id="checkbox2" type="checkbox" onmousedown="swap(2)" style="opacity:0.25">
 		<br><br>
 		<button class="button" style="background-color: #1ab2ff;" onmousedown="half(3)">
-			Advanced Challenge: <a id="clicks3">1000</a> Points
+			Advanced Challenge: <span id="clicks3">1000</span> Points
 		</button>
 		<div id="restriction3" style="display: none;">
 			<br>
 			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(33)">
-				Advanced Challenge (Restricted): <a id="clicks33">1800</a> Points
+				Advanced Challenge (Restricted): <span id="clicks33">1800</span> Points
 			</button>
 			<br>
-			<input id="checkbox33" type="checkbox" onclick="change(33)" style="opacity:0.5">
+			<input id="checkbox33" type="checkbox" onmousedown="swap(33)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
 		</div>
 		<p style="font-size: 1px"></p>
-		<input id="checkbox3" type="checkbox" onclick="change(3)" style="opacity:0.25">
+		<input id="checkbox3" type="checkbox" onmousedown="swap(3)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset()">
-			<a id="reset_tip">Reset Points</a>
+		<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset(event)">
+			<span id="reset_tip">Reset Points</span>
 		</button>
 		<br>
+		<br>
+		<center style= "font-size: 30px; color: #FFF">
+			page made by kee meng :D hope you enjoy!
+		</center>
 
 	</body>
 </html>
