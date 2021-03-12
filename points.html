@@ -74,24 +74,58 @@
 				}
 			}
 
-			function half(number) {
-				if (number == 1) {
-					clicks1 = Math.floor(clicks1/2);
+			function half(event, number) {
+				if (event.shiftKey) {
+					if (number == 1) {
+						clicks1 = Math.floor(clicks1/2);
+						clicks_1 = clicks1;
+						document.getElementById("clicks1").innerHTML = clicks1;
+					}
+					else if (number == 2) {
+						clicks2 = Math.floor(clicks2/2);
+						clicks_2 = clicks2;
+						document.getElementById("clicks2").innerHTML = clicks2;
+					}
+					else if (number == 3) {
+						clicks3 = Math.floor(clicks3/2);
+						clicks_3 = clicks3;
+						document.getElementById("clicks3").innerHTML = clicks3;
+					}
+					else if (number == 11) {
+						clicks11 = Math.floor(clicks11/2);
+						clicks_11 = clicks11;
+						document.getElementById("clicks11").innerHTML = clicks11;
+					}
+					else if (number == 22) {
+						clicks22 = Math.floor(clicks22/2);
+						clicks_22 = clicks22;
+						document.getElementById("clicks22").innerHTML = clicks22;
+					}
+					else if (number == 33) {
+						clicks33 = Math.floor(clicks33/2);
+						clicks_33 = clicks33;
+						document.getElementById("clicks33").innerHTML = clicks33;
+					}
 				}
-				else if (number == 2) {
-					clicks2 = Math.floor(clicks2/2);
-				}
-				else if (number == 3) {
-					clicks3 = Math.floor(clicks3/2);
-				}
-				else if (number == 11) {
-					clicks11 = Math.floor(clicks11/2);
-				}
-				else if (number == 22) {
-					clicks22 = Math.floor(clicks22/2);
-				}
-				else if (number == 33) {
-					clicks33 = Math.floor(clicks33/2);
+				else {
+					if (number == 1) {
+						clicks1 = Math.floor(clicks1/2);
+					}
+					else if (number == 2) {
+						clicks2 = Math.floor(clicks2/2);
+					}
+					else if (number == 3) {
+						clicks3 = Math.floor(clicks3/2);
+					}
+					else if (number == 11) {
+						clicks11 = Math.floor(clicks11/2);
+					}
+					else if (number == 22) {
+						clicks22 = Math.floor(clicks22/2);
+					}
+					else if (number == 33) {
+						clicks33 = Math.floor(clicks33/2);
+					}
 				}
 			}
 
@@ -145,9 +179,6 @@
 						clicks_33 ++;
 						document.getElementById("clicks33").innerHTML = clicks_33;
 					}
-					if (clicks_1 == clicks1 && clicks_11 == clicks11 && clicks_2 == clicks2 && clicks_22 == clicks22 && clicks_3 == clicks3 && clicks_33 == clicks33) {
-						document.getElementById("reset_tip").innerHTML = "Reset Points";
-					}
 				}
 				else {
 					clicks_1 = clicks1;
@@ -163,11 +194,21 @@
 					clicks_33 = clicks33;
 					document.getElementById("clicks33").innerHTML = clicks_33;
 				}
+				if (clicks_1 == clicks1 && clicks_11 == clicks11 && clicks_2 == clicks2 && clicks_22 == clicks22 && clicks_3 == clicks3 && clicks_33 == clicks33) {
+					document.getElementById("reset_tip").innerHTML = "Reset Points";
+				}
+				if (clicks1 == 100 && clicks11 == 200 && clicks2 == 500 && clicks22 == 800 && clicks3 == 1000 && clicks33 == 1800 && clicks_1 == 100 && clicks_11 == 200 && clicks_2 == 500 && clicks_22 == 800 && clicks_3 == 1000 && clicks_33 == 1800) {
+					document.getElementById("resetbutton").style.display = "none";
+				}
+				else {
+					document.getElementById("resetbutton").style.display = "block";
+				}
 			}
 
 			setInterval(change,0);
 
 			function reset(event) {
+				document.getElementById("reset_tip").innerHTML = "Reset Points";
 				if (event.shiftKey) {
 					clicks1 = 100;
 					clicks2 = 500;
@@ -175,6 +216,7 @@
 					clicks11 = 200;
 					clicks22 = 800;
 					clicks33 = 1800;
+					document.getElementById("reset_tip").innerHTML = "Reset Points";
 				}
 				if (clicks_1 < clicks1 || clicks_11 < clicks11 || clicks_2 < clicks2 || clicks_22 < clicks22 || clicks_3 < clicks3 || clicks_33 < clicks33) {
 					document.getElementById("clicks1").innerHTML = clicks1;
@@ -256,24 +298,24 @@
 
 		</style>
 
-		<button style="position: absolute; top: 10px; left: 10px;" onmousedown="alert('Top middle checkbox to toggle animation\nClick the time to change the timer\nClick the other checkboxes to show/hide restrictions\nShift click reset button to reset immediately');">Hint</button>
+		<button style="position: absolute; top: 10px; left: 10px;" onmousedown="alert('Top middle checkbox to toggle animation\nClick the time to change the timer\nClick the other checkboxes to show/hide restrictions\nShift click challenges button to deduct points immediately\nShift click reset button to reset immediately');">Hint</button>
 		<center style= "font-size: 48px;">
 			Computer Science Society
 		</center>
 		<input checked type="checkbox" onmousedown="animation()" style="opacity:0.25">
 
-		<center style="font-size: 32px;" onmousedown="change_time()">
+		<div style="font-size: 32px;" onmousedown="change_time()">
 			<span id="timer">30</span> minutes left
-		</center>
+		</div>
 		<hr>
 		<br>
 
-		<button class="button" style="background-color: #b3e6ff;" onmousedown="half(1)">
+		<button class="button" style="background-color: #b3e6ff;" onmousedown="half(event,1)">
 			Beginner Challenge: <span id="clicks1">100</span> Points
 		</button>
 		<div id="restriction1" style="display: none;">
 			<br>
-			<button class="button" style="background-color: #b3e6ff;" onmousedown="half(11)">
+			<button class="button" style="background-color: #b3e6ff;" onmousedown="half(event,11)">
 				Beginner Challenge (Restricted): <span id="clicks11">200</span> Points
 			</button>
 			<br>
@@ -283,12 +325,12 @@
 		<p style="font-size: 1px"></p>
 		<input id="checkbox1" type="checkbox" onmousedown="swap(1)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #66ccff;" onmousedown="half(2)">
+		<button class="button" style="background-color: #66ccff;" onmousedown="half(event,2)">
 			Intermediate Challenge: <span id="clicks2">500</span> Points
 		</button>
 		<div id="restriction2" style="display: none;">
 			<br>
-			<button class="button" style="background-color: #66ccff;" onmousedown="half(22)">
+			<button class="button" style="background-color: #66ccff;" onmousedown="half(event,22)">
 				Intermediate Challenge (Restricted): <span id="clicks22">800</span> Points
 			</button>
 			<br>
@@ -298,12 +340,12 @@
 		<p style="font-size: 1px"></p>
 		<input id="checkbox2" type="checkbox" onmousedown="swap(2)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #1ab2ff;" onmousedown="half(3)">
+		<button class="button" style="background-color: #1ab2ff;" onmousedown="half(event,3)">
 			Advanced Challenge: <span id="clicks3">1000</span> Points
 		</button>
 		<div id="restriction3" style="display: none;">
 			<br>
-			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(33)">
+			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(event,33)">
 				Advanced Challenge (Restricted): <span id="clicks33">1800</span> Points
 			</button>
 			<br>
@@ -313,9 +355,11 @@
 		<p style="font-size: 1px"></p>
 		<input id="checkbox3" type="checkbox" onmousedown="swap(3)" style="opacity:0.25">
 		<br><br>
-		<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset(event)">
-			<span id="reset_tip">Reset Points</span>
-		</button>
+		<div id="resetbutton" style="dispay:none">
+			<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset(event)">
+				<span id="reset_tip">Reset Points</span>
+			</button>
+		</div>
 		<br>
 		<br>
 		<center style= "font-size: 30px; color: #FFF">
