@@ -4,7 +4,7 @@
 		<script type="text/javascript">
 			var timer = prompt("Please enter timer (minutes)", "30");
 			function time() { 
-				timer -= 1
+				timer --;
 				document.getElementById("timer").innerHTML = timer;
 				if (timer <= 0) {
 					clearInterval(repeat);
@@ -72,19 +72,70 @@
 				}
 			}
 
+			// function sleep(milliseconds) {
+			// 	const date = Date.now();
+			// 	let currentDate = null;
+			// 	do {
+			// 		currentDate = Date.now();
+			// 	} while (currentDate - date < milliseconds);
+			// }
+
+			function reset1() {
+				if (clicks1 < 100) {
+					clicks1 ++;
+					document.getElementById("clicks1").innerHTML = clicks1;
+				}
+				else if (clicks11 < 200) {
+					clicks11 ++;
+					document.getElementById("clicks11").innerHTML = clicks11;
+				}
+				else if (clicks2 < 500) {
+					clicks2 ++;
+					document.getElementById("clicks2").innerHTML = clicks2;
+				}
+				else if (clicks22 < 800) {
+					clicks22 ++;
+					document.getElementById("clicks22").innerHTML = clicks22;
+				}
+				else if (clicks3 < 1000) {
+					clicks3 ++;
+					document.getElementById("clicks3").innerHTML = clicks3;
+				}
+				else if (clicks33 < 1800) {
+					clicks33 ++;
+					document.getElementById("clicks33").innerHTML = clicks33;
+				}
+				else {
+					clearInterval(repeat_reset);
+					repeat_reset = null;
+					document.getElementById("reset_tip").innerHTML = "Reset Points";
+				}
+			}
+			var repeat_reset = setInterval(reset1);
+			clearInterval(repeat_reset);
+			repeat_reset = null;
 			function reset() {
-				clicks1 = 100;
-				clicks2 = 500;
-				clicks3 = 1000;
-				clicks11 = 200;
-				clicks22 = 800;
-				clicks33 = 1800;
-				document.getElementById("clicks1").innerHTML = 100;
-				document.getElementById("clicks2").innerHTML = 500;
-				document.getElementById("clicks3").innerHTML = 1000;
-				document.getElementById("clicks11").innerHTML = 200;
-				document.getElementById("clicks22").innerHTML = 800;
-				document.getElementById("clicks33").innerHTML = 1800;
+				if (!repeat_reset) {
+					document.getElementById("reset_tip").innerHTML = "Click again to quickly reset points";
+					repeat_reset = setInterval(reset1);
+				}
+				else {
+					clicks1 = 100;
+					clicks2 = 500;
+					clicks3 = 1000;
+					clicks11 = 200;
+					clicks22 = 800;
+					clicks33 = 1800;
+					document.getElementById("clicks1").innerHTML = clicks1;
+					document.getElementById("clicks2").innerHTML = clicks2;
+					document.getElementById("clicks3").innerHTML = clicks3;
+					document.getElementById("clicks11").innerHTML = clicks11;
+					document.getElementById("clicks22").innerHTML = clicks22;
+					document.getElementById("clicks33").innerHTML = clicks33;
+					document.getElementById("reset_tip").innerHTML = "Reset Points";
+				}
+				// while (clicks1 < 100 && clicks11 < 200 && clicks2 < 500 && clicks22 < 800 && clicks3 < 1000 && clicks33 < 1800) {}
+				// clearInterval(repeat_reset);
 			}
 		</script>
 
@@ -207,7 +258,7 @@
 		<input type="checkbox" onclick="change(3)" style="opacity:0.25">
 		<br><br>
 		<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset()">
-			Reset Points
+			<a id="reset_tip">Reset Points</a>
 		</button>
 		<br>
 
