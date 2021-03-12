@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<body style= "text-align: center; font-family: Futura; font-weight: bold;">
+		<script type="text/javascript">
+			var pressure = 0;
+			Pressure.set("#element", {
+				start: function(event){
+					prompt("Hi");
+					// this is called on force start
+				},
+				end: function(){
+					// this is called on force end
+				},
+				startDeepPress: function(event){
+					// this is called on "force click" / "deep press", aka once the force is greater than 0.5
+				},
+				endDeepPress: function(){
+					// this is called when the "force click" / "deep press" end
+				},
+				change: function(force, event){
+					document.getElementById("pressure").innerHTML = force;
+					// this is called every time there is a change in pressure
+					// 'force' is a value ranging from 0 to 1
+				},
+				unsupported: function(){
+					// NOTE: this is only called if the polyfill option is disabled!
+					// this is called once there is a touch on the element and the device or browser does not support Force or 3D touch
+				}
+			});
+		</script>
+
+		<style type="text/css">
+			.element{
+				width: 200px;
+				padding: 20px;
+				background: #0081af;
+				margin-bottom: 10px;
+				color: white;
+				cursor: pointer;
+			}
+			div[id*='jquery']{
+				background: #72238e;
+			}
+			h3{
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+		</style>
+
+		<div class="element" id="e1">
+			Pressure: <a id="pressure">0</a>
+		</div>
+	</body>
+</html>

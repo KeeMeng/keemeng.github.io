@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<style>
+			.element {
+				width: 200px;
+				padding: 20px;
+				background: #0080FF;
+				margin-bottom: 10px;
+				color: white;
+				cursor: pointer;
+			}
+			div[id*='jquery'] {
+				background: #72238e;
+			}
+			h3 {
+				margin-top: 0;
+				margin-bottom: 10px;
+			}
+			img {
+				width: 100%;
+			}
+		</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<h1>Pressure Tests</h1>
+		<h3>Change Pressure</h3>
+		<div class="element" id="el1">0</div>
+		<h3>Change Pressure (target ONLY Force Touch | Mac, Magic Trackpad 2)</h3>
+		<div class="element" id="el2">0</div>
+		<h3>Change Pressure (target ONLY 3D Touch | iPhone6s, iPhone7, Apple Pencil)</h3>
+		<div class="element" id="el3">0</div>
+		<h3>Change Pressure (target ONLY <a href="https://www.w3.org/TR/pointerevents/">Pointer Events</a>)</h3>
+		<div class="element" id="el4">0</div>
+		<hr />
+		<h1>jQuery Pressure Tests</h1>
+		<h3>Change Pressure</h3>
+		<div class="element" id="el1-jquery">0</div>
+		<h3>Change Pressure (target ONLY Force Touch | Mac, Magic Trackpad 2)</h3>
+		<div class="element" id="el2-jquery">0</div>
+		<h3>Change Pressure (target ONLY 3D Touch | iPhone6s, iPhone7, Apple Pencil)</h3>
+		<div class="element" id="el3-jquery">0</div>
+		<h3>Change Pressure (target ONLY <a href="https://www.w3.org/TR/pointerevents/">Pointer Events</a>)</h3>
+		<div class="element" id="el4-jquery">0</div>
+		<img src="http://assets.climatecentral.org/images/made/12_5_14_upton_ocean_sunset_San_Diego_720_480_s_c1_c_c.jpg" />
+
+		<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="../dist/pressure.js"></script>
+		<script type="text/javascript" src="../dist/jquery.pressure.js"></script> -->
+		<script type="text/javascript">
+			// Example of change method with a failure closure
+			// This structure can be used in any methods of Pressure
+			// The failure block will return with an "error" and message showing why the device doesn't support 3D Touch and Force Touch
+
+			$.pressureConfig({
+				polyfill: false
+			});
+
+			var block = {
+				start: function(event) {
+					console.log('start', event);
+				},
+
+				change: function(force, event) {
+					// event.preventDefault();
+					this.style.width = Pressure.map(force, 0, 1, 200, 300) + 'px';
+					this.innerHTML = force;
+					console.log('change', force);
+				},
+
+				startDeepPress: function(event) {
+					console.log('start deep press', event);
+					this.style.backgroundColor = '#FF0040';
+				},
+
+				endDeepPress: function() {
+					console.log('end deep press');
+					this.style.backgroundColor = '#0080FF';
+				},
+
+				end: function() {
+					console.log('end');
+					this.style.width = '200px';
+					this.innerHTML = 0;
+				},
+
+				unsupported: function() {
+					console.log(this);
+					this.innerHTML = 'Your device / browser does not support this :(';
+				}
+			}
+
+			Pressure.set(document.querySelectorAll('#el1'), block);
+			Pressure.set(document.querySelectorAll('#el2'), block, {only: 'mouse'});
+			Pressure.set($('#el3'), block, {only: 'touch'});
+			Pressure.set('#el4', block, {only: 'pointer'});
+
+			$('#el1-jquery').pressure(block);
+			$('#el2-jquery').pressure(block, {only: 'mouse'});
+			$('#el3-jquery').pressure(block, {only: 'touch'});
+			$('#el4-jquery').pressure(block, {only: 'pointer'});
+
+			$('img').pressure({
+				change: function(force, event){
+					console.log(force);
+				}
+			});
+		</script>
+	</body>
+</html>
