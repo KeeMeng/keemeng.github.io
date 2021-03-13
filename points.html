@@ -245,7 +245,15 @@
 			}
 
 			document.body.classList.toggle("lightmode");
+			var dark = false;
 			function dark_mode() {
+				dark = !dark;
+				if (dark) {
+					document.getElementById("mode").innerHTML = "Light";
+				}
+				else {
+					document.getElementById("mode").innerHTML = "Dark";
+				}
 				document.body.classList.toggle("darkmode");
 				document.body.classList.toggle("lightmode");
 			}
@@ -362,7 +370,7 @@
 
 		</style>
 
-		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; left: 10px; color: inherit; background-color: #989898; " onmousedown="show_hint()">Hint</button>
+		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; left: 10px; color: inherit; background-color: #A0A0A0; " onmousedown="show_hint()">Hint</button>
 		<div id="hint_box" style="color: inherit; background-color: transparent; text-align: left; position: fixed; top: 42px; left:10px; display: none; ">
 			Top middle checkbox to toggle animation<br>
 			Click the time to change the timer<br>
@@ -370,7 +378,7 @@
 			Shift click challenges button to deduct points immediately<br>
 			Shift click reset button to reset immediately<br>
 		</div>
-		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; right: 10px; color: inherit; background-color: #989898; "  onmousedown="dark_mode()">Dark Mode</button>
+		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; right: 10px; color: inherit; background-color: #A0A0A0; "  onmousedown="dark_mode()"><span id="mode">Dark</span> Mode</button>
 		<center style= "font-size: 48px;">
 			Computer Science Society
 		</center>
