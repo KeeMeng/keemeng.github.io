@@ -243,6 +243,11 @@
 					clicks33 = 1800;
 				}
 			}
+
+			function dark_mode() {
+				document.body.classList.toggle("darkmode");
+			}
+
 		</script>
 
 		<style>
@@ -296,9 +301,15 @@
 			transform: scale(1.08);
 		}
 
+		.darkmode {
+			background-color: black;
+			color: white;
+		}
+
 		</style>
 
-		<button style="position: absolute; top: 10px; left: 10px;" onmousedown="alert('Top middle checkbox to toggle animation\nClick the time to change the timer\nClick the other checkboxes to show/hide restrictions\nShift click challenges button to deduct points immediately\nShift click reset button to reset immediately');">Hint</button>
+		<button style="font-size: 16px; position: absolute; top: 10px; left: 10px;" onmousedown="alert('Top middle checkbox to toggle animation\nClick the time to change the timer\nClick the other checkboxes to show/hide restrictions\nShift click challenges button to deduct points immediately\nShift click reset button to reset immediately');">Hint</button>
+		<button style="font-size: 16px; position: absolute; top: 10px; right: 10px;" onmousedown="dark_mode()">Dark Mode</button>
 		<center style= "font-size: 48px;">
 			Computer Science Society
 		</center>
@@ -362,9 +373,5 @@
 		</div>
 		<br>
 		<br>
-		<center style= "font-size: 30px; color: #FFF">
-			page made by kee meng :D hope you enjoy!
-		</center>
-
 	</body>
 </html>
