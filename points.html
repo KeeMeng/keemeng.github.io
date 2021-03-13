@@ -244,78 +244,139 @@
 				}
 			}
 
+			document.body.classList.toggle("lightmode");
 			function dark_mode() {
 				document.body.classList.toggle("darkmode");
+				document.body.classList.toggle("lightmode");
+			}
+
+			var showhint = false
+			document.getElementById("hint_box").style.display = "none";
+			function show_hint() {
+				showhint = !showhint
+				if (showhint) {
+					document.getElementById("hint_box").style.display = "block";
+				}
+				else {
+					document.getElementById("hint_box").style.display = "none";
+				}
 			}
 
 		</script>
 
 		<style>
-		.button {
-			padding: 10px 10px;
-			font-family: Futura;
-			font-size: 32px;
-			outline: none;
-			color: #004990;
-			border: none;
-			border-radius: 15px;
-			width: 750px;
-			margin: auto;
-			display: block;
-			display: inline-block;
-			-webkit-transform: perspective(1px) translateZ(0);
-			transform: perspective(1px) translateZ(0);
-			-webkit-transition-duration: 0.2s;
-			transition-duration: 0.2s;
-			-webkit-transition-property: transform;
-			transition-property: transform;
 
-		}
-		@-webkit-keyframes pop {
-			0% {
+			@-webkit-keyframes pop {
+				0% {
+					-webkit-transform: scale(1.05);
+				}
+				100% {
+					-webkit-transform: scale(1.08);
+				}
+			}
+			@keyframes pop {
+				0% {
+					transform: scale(1.05);
+				}
+				100% {
+					transform: scale(1.08);
+				}
+			}
+
+			.button {
+				padding: 10px 10px;
+				font-family: Futura;
+				font-size: 32px;
+				outline: none;
+				color: #004990;
+				border: none;
+				border-radius: 15px;
+				width: 750px;
+				margin: auto;
+				display: inline-block;
+				-webkit-transform: perspective(1px) translateZ(0);
+				transform: perspective(1px) translateZ(0);
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+				-webkit-transition-property: transform;
+				transition-property: transform;
+			}
+
+			.button:hover, .button:focus {
 				-webkit-transform: scale(1.05);
-			}
-			100% {
-				-webkit-transform: scale(1.08);
-			}
-		}
-		@keyframes pop {
-			0% {
 				transform: scale(1.05);
 			}
-			100% {
+
+			.button:active {
+				-webkit-animation-name: pop;
+				animation-name: pop;
+				-webkit-animation-duration: 0.1s;
+				animation-duration: 0.1s;
+				-webkit-transform: scale(1.08);
 				transform: scale(1.08);
 			}
-		}
-		.button:hover, .button:focus {
-			-webkit-transform: scale(1.05);
-			transform: scale(1.05);
-		}
 
-		.button:active {
-			-webkit-animation-name: pop;
-			animation-name: pop;
-			-webkit-animation-duration: 0.1s;
-			animation-duration: 0.1s;
-			-webkit-transform: scale(1.08);
-			transform: scale(1.08);
-		}
+			.small_button {
+				padding: 5px 5px;
+				font-family: Futura;
+				font-size: 16px;
+				outline: all;
+				border: none;
+				border-radius: 8px;
+				margin: auto;
+				display: inline-block;
+				vertical-align:middle;
+				-webkit-transform: perspective(1px) translateZ(0);
+				transform: perspective(1px) translateZ(0);
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+				-webkit-transition-property: transform;
+				transition-property: transform;
+			}
 
-		.darkmode {
-			background-color: black;
-			color: white;
-		}
+			.small_button:hover, .small_button:focus {
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05);
+			}
+
+			.small_button:active {
+				-webkit-animation-name: pop;
+				animation-name: pop;
+				-webkit-animation-duration: 0.1s;
+				animation-duration: 0.1s;
+				-webkit-transform: scale(1.08);
+				transform: scale(1.08);
+			}
+
+			.darkmode {
+				background-color: black;
+				color: white;
+				transition: 0.5s;
+			}
+
+			.lightmode {
+				background-color: white;
+				color: black;
+				transition: 0.5s;
+			}
 
 		</style>
 
-		<button style="font-size: 16px; position: absolute; top: 10px; left: 10px;" onmousedown="alert('Top middle checkbox to toggle animation\nClick the time to change the timer\nClick the other checkboxes to show/hide restrictions\nShift click challenges button to deduct points immediately\nShift click reset button to reset immediately');">Hint</button>
-		<button style="font-size: 16px; position: absolute; top: 10px; right: 10px;" onmousedown="dark_mode()">Dark Mode</button>
+		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; left: 10px; color: inherit; background-color: #989898; " onmousedown="show_hint()">Hint</button>
+		<div id="hint_box" style="color: inherit; background-color: transparent; text-align: left; position: fixed; top: 42px; left:10px; display: none; ">
+			Top middle checkbox to toggle animation<br>
+			Click the time to change the timer<br>
+			Click the other checkboxes to show/hide restrictions<br>
+			Shift click challenges button to deduct points immediately<br>
+			Shift click reset button to reset immediately<br>
+		</div>
+		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; right: 10px; color: inherit; background-color: #989898; "  onmousedown="dark_mode()">Dark Mode</button>
 		<center style= "font-size: 48px;">
 			Computer Science Society
 		</center>
-		<input checked type="checkbox" onmousedown="animation()" style="opacity:0.25">
+		<input checked type="checkbox" onmousedown="animation()" style="opacity:0.5">
 
-		<div style="font-size: 32px;" onmousedown="change_time()">
+		<div style="font-size: 36px;" onmousedown="change_time()">
 			<span id="timer">30</span> minutes left
 		</div>
 		<hr>
@@ -331,10 +392,10 @@
 			</button>
 			<br>
 			<input id="checkbox11" type="checkbox" onmousedown="swap(11)" style="opacity:0.5">
-			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
+			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
 		</div>
 		<p style="font-size: 1px"></p>
-		<input id="checkbox1" type="checkbox" onmousedown="swap(1)" style="opacity:0.25">
+		<input id="checkbox1" type="checkbox" onmousedown="swap(1)" style="opacity:0.5">
 		<br><br>
 		<button class="button" style="background-color: #66ccff;" onmousedown="half(event,2)">
 			Intermediate Challenge: <span id="clicks2">500</span> Points
@@ -346,10 +407,10 @@
 			</button>
 			<br>
 			<input id="checkbox22" type="checkbox" onmousedown="swap(22)" style="opacity:0.5">
-			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
+			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
 		</div>
 		<p style="font-size: 1px"></p>
-		<input id="checkbox2" type="checkbox" onmousedown="swap(2)" style="opacity:0.25">
+		<input id="checkbox2" type="checkbox" onmousedown="swap(2)" style="opacity:0.5">
 		<br><br>
 		<button class="button" style="background-color: #1ab2ff;" onmousedown="half(event,3)">
 			Advanced Challenge: <span id="clicks3">1000</span> Points
@@ -361,10 +422,10 @@
 			</button>
 			<br>
 			<input id="checkbox33" type="checkbox" onmousedown="swap(33)" style="opacity:0.5">
-			Restriction: <input type="text" style="font-size: 16px; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove;">
+			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
 		</div>
 		<p style="font-size: 1px"></p>
-		<input id="checkbox3" type="checkbox" onmousedown="swap(3)" style="opacity:0.25">
+		<input id="checkbox3" type="checkbox" onmousedown="swap(3)" style="opacity:0.5">
 		<br><br>
 		<div id="resetbutton" style="dispay:none">
 			<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset(event)">
