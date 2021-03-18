@@ -18,6 +18,9 @@
 			var clicks_33 = 1800;
 
 			var timer = prompt("Please enter timer (minutes)", "30");
+			if (timer == null) {
+				timer = 30;
+			}
 			function time() { 
 				timer --;
 				document.getElementById("timer").innerHTML = timer;
@@ -301,7 +304,7 @@
 				border-radius: 15px;
 				width: 750px;
 				margin: auto;
-				display: inline-block;
+				display: block;
 				-webkit-transform: perspective(1px) translateZ(0);
 				transform: perspective(1px) translateZ(0);
 				-webkit-transition-duration: 0.2s;
@@ -332,7 +335,7 @@
 				border: none;
 				border-radius: 8px;
 				margin: auto;
-				display: inline-block;
+				display: block;
 				vertical-align:middle;
 				-webkit-transform: perspective(1px) translateZ(0);
 				transform: perspective(1px) translateZ(0);
@@ -371,7 +374,7 @@
 		</style>
 
 		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; left: 10px; color: inherit; background-color: #A0A0A0; " onmousedown="show_hint()">Hint</button>
-		<div id="hint_box" style="color: inherit; background-color: transparent; text-align: left; position: fixed; top: 42px; left:10px; display: none; ">
+		<div id="hint_box" style="color: inherit; background-color: transparent; text-align: left; position: absolute; top: 42px; left:10px; display: none; ">
 			Top middle checkbox to toggle animation<br>
 			Click the time to change the timer<br>
 			Click the other checkboxes to show/hide restrictions<br>
@@ -398,7 +401,6 @@
 			<button class="button" style="background-color: #b3e6ff;" onmousedown="half(event,11)">
 				Beginner Challenge (Restricted): <span id="clicks11">200</span> Points
 			</button>
-			<br>
 			<input id="checkbox11" type="checkbox" onmousedown="swap(11)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
 		</div>
@@ -413,7 +415,6 @@
 			<button class="button" style="background-color: #66ccff;" onmousedown="half(event,22)">
 				Intermediate Challenge (Restricted): <span id="clicks22">800</span> Points
 			</button>
-			<br>
 			<input id="checkbox22" type="checkbox" onmousedown="swap(22)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
 		</div>
@@ -428,7 +429,6 @@
 			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(event,33)">
 				Advanced Challenge (Restricted): <span id="clicks33">1800</span> Points
 			</button>
-			<br>
 			<input id="checkbox33" type="checkbox" onmousedown="swap(33)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
 		</div>
