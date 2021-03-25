@@ -6,16 +6,16 @@
 			var clicks1 = 100;
 			var clicks2 = 500;
 			var clicks3 = 1000;
-			var clicks11 = 200;
-			var clicks22 = 800;
-			var clicks33 = 1800;
+			var clicks11 = 100;
+			var clicks22 = 300;
+			var clicks33 = 800;
 
 			var clicks_1 = 100;
 			var clicks_2 = 500;
 			var clicks_3 = 1000;
-			var clicks_11 = 200;
-			var clicks_22 = 800;
-			var clicks_33 = 1800;
+			var clicks_11 = 100;
+			var clicks_22 = 300;
+			var clicks_33 = 800;
 
 			var timer = prompt("Please enter timer (minutes)", "30");
 			if (timer == null) {
@@ -200,7 +200,7 @@
 				if (clicks_1 == clicks1 && clicks_11 == clicks11 && clicks_2 == clicks2 && clicks_22 == clicks22 && clicks_3 == clicks3 && clicks_33 == clicks33) {
 					document.getElementById("reset_tip").innerHTML = "Reset Points";
 				}
-				if (clicks1 == 100 && clicks11 == 200 && clicks2 == 500 && clicks22 == 800 && clicks3 == 1000 && clicks33 == 1800 && clicks_1 == 100 && clicks_11 == 200 && clicks_2 == 500 && clicks_22 == 800 && clicks_3 == 1000 && clicks_33 == 1800) {
+				if (clicks1 == 100 && clicks11 == 100 && clicks2 == 500 && clicks22 == 300 && clicks3 == 1000 && clicks33 == 800 && clicks_1 == 100 && clicks_11 == 100 && clicks_2 == 500 && clicks_22 == 300 && clicks_3 == 1000 && clicks_33 == 800) {
 					document.getElementById("resetbutton").style.display = "none";
 				}
 				else {
@@ -216,9 +216,9 @@
 					clicks1 = 100;
 					clicks2 = 500;
 					clicks3 = 1000;
-					clicks11 = 200;
-					clicks22 = 800;
-					clicks33 = 1800;
+					clicks11 = 100;
+					clicks22 = 300;
+					clicks33 = 800;
 					document.getElementById("reset_tip").innerHTML = "Reset Points";
 				}
 				if (clicks_1 < clicks1 || clicks_11 < clicks11 || clicks_2 < clicks2 || clicks_22 < clicks22 || clicks_3 < clicks3 || clicks_33 < clicks33) {
@@ -241,9 +241,9 @@
 					clicks1 = 100;
 					clicks2 = 500;
 					clicks3 = 1000;
-					clicks11 = 200;
-					clicks22 = 800;
-					clicks33 = 1800;
+					clicks11 = 100;
+					clicks22 = 300;
+					clicks33 = 800;
 				}
 			}
 
@@ -399,7 +399,7 @@
 		<div id="restriction1" style="display: none;">
 			<br>
 			<button class="button" style="background-color: #b3e6ff;" onmousedown="half(event,11)">
-				Beginner Challenge (Restricted): <span id="clicks11">200</span> Points
+				Beginner Challenge Restriction: <span id="clicks11">100</span> Points
 			</button>
 			<input id="checkbox11" type="checkbox" onmousedown="swap(11)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
@@ -413,7 +413,7 @@
 		<div id="restriction2" style="display: none;">
 			<br>
 			<button class="button" style="background-color: #66ccff;" onmousedown="half(event,22)">
-				Intermediate Challenge (Restricted): <span id="clicks22">800</span> Points
+				Intermediate Challenge Restriction: <span id="clicks22">300</span> Points
 			</button>
 			<input id="checkbox22" type="checkbox" onmousedown="swap(22)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
@@ -427,7 +427,7 @@
 		<div id="restriction3" style="display: none;">
 			<br>
 			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(event,33)">
-				Advanced Challenge (Restricted): <span id="clicks33">1800</span> Points
+				Advanced Challenge Restriction: <span id="clicks33">800</span> Points
 			</button>
 			<input id="checkbox33" type="checkbox" onmousedown="swap(33)" style="opacity:0.5">
 			Restriction: <input type="text" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
