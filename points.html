@@ -40,29 +40,13 @@
 				document.getElementById("checkbox5").checked = true;
 				document.getElementById("checkbox6").checked = true;
 
-				if (number == 1) {
-					document.getElementById("restriction1").style.display = "block";
-					document.getElementById("checkbox1").style.display = "none";
+				if (number == 1 || number == 2 || number == 3) {
+					document.getElementById("restriction"+String(number)).style.display = "block";
+					document.getElementById("checkbox"+String(number)).style.display = "none";
 				}
-				else if (number == 4) {
-					document.getElementById("restriction1").style.display = "none";
-					document.getElementById("checkbox1").style.display = "inline";
-				}
-				else if (number == 2) {
-					document.getElementById("restriction2").style.display = "block";
-					document.getElementById("checkbox2").style.display = "none";
-				}
-				else if (number == 5) {
-					document.getElementById("restriction2").style.display = "none";
-					document.getElementById("checkbox2").style.display = "inline";
-				}
-				else if (number == 3) {
-					document.getElementById("restriction3").style.display = "block";
-					document.getElementById("checkbox3").style.display = "none";
-				}
-				else if (number == 6) {
-					document.getElementById("restriction3").style.display = "none";
-					document.getElementById("checkbox3").style.display = "inline";
+				else if (number == 4 || number == 5 || number == 6) {
+					document.getElementById("restriction"+String(number-3)).style.display = "none";
+					document.getElementById("checkbox"+String(number-3)).style.display = "inline";
 				}
 			}
 
@@ -70,68 +54,25 @@
 				clicks[number-1] = Math.floor(clicks[number-1]/2);
 				if (event.shiftKey) {
 					clicks2[number-1] = clicks[number-1];
-					document.getElementById(parseInt("clicks", number)).innerHTML = clicks[number-1];
+					document.getElementById("clicks"+String(number)).innerHTML = clicks[number-1];
 				}
 			}
 
 			function change() {
 				if (animate) {
-					if (clicks2[0] > clicks[0]) {
-						clicks2[0] --;
-						document.getElementById("clicks1").innerHTML = clicks2[0];
-					}
-					if (clicks2[3] > clicks[3]) {
-						clicks2[3] --;
-						document.getElementById("clicks4").innerHTML = clicks2[3];
-					}
-					if (clicks2[1] > clicks[1]) {
-						clicks2[1] --;
-						document.getElementById("clicks2").innerHTML = clicks2[1];
-					}
-					if (clicks2[4] > clicks[4]) {
-						clicks2[4] --;
-						document.getElementById("clicks5").innerHTML = clicks2[4];
-					}
-					if (clicks2[2] > clicks[2]) {
-						clicks2[2] --;
-						document.getElementById("clicks3").innerHTML = clicks2[2];
-					}
-					if (clicks2[5] > clicks[5]) {
-						clicks2[5] --;
-						document.getElementById("clicks6").innerHTML = clicks2[5];
-					}
-					if (clicks2[0] < clicks[0]) {
-						clicks2[0] ++;
-						document.getElementById("clicks1").innerHTML = clicks2[0];
-					}
-					if (clicks2[3] < clicks[3]) {
-						clicks2[3] ++;
-						document.getElementById("clicks4").innerHTML = clicks2[3];
-					}
-					if (clicks2[1] < clicks[1]) {
-						clicks2[1] ++;
-						document.getElementById("clicks2").innerHTML = clicks2[1];
-					}
-					if (clicks2[4] < clicks[4]) {
-						clicks2[4] ++;
-						document.getElementById("clicks5").innerHTML = clicks2[4];
-					}
-					if (clicks2[2] < clicks[2]) {
-						clicks2[2] ++;
-						document.getElementById("clicks3").innerHTML = clicks2[2];
-					}
-					if (clicks2[5] < clicks[5]) {
-						clicks2[5] ++;
-						document.getElementById("clicks6").innerHTML = clicks2[5];
+					for (var i = 0; i < 6; i++) {
+						if (clicks2[i] > clicks[i]) {
+							clicks2[i] --;
+							document.getElementById("clicks"+String(i+1)).innerHTML = clicks2[i];
+						}
+						else if (clicks2[i] < clicks[i]) {
+							clicks2[i] ++;
+							document.getElementById("clicks"+String(i+1)).innerHTML = clicks2[i];
+						}
 					}
 				}
 				else {
-					clicks2[0] = clicks[0];
-					clicks2[1] = clicks[1];
-					clicks2[2] = clicks[2];
-					clicks2[3] = clicks[3];
-					clicks2[4] = clicks[4];
-					clicks2[5] = clicks[5];
+					clicks2 = clicks.slice()
 					document.getElementById("clicks1").innerHTML = clicks2[0];
 					document.getElementById("clicks2").innerHTML = clicks2[1];
 					document.getElementById("clicks3").innerHTML = clicks2[2];
@@ -139,14 +80,12 @@
 					document.getElementById("clicks5").innerHTML = clicks2[4];
 					document.getElementById("clicks6").innerHTML = clicks2[5];
 				}
-				if (clicks[0] == clicks2[0] && clicks[1] == clicks2[1] && clicks[2] == clicks2[2] && clicks[3] == clicks2[3] && clicks[4] == clicks2[4] && clicks[5] == clicks2[5]) {
-					document.getElementById("reset_tip").innerHTML = "Reset Points";
-				}
-				if (clicks[0] == 100 && clicks[3] == 100 && clicks[1] == 500 && clicks[4] == 300 && clicks[2] == 1000 && clicks[5] == 800 && clicks2[0] == 100 && clicks2[3] == 100 && clicks2[1] == 500 && clicks2[4] == 300 && clicks2[2] == 1000 && clicks2[5] == 800) {
-					document.getElementById("resetbutton").style.display = "none";
+				if (clicks.join(",") != "100,500,1000,100,300,800" || clicks2.join(",") != "100,500,1000,100,300,800") {
+					document.getElementById("resetbutton").style.display = "block";
 				}
 				else {
-					document.getElementById("resetbutton").style.display = "block";
+					document.getElementById("resetbutton").style.display = "none";
+					document.getElementById("reset_tip").innerHTML = "Reset Points";
 				}
 			}
 
@@ -159,19 +98,15 @@
 					document.getElementById("reset_tip").innerHTML = "Reset Points";
 				}
 				if (clicks2[0] < clicks[0] || clicks2[1] < clicks[1] || clicks2[2] < clicks[2] || clicks2[3] < clicks[3] || clicks2[4] < clicks[4] || clicks2[5] < clicks[5]) {
+					clicks2 = [100,500,1000,100,300,800];
 					document.getElementById("clicks1").innerHTML = clicks[0];
-					clicks2[0] = clicks[0];
 					document.getElementById("clicks2").innerHTML = clicks[1];
-					clicks2[1] = clicks[1];
 					document.getElementById("clicks3").innerHTML = clicks[2];
-					clicks2[2] = clicks[2];
 					document.getElementById("clicks4").innerHTML = clicks[3];
-					clicks2[3] = clicks[3];
 					document.getElementById("clicks5").innerHTML = clicks[4];
-					clicks2[4] = clicks[4];
 					document.getElementById("clicks6").innerHTML = clicks[5];
-					clicks2[5] = clicks[5];
 					document.getElementById("reset_tip").innerHTML = "Reset Points";
+					document.getElementById("resetbutton").style.display = "none";
 				}
 				else {
 					document.getElementById("reset_tip").innerHTML = "Click again to quickly reset points";
@@ -196,7 +131,7 @@
 			var showhint = false;
 			document.getElementById("hint_box").style.display = "none";
 			function show_hint() {
-				showhint = !showhint
+				showhint = !showhint;
 				if (showhint) {
 					document.getElementById("hint_box").style.display = "block";
 				}
@@ -210,20 +145,10 @@
 		<style>
 
 			@-webkit-keyframes pop {
-				0% {
-					-webkit-transform: scale(1.05);
-				}
-				100% {
-					-webkit-transform: scale(1.08);
-				}
+				-webkit-transform: scale(1.08);
 			}
 			@keyframes pop {
-				0% {
-					transform: scale(1.05);
-				}
-				100% {
-					transform: scale(1.08);
-				}
+				transform: scale(1.08);
 			}
 
 			.button {
@@ -358,7 +283,7 @@
 		</button>
 		<div id="restriction3" style="display: none;">
 			<br>
-			<button class="button" id="restriction3" style="background-color: #1ab2ff;" onmousedown="half(event,6)">
+			<button class="button" style="background-color: #1ab2ff;" onmousedown="half(event,6)">
 				Advanced Challenge Restriction: <span id="clicks6">800</span> Points
 			</button>
 			<input id="checkbox6" type="checkbox" onmousedown="swap(6)" style="opacity:0.5">
