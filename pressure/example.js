@@ -1,7 +1,7 @@
 // Example of change method with a failure closure
 // This structure can be used in any methods of Pressure
 // The failure block will return with an "error" and message showing why the device doesn't support 3D Touch and Force Touch
-
+src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
 $.pressureConfig({
 	polyfill: false
 });
