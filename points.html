@@ -27,6 +27,13 @@
 				}
 			}
 
+			function change_title() {
+				var title = prompt("Title:", "Computer Science Society")
+				if (title !== "") {
+					document.getElementById("title").innerHTML = title;
+				}
+			}
+
 			var animate = true;
 			function animation() {
 				animate = !animate;
@@ -239,9 +246,9 @@
 			Shift click reset button to reset immediately<br>
 		</div>
 		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; right: 10px; color: inherit; background-color: #A0A0A0; "  onmousedown="dark_mode()"><span id="mode">Dark</span> Mode</button>
-		<center style= "font-size: 48px;">
-			Computer Science Society
-		</center>
+		<div style="font-size: 48px;" onmousedown="change_title()">
+			<span id="title">Computer Science Society</span>
+		</div>
 		<input checked type="checkbox" onmousedown="animation()" style="opacity:0.5">
 
 		<div style="font-size: 36px;" onmousedown="change_time()">
