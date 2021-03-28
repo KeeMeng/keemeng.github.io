@@ -5,11 +5,8 @@
 
 			var clicks = [100,500,1000,100,300,800];
 			var clicks2 = [100,500,1000,100,300,800];
-
-			// var timer = prompt("Please enter timer (minutes)", "30");
-			// if (timer == null) {
 			var timer = 30;
-				
+
 			function time() { 
 				timer --;
 				document.getElementById("timer").innerHTML = timer;
@@ -79,13 +76,13 @@
 					}
 				}
 				else {
-					clicks2 = clicks.slice()
-					document.getElementById("clicks1").innerHTML = clicks2[0];
-					document.getElementById("clicks2").innerHTML = clicks2[1];
-					document.getElementById("clicks3").innerHTML = clicks2[2];
-					document.getElementById("clicks4").innerHTML = clicks2[3];
-					document.getElementById("clicks5").innerHTML = clicks2[4];
-					document.getElementById("clicks6").innerHTML = clicks2[5];
+					clicks2 = clicks.slice();
+					document.getElementById("clicks1").innerHTML = 100;
+					document.getElementById("clicks2").innerHTML = 500;
+					document.getElementById("clicks3").innerHTML = 1000;
+					document.getElementById("clicks4").innerHTML = 100;
+					document.getElementById("clicks5").innerHTML = 300;
+					document.getElementById("clicks6").innerHTML = 800;
 				}
 				if (clicks.join(",") != "100,500,1000,100,300,800" || clicks2.join(",") != "100,500,1000,100,300,800") {
 					document.getElementById("resetbutton").style.display = "block";
@@ -106,12 +103,12 @@
 				}
 				if (clicks2[0] < clicks[0] || clicks2[1] < clicks[1] || clicks2[2] < clicks[2] || clicks2[3] < clicks[3] || clicks2[4] < clicks[4] || clicks2[5] < clicks[5]) {
 					clicks2 = [100,500,1000,100,300,800];
-					document.getElementById("clicks1").innerHTML = clicks[0];
-					document.getElementById("clicks2").innerHTML = clicks[1];
-					document.getElementById("clicks3").innerHTML = clicks[2];
-					document.getElementById("clicks4").innerHTML = clicks[3];
-					document.getElementById("clicks5").innerHTML = clicks[4];
-					document.getElementById("clicks6").innerHTML = clicks[5];
+					document.getElementById("clicks1").innerHTML = 100;
+					document.getElementById("clicks2").innerHTML = 500;
+					document.getElementById("clicks3").innerHTML = 1000;
+					document.getElementById("clicks4").innerHTML = 100;
+					document.getElementById("clicks5").innerHTML = 300;
+					document.getElementById("clicks6").innerHTML = 800;
 					document.getElementById("reset_tip").innerHTML = "Reset Points";
 					document.getElementById("resetbutton").style.display = "none";
 				}
@@ -136,7 +133,6 @@
 			}
 
 			var showhint = false;
-			document.getElementById("hint_box").style.display = "none";
 			function show_hint() {
 				showhint = !showhint;
 				if (showhint) {
