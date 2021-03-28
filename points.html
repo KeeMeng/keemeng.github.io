@@ -146,14 +146,6 @@
 		</script>
 
 		<style>
-
-			@-webkit-keyframes pop {
-				-webkit-transform: scale(1.08);
-			}
-			@keyframes pop {
-				transform: scale(1.08);
-			}
-
 			.button {
 				padding: 10px 10px;
 				font-family: Futura;
@@ -165,8 +157,8 @@
 				width: 750px;
 				margin: auto;
 				display: block;
-				-webkit-transform: perspective(1px) translateZ(0);
-				transform: perspective(1px) translateZ(0);
+				-webkit-transform: perspective(1px);
+				transform: perspective(1px);
 				-webkit-transition-duration: 0.2s;
 				transition-duration: 0.2s;
 				-webkit-transition-property: transform;
@@ -179,8 +171,6 @@
 			}
 
 			.button:active {
-				-webkit-animation-name: pop;
-				animation-name: pop;
 				-webkit-animation-duration: 0.1s;
 				animation-duration: 0.1s;
 				-webkit-transform: scale(1.08);
@@ -197,8 +187,8 @@
 				margin: auto;
 				display: block;
 				vertical-align:middle;
-				-webkit-transform: perspective(1px) translateZ(0);
-				transform: perspective(1px) translateZ(0);
+				-webkit-transform: perspective(1px);
+				transform: perspective(1px);
 				-webkit-transition-duration: 0.2s;
 				transition-duration: 0.2s;
 				-webkit-transition-property: transform;
