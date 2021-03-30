@@ -3,24 +3,44 @@
 	<body style="text-align: center; font-family: Futura; font-weight: bold;">
 		<script type="text/javascript">
 			var char_array = ["T", "G", "M", "k", "h", "da", "_", "d", "c", "m", "u", "n", "p"];
-			var power_array = [12,9,6,3,2,1,0,-1,-2,-3,-6,-9,-12]
+			var power_array = [12,9,6,3,2,1,0,-1,-2,-3,-6,-9,-12];
 			var name_array = ["tera", "giga", "mega", "kilo", "hecto", "deca", "", "deci", "centi", "milli", "micro", "nano", "pico"];
 			function set_output() {
-				let re = new RegExp("([0-9]+) ?([a-zA-Z\_]+)([0-9])?([a-zA-Z ]*) ([a-zA-Z\_]+)([0-9])?");
+				let re = new RegExp("^(eg. )?([0-9]*) ?(T|G|M|k|h|da|_|d|c|m|u|n|p|)?([0-9])?([a-zA-Z ]*) (T|G|M|k|h|da|_|d|c|m|u|n|p|)([0-9])?");
 				let match = document.getElementById("input_text").value.match(re);
-				if (match !== null && char_array.includes(match[2]) && char_array.includes(match[5])) {
-					x = match[2];
-					x_power = power_array[char_array.indexOf(x)];
-					x_name = name_array[char_array.indexOf(x)];
-					y = match[5];
-					y_power = power_array[char_array.indexOf(y)];
-					y_name = name_array[char_array.indexOf(y)];
-					number = match[1] * 10 ** (x_power - y_power);
-					if (match[3] != undefined || match[6] != undefined) {
-						document.getElementById("output").innerHTML = match[1] + x_name + "^" + match[3] + " = " + number + " " + y_name + "^" + match[6];
+				// document.getElementById("debug").innerHTML = match;
+				if (match !== null && (match[3] == undefined || char_array.includes(match[3])) && (match[6] == undefined || char_array.includes(match[6]))) {
+					if (match[3] == undefined) {
+						x_power = 0;
+						x_name = "";
 					}
 					else {
-						document.getElementById("output").innerHTML = match[1] + " " + x_name + " = " + number + " " + y_name;
+						x = match[3];
+						x_power = power_array[char_array.indexOf(x)];
+						x_name = name_array[char_array.indexOf(x)];
+					}
+					if (match[6] == undefined) {
+						y_power = 0;
+						y_name = "";
+					}
+					else {
+						y = match[6];
+						y_power = power_array[char_array.indexOf(y)];
+						y_name = name_array[char_array.indexOf(y)];
+					}
+					if (match[2] == "") {
+						num = 1;
+					}
+					else {
+						num = match[2];
+					}
+					number = num * 10 ** (x_power - y_power);
+					
+					if (match[4] != undefined || match[7] != undefined) {
+						document.getElementById("output").innerHTML = num + x_name + "^" + match[4] + " = " + number + " " + y_name + "^" + match[7];
+					}
+					else {
+						document.getElementById("output").innerHTML = num + " " + x_name + " = " + number + " " + y_name;
 					}
 					if (x_name != "") {
 						document.getElementById("xvalue").innerHTML = "Unit 1 (" + x_name + "): " + 10 ** x_power;
@@ -97,6 +117,8 @@
 		<span id="xvalue" style="font-weight: normal; font-size: 32px;"></span>
 		<br>
 		<span id="yvalue" style="font-weight: normal; font-size: 32px;"></span>
+		<br>
+		<span id="debug" style="font-weight: normal; font-size: 32px;"></span>
 		<br>
 	</body>
 </html>
