@@ -6,7 +6,7 @@
 			var power_array = [12,9,6,3,2,1,0,-1,-2,-3,-6,-9,-12]
 			var name_array = ["tera", "giga", "mega", "kilo", "hecto", "deca", "", "deci", "centi", "milli", "micro", "nano", "pico"];
 			function set_output() {
-				let re = new RegExp("([0-9]+)([a-zA-Z\_]+)([0-9])?([a-zA-Z ]*) ([a-zA-Z\_]+)([0-9])?");
+				let re = new RegExp("([0-9]+) ?([a-zA-Z\_]+)([0-9])?([a-zA-Z ]*) ([a-zA-Z\_]+)([0-9])?");
 				let match = document.getElementById("input_text").value.match(re);
 				if (match !== null && char_array.includes(match[2]) && char_array.includes(match[5])) {
 					x = match[2];
@@ -32,15 +32,56 @@
 				}
 			}
 			setInterval(set_output, 0);
+
+			document.body.classList.toggle("lightmode");
+			var dark = false;
+			function dark_mode() {
+				dark = !dark;
+				document.body.classList.toggle("darkmode");
+				document.body.classList.toggle("lightmode");
+			}
+
 		</script>
 
 		<style>
+			.darkmode {
+				background-color: black;
+				color: white;
+				transition: 0.5s;
+				border-color: white;
+			}
+
+			.lightmode {
+				background-color: white;
+				color: black;
+				transition: 0.5s;
+				border-color: black;
+			}
+
+			.textbox {
+				border-radius: 1em;
+				border-width: 5px;
+				background-color: inherit;
+				color: inherit;
+				border-color: inherit;
+
+				-webkit-transform: perspective(1px);
+				transform: perspective(1px);
+				-webkit-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+				-webkit-transition-property: transform;
+				transition-property: transform;
+			}
+			.textbox:hover, .textbox:active {
+				-webkit-transform: scale(1.05);
+				transform: scale(1.05);
+			}
 		</style>
 
-		<center style="font-size: 64px">Converter</center>
+		<center style="font-size: 64px" onmousedown="dark_mode()">Converter</center>
 		<p style="font-size: 32;">Units: T, G, M, k, h, da, _ (1), d, c, m , u, n, p</p>
-		<input type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
-		<br>
+		<input class="textbox" type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
+		<p style="font-size: 4px;"></p>
 		<span id="output" style="font-weight: normal; font-size: 32px;"></span>
 		<br>
 		<span id="xvalue" style="font-weight: normal; font-size: 32px;"></span>
