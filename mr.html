@@ -8,6 +8,7 @@
 
 			function set_output() {
 				var molar_mass = 0;
+				var array = new Array(111).fill(0);
 
 				let re1 = new RegExp("\\([^\)]+\\)[0-9]+", "g");
 				let re2 = new RegExp("([A-Z][a-z]?[0-9]*)", "g");
@@ -21,7 +22,12 @@
 					for (item of match_inside) {
 						molecule = String(item[0]).match(/^[A-Z][a-z]?/);
 						number = String(item[0]).match(/[0-9]+$/);
-						molar_mass = molar_mass + (mass[letters.indexOf(String(molecule))] * repeat);
+						if (number == null) {
+							number = 1
+						}
+						index = letters.indexOf(String(molecule));
+						molar_mass = molar_mass + (mass[index] * repeat);
+						array[index] = parseInt(array[index]) + parseInt(repeat) * parseInt(number);
 					}
 
 					molar_mass = molar_mass + (mass[letters.indexOf(String(molecule))] * number);
@@ -33,15 +39,33 @@
 				for (item of match2) {
 					molecule = String(item[0]).match(/^[A-Z][a-z]?/);
 					number = String(item[0]).match(/[0-9]+$/);
+					index = letters.indexOf(String(molecule))
 					if (number == null) {
-						molar_mass = molar_mass + (mass[letters.indexOf(String(molecule))]);
+						molar_mass = molar_mass + (mass[index]);
+						array[index] = parseInt(array[index]) + 1;
 					}
 					else {
-						molar_mass = molar_mass + (mass[letters.indexOf(String(molecule))] * number);
+						molar_mass = molar_mass + (mass[index] * number);
+						array[index] = parseInt(array[index]) + parseInt(number);
 					}
 				}
-				document.getElementById("output").innerHTML = molar_mass;
 
+				var output_string = "";
+				var sum = "";
+				for (var i=0; i < 111; i++) {
+					if (array[i] > 0) {
+						output_string = output_string + "<div>" + names[i] + " (" + letters[i] + "): " + array[i] + " * " + mass[i] + " = " + mass[i] * array[i] + "</div>";
+						sum = sum + mass[i] * array[i] + " + ";
+					}
+				}
+				sum = sum.slice(0,-3)
+				document.getElementById("info").innerHTML = output_string;
+				if (molar_mass > 0) {
+					document.getElementById("output").innerHTML = "Total: " + sum + " = " + molar_mass;	
+				}
+				else {
+					document.getElementById("output").innerHTML = "Total: " + molar_mass;
+				}
 
 			}
 			setInterval(set_output, 0);
@@ -94,7 +118,9 @@
 		<center style="font-size: 64px" onmousedown="dark_mode()">Molar Mass</center>
 		<input class="textbox" type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
 		<p style="font-size: 4px;"></p>
-		<span id="output" style="font-weight: normal; font-size: 32px;"></span>
+		<span id="info" style="font-weight: normal; font-size: 32px;"></span>
+		<p style="font-size: 12px;"></p>
+		<span id="output" style="font-weight: ; font-size: 32px;"></span>
 		<br>
 		<span id="debug" style="font-weight: normal; font-size: 32px;"></span>
 		<br>
