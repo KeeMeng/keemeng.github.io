@@ -6,10 +6,9 @@
 			var power_array = [12,9,6,3,2,1,0,-1,-2,-3,-6,-9,-12]
 			var name_array = ["tera", "giga", "mega", "kilo", "hecto", "deca", "", "deci", "centi", "milli", "micro", "nano", "pico"];
 			function set_output() {
-				// let re = new RegExp("([0-9]+)(\w+)\b\s*\w+\s*\b(\w+)");
 				let re = new RegExp("([0-9]+)([a-zA-Z\_]+)([0-9])?([a-zA-Z ]*) ([a-zA-Z\_]+)([0-9])?");
 				let match = document.getElementById("input_text").value.match(re);
-				if (match !== null) {
+				if (match !== null && char_array.includes(match[2]) && char_array.includes(match[5])) {
 					x = match[2];
 					x_power = power_array[char_array.indexOf(x)];
 					x_name = name_array[char_array.indexOf(x)];
@@ -17,7 +16,6 @@
 					y_power = power_array[char_array.indexOf(y)];
 					y_name = name_array[char_array.indexOf(y)];
 					number = match[1] * 10 ** (x_power - y_power);
-					// number = number.toFixed(0);
 					if (match[3] != undefined || match[6] != undefined) {
 						document.getElementById("output").innerHTML = match[1] + x_name + "^" + match[3] + " = " + number + y_name + "^" + match[6];
 					}
@@ -26,11 +24,11 @@
 					}
 					document.getElementById("xvalue").innerHTML = "Unit 1 (" + x_name + "): " + 10 ** x_power;
 					document.getElementById("yvalue").innerHTML = "Unit 2 (" + y_name + "): " + 10 ** y_power;
-
-					// document.getElementById("output").innerHTML = match;
 				}
 				else {
 					document.getElementById("output").innerHTML = "";
+					document.getElementById("xvalue").innerHTML = "";
+					document.getElementById("yvalue").innerHTML = "";
 				}
 			}
 			setInterval(set_output, 0);
