@@ -17,13 +17,23 @@
 					y_name = name_array[char_array.indexOf(y)];
 					number = match[1] * 10 ** (x_power - y_power);
 					if (match[3] != undefined || match[6] != undefined) {
-						document.getElementById("output").innerHTML = match[1] + x_name + "^" + match[3] + " = " + number + y_name + "^" + match[6];
+						document.getElementById("output").innerHTML = match[1] + x_name + "^" + match[3] + " = " + number + " " + y_name + "^" + match[6];
 					}
 					else {
-						document.getElementById("output").innerHTML = match[1] + x_name + " = " + number + y_name;
+						document.getElementById("output").innerHTML = match[1] + " " + x_name + " = " + number + " " + y_name;
 					}
-					document.getElementById("xvalue").innerHTML = "Unit 1 (" + x_name + "): " + 10 ** x_power;
-					document.getElementById("yvalue").innerHTML = "Unit 2 (" + y_name + "): " + 10 ** y_power;
+					if (x_name != "") {
+						document.getElementById("xvalue").innerHTML = "Unit 1 (" + x_name + "): " + 10 ** x_power;
+					}
+					else {
+						document.getElementById("xvalue").innerHTML = "Unit 1: " + 10 ** x_power;
+					}
+					if (y_name != "") {
+						document.getElementById("yvalue").innerHTML = "Unit 2 (" + y_name + "): " + 10 ** y_power;
+					}
+					else {
+						document.getElementById("yvalue").innerHTML = "Unit 2: " + 10 ** y_power;
+					}
 				}
 				else {
 					document.getElementById("output").innerHTML = "";
