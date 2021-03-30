@@ -50,19 +50,26 @@
 
 				var output_string = "";
 				var sum = "";
+				var count = 0;
 				for (var i=0; i < 111; i++) {
 					if (array[i] > 0) {
 						output_string = output_string + "<div>" + names[i] + " (" + letters[i] + "): " + array[i] + " * " + mass[i] + " = " + mass[i] * array[i] + "</div>";
 						sum = sum + mass[i] * array[i] + " + ";
+						count++;
 					}
 				}
 				sum = sum.slice(0,-3)
 				document.getElementById("info").innerHTML = output_string;
 				if (molar_mass > 0) {
-					document.getElementById("output").innerHTML = "Total: " + sum + " = " + molar_mass;	
+					if (count == 1) {
+						document.getElementById("output").innerHTML = "Total: " + molar_mass;	
+					}
+					else {
+						document.getElementById("output").innerHTML = "Total: " + sum + " = " + molar_mass;	
+					}
 				}
-				else {
-					document.getElementById("output").innerHTML = "Total: " + molar_mass;
+				else if (count == 0) {
+					document.getElementById("output").innerHTML = "";
 				}
 
 			}
