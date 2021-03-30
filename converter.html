@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<body style="text-align: center; font-family: Futura; font-weight: bold;">
+		<script type="text/javascript">
+			var char_array = ["G", "M", "k", "h", "da", "_", "d", "c", "m", "u", "n"];
+			var power_array = [1000000000,1000000,1000,100,10,1,0.1,0.01,0.001,0.000001,0.000000001]
+			function set_output() {
+				// let re = new RegExp("([0-9]+)(\w+)\b\s*\w+\s*\b(\w+)");
+				let re = new RegExp("([0-9]+)([a-zA-Z\_]+)([0-9])?([a-zA-Z ]*) ([a-zA-Z\_]+)([0-9])?");
+				let match = document.getElementById("input_text").value.match(re);
+				if (match !== null) {
+					x = match[2];
+					x_power = power_array[char_array.indexOf(x)];
+					y = match[5];
+					y_power = power_array[char_array.indexOf(y)];
+					number = match[1] / x_power * y_power;
+					// number = number.toFixed(0);
+					if (match[3] != undefined || match[6] != undefined) {
+						document.getElementById("output").innerHTML = match[1] + match[2] + "^" + match[3] + " = " + number + match[5] + "^" + match[6];
+					}
+					else {
+						document.getElementById("output").innerHTML = match[1] + match[2] + " = " + number + match[5];
+					}
+					document.getElementById("xvalue").innerHTML = "Unit 1: " + x_power;
+					document.getElementById("yvalue").innerHTML = "Unit 2: " + y_power;
+
+					// document.getElementById("output").innerHTML = match;
+				}
+				else {
+					document.getElementById("output").innerHTML = "";
+				}
+			}
+			setInterval(set_output, 0);
+		</script>
+
+		<style>
+		</style>
+
+		<center style="font-size: 64px">Converter</center>
+		<p style="font-size: 32;">Units: ["G", "M", "k", "h", "da", "_", "d", "c", "m", "u", "n"]</p>
+		<input type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
+		<br>
+		<span id="output" style="font-weight: normal; font-size: 32px;"></span>
+		<br>
+		<span id="xvalue" style="font-weight: normal; font-size: 32px;"></span>
+		<br>
+		<span id="yvalue" style="font-weight: normal; font-size: 32px;"></span>
+		<br>
+	</body>
+</html>
