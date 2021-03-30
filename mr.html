@@ -26,11 +26,9 @@
 							number = 1
 						}
 						index = letters.indexOf(String(molecule));
-						molar_mass = molar_mass + (mass[index] * repeat);
+						molar_mass = molar_mass + (mass[index] * repeat * number);
 						array[index] = parseInt(array[index]) + parseInt(repeat) * parseInt(number);
 					}
-
-					molar_mass = molar_mass + (mass[letters.indexOf(String(molecule))] * number);
 				}
 
 				let string = document.getElementById("input_text").value.replace(re1, "");
