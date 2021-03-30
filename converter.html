@@ -2,8 +2,9 @@
 <html>
 	<body style="text-align: center; font-family: Futura; font-weight: bold;">
 		<script type="text/javascript">
-			var char_array = ["G", "M", "k", "h", "da", "_", "d", "c", "m", "u", "n"];
-			var power_array = [1000000000,1000000,1000,100,10,1,0.1,0.01,0.001,0.000001,0.000000001]
+			var char_array = ["T", "G", "M", "k", "h", "da", "_", "d", "c", "m", "u", "n", "p"];
+			var power_array = [12,9,6,3,2,1,0,-1,-2,-3,-6,-9,-12]
+			var name_array = ["tera", "giga", "mega", "kilo", "hecto", "deca", "", "deci", "centi", "milli", "micro", "nano", "pico"];
 			function set_output() {
 				// let re = new RegExp("([0-9]+)(\w+)\b\s*\w+\s*\b(\w+)");
 				let re = new RegExp("([0-9]+)([a-zA-Z\_]+)([0-9])?([a-zA-Z ]*) ([a-zA-Z\_]+)([0-9])?");
@@ -11,18 +12,20 @@
 				if (match !== null) {
 					x = match[2];
 					x_power = power_array[char_array.indexOf(x)];
+					x_name = name_array[char_array.indexOf(x)];
 					y = match[5];
 					y_power = power_array[char_array.indexOf(y)];
-					number = match[1] / x_power * y_power;
+					y_name = name_array[char_array.indexOf(y)];
+					number = match[1] * 10 ** (x_power - y_power);
 					// number = number.toFixed(0);
 					if (match[3] != undefined || match[6] != undefined) {
-						document.getElementById("output").innerHTML = match[1] + match[2] + "^" + match[3] + " = " + number + match[5] + "^" + match[6];
+						document.getElementById("output").innerHTML = match[1] + x_name + "^" + match[3] + " = " + number + y_name + "^" + match[6];
 					}
 					else {
-						document.getElementById("output").innerHTML = match[1] + match[2] + " = " + number + match[5];
+						document.getElementById("output").innerHTML = match[1] + x_name + " = " + number + y_name;
 					}
-					document.getElementById("xvalue").innerHTML = "Unit 1: " + x_power;
-					document.getElementById("yvalue").innerHTML = "Unit 2: " + y_power;
+					document.getElementById("xvalue").innerHTML = "Unit 1 (" + x_name + "): " + 10 ** x_power;
+					document.getElementById("yvalue").innerHTML = "Unit 2 (" + y_name + "): " + 10 ** y_power;
 
 					// document.getElementById("output").innerHTML = match;
 				}
@@ -37,7 +40,7 @@
 		</style>
 
 		<center style="font-size: 64px">Converter</center>
-		<p style="font-size: 32;">Units: ["G", "M", "k", "h", "da", "_", "d", "c", "m", "u", "n"]</p>
+		<p style="font-size: 32;">Units: T, G, M, k, h, da, _ (1), d, c, m , u, n, p</p>
 		<input type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
 		<br>
 		<span id="output" style="font-weight: normal; font-size: 32px;"></span>
