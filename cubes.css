@@ -1,0 +1,28 @@
+#wrapper {
+	width: 250px;
+	height: 250px;
+	align-content: center;
+	margin: 20px auto;
+	background-color: #EEE;
+}
+.cube {
+	/*width: 128px;
+	height: 128px;*/
+	top: 250px;
+	left: 50%;
+	transform-style: preserve-3d;
+	/*transform: rotateX(-18deg) rotateY(-45deg) rotateZ(0deg);*/
+	margin: auto;
+	position: absolute;
+	transform-origin: 100% 100%;
+	transition: all 0.5s ease-in-out;
+}
+.side {
+	position: absolute;
+	transition: all 0.5s ease-in-out;
+	width: 2px;
+	height: 2px;
+	float: left;
+	overflow: hidden;
+	/*opacity: 0.85;*/
+}
