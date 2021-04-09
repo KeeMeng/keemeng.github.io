@@ -9,11 +9,11 @@ var input_count = 0;
 
 function set_matrix() {
 	matrix = [];
-	for(var i = 0; i < n; i++) {
+	for (var i = 0; i < n; i++) {
 		let layer = [];
-		for(var j = 0; j < n; j++) {
+		for (var j = 0; j < n; j++) {
 			let line = [];
-			for(var k = 0; k < n; k++) {
+			for (var k = 0; k < n; k++) {
 				let block = {
 					"red": 0,
 					"green": 0,
@@ -54,10 +54,15 @@ function create_cubes() {
 }
 
 function setblock([x,y,z],[r,g,b,a]) {
-	matrix[x][y][z].red = r;
-	matrix[x][y][z].green = g;
-	matrix[x][y][z].blue = b;
-	matrix[x][y][z].alpha = a;
+	try {
+		matrix[x][y][z].red = r;
+		matrix[x][y][z].green = g;
+		matrix[x][y][z].blue = b;
+		matrix[x][y][z].alpha = a;
+	}
+	catch (error) {
+		console.error(error);
+	}
 }
 
 function add_input() {
@@ -76,23 +81,48 @@ function add_input() {
 
 function update() {
 	set_matrix();
-	for(var i = 1; i <= input_count; i++) {
+	for (var i = 1; i <= input_count; i++) {
+		var hex = document.getElementById("c"+String(i)).value;
+		let r = 0, g = 0, b = 0, a = 0.0, xpos = 0, ypos = 0, zpos = 0;
+		r = parseInt(hex[1] + hex[2], 16);
+		g = parseInt(hex[3] + hex[4], 16);
+		b = parseInt(hex[5] + hex[6], 16);
+		a = parseFloat(document.getElementById("a"+String(i)).value);
+		xpos = Number(document.getElementById("x"+String(i)).value);
+		ypos = Number(document.getElementById("y"+String(i)).value);
+		zpos = Number(document.getElementById("z"+String(i)).value);
+		document.getElementById("a"+String(i)).style.backgroundColor = "#fff";
+		document.getElementById("x"+String(i)).style.backgroundColor = "#fff";
+		document.getElementById("y"+String(i)).style.backgroundColor = "#fff";
+		document.getElementById("z"+String(i)).style.backgroundColor = "#fff";
+
 		if ((document.getElementById("x"+String(i)).value != "") && (document.getElementById("y"+String(i)).value != "") && (document.getElementById("z"+String(i)).value != "")) {
-			var hex = document.getElementById("c"+String(i)).value;
-			let r = 0, g = 0, b = 0, a = 0.0, xpos = 0, ypos = 0, zpos = 0;
-			r = parseInt(hex[1] + hex[2], 16);
-			g = parseInt(hex[3] + hex[4], 16);
-			b = parseInt(hex[5] + hex[6], 16);
-			xpos = Number(document.getElementById("x"+String(i)).value);
-			ypos = Number(document.getElementById("y"+String(i)).value);
-			zpos = Number(document.getElementById("z"+String(i)).value);
 			if (document.getElementById("a"+String(i)).value == "") {
 				a = 1.0;
 			}
 			else {
 				a = parseFloat(document.getElementById("a"+String(i)).value);
 			}
-			setblock([xpos,ypos,zpos], [r,g,b,a]);
+			var error = false;
+			if (a > 1.0) {
+				document.getElementById("a"+String(i)).style.backgroundColor = "#f00";
+				error = true;
+			}
+			if (xpos >= n) {
+				document.getElementById("x"+String(i)).style.backgroundColor = "#f00";
+				error = true;
+			}
+			if (ypos >= n) {
+				document.getElementById("y"+String(i)).style.backgroundColor = "#f00";
+				error = true;
+			}
+			if (zpos >= n) {
+				document.getElementById("z"+String(i)).style.backgroundColor = "#f00";
+				error = true;
+			}
+			if (!error) {
+				setblock([xpos,ypos,zpos], [r,g,b,a]);
+			}
 		}
 	}
 	for (var x = 0; x < n; x++) {
