@@ -1,14 +1,12 @@
 var cubex = -18;
 var cubey = -45;
 var cubez = 0;
-
 var temp = Number(prompt("Cube Size"));
 var n = 2;
-if (temp > 0) {
-	n = temp;
-}
-
+if (temp > 0) {n = temp;}
 var matrix = [];
+var input_count = 0;
+
 function set_matrix() {
 	matrix = [];
 	for(var i = 0; i < n; i++) {
@@ -21,7 +19,6 @@ function set_matrix() {
 					"green": 0,
 					"blue": 0,
 					"alpha": 0,
-					// "alpha": 255,
 				};
 				line.push(block);
 			}
@@ -31,7 +28,30 @@ function set_matrix() {
 	}
 }
 
-set_matrix();
+function create_cubes() {
+	for (var x = 0; x < n; x++) {
+		for (var y = 0; y < n; y++) {
+			for (var z = 0; z < n; z++) {
+				var rgba = `rgba(${matrix[x][y][z].red}, ${matrix[x][y][z].green}, ${matrix[x][y][z].blue}, ${matrix[x][y][z].alpha})`;
+				var cubeid = `${("000" + x).substr(-3)}_${("000" + y).substr(-3)}_${("000" + z).substr(-3)}`;
+				var cubehtml = `
+				<div class="cube" id="${cubeid}" style="transform: scale(${128/n}) rotateX(-18deg) rotateY(-45deg) rotateZ(0deg) translate3d(${String(0+2*(-Number(n/2)+x))}px,${String(0+2*(-Number(n/2)+y))}px,${String(1+2*(-Number(n/2)+z))}px)">
+					<div class="side1" id="${cubeid}_1" style="transform: rotateX(90deg) translateZ(1px); background-color: ${rgba}"></div>
+					<div class="side2" id="${cubeid}_2" style="transform: rotateY(-90deg) translateZ(1px); background-color: ${rgba}"></div>
+					<div class="side3" id="${cubeid}_3" style="transform: rotateY(0deg) translateZ(1px); background-color: ${rgba}"></div>
+					<div class="side4" id="${cubeid}_4" style="transform: rotateY(90deg) translateZ(1px); background-color: ${rgba}"></div>
+					<div class="side5" id="${cubeid}_5" style="transform: rotateY(180deg) translateZ(1px); background-color: ${rgba}"></div>
+					<div class="side6" id="${cubeid}_6" style="transform: rotateX(-90deg) translateZ(1px); background-color: ${rgba}"></div>
+				</div>
+				`;
+				document.getElementById("wrapper").insertAdjacentHTML("beforeend", cubehtml);
+				if (matrix[x][y][z].alpha == 0) {
+					document.getElementById(cubeid).style.display = "none";
+				}
+			}
+		}
+	}
+}
 
 function setblock([x,y,z],[r,g,b,a]) {
 	matrix[x][y][z].red = r;
@@ -40,32 +60,6 @@ function setblock([x,y,z],[r,g,b,a]) {
 	matrix[x][y][z].alpha = a;
 }
 
-
-for (var x = 0; x < n; x++) {
-	for (var y = 0; y < n; y++) {
-		for (var z = 0; z < n; z++) {
-			var rgba = `rgba(${matrix[x][y][z].red}, ${matrix[x][y][z].green}, ${matrix[x][y][z].blue}, ${matrix[x][y][z].alpha})`;
-			var cubeid = `${("000" + x).substr(-3)}_${("000" + y).substr(-3)}_${("000" + z).substr(-3)}`;
-			var cubehtml = `
-			<div class="cube" id="${cubeid}" style="transform: scale(${128/n}) rotateX(-18deg) rotateY(-45deg) rotateZ(0deg) translate3d(${String(0+2*(-Number(n/2)+x))}px,${String(0+2*(-Number(n/2)+y))}px,${String(1+2*(-Number(n/2)+z))}px)">
-				<div class="side1" id="${cubeid}_1" style="transform: rotateX(90deg) translateZ(1px); background-color: ${rgba}"></div>
-				<div class="side2" id="${cubeid}_2" style="transform: rotateY(-90deg) translateZ(1px); background-color: ${rgba}"></div>
-				<div class="side3" id="${cubeid}_3" style="transform: rotateY(0deg) translateZ(1px); background-color: ${rgba}"></div>
-				<div class="side4" id="${cubeid}_4" style="transform: rotateY(90deg) translateZ(1px); background-color: ${rgba}"></div>
-				<div class="side5" id="${cubeid}_5" style="transform: rotateY(180deg) translateZ(1px); background-color: ${rgba}"></div>
-				<div class="side6" id="${cubeid}_6" style="transform: rotateX(-90deg) translateZ(1px); background-color: ${rgba}"></div>
-			</div>
-			`;
-			document.getElementById("wrapper").insertAdjacentHTML("beforeend", cubehtml);
-			if (matrix[x][y][z].alpha == 0) {
-				document.getElementById(cubeid).style.display = "none";
-			}
-		}
-	}
-}
-
-
-var input_count = 0;
 function add_input() {
 	input_count++;
 	var inputhtml = `
@@ -130,18 +124,6 @@ function update() {
 	}
 }
 
-add_input();
-add_input();
-add_input();
-add_input();
-
-set_inputs(1, "#FF0000", 0, 0, 0, 0.75);
-set_inputs(2, "#00FF00", 0, 0, 1, 0.75);
-set_inputs(3, "#0000FF", 0, 1, 0, 0.75);
-set_inputs(4, "#FFFF00", 0, 1, 1, 0.75);
-
-update();
-
 function set_inputs(number, color, x, y, z, a) {
 	document.getElementById("c"+String(number)).value = color;
 	document.getElementById("x"+String(number)).value = x;
@@ -185,3 +167,18 @@ function flip_up() {
 function flip_down() {
 	rotate("cubez", 90);
 }
+
+set_matrix();
+create_cubes();
+
+add_input();
+add_input();
+add_input();
+add_input();
+
+set_inputs(1, "#FF0000", 0, 0, 0, 0.75);
+set_inputs(2, "#00FF00", 0, 0, 1, 0.75);
+set_inputs(3, "#0000FF", 0, 1, 0, 0.75);
+set_inputs(4, "#FFFF00", 0, 1, 1, 0.75);
+
+update();
