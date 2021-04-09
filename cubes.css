@@ -7,12 +7,9 @@
 	transition: 0.5s;
 }
 .cube {
-	/*width: 128px;
-	height: 128px;*/
 	top: 340px;
 	left: 50%;
 	transform-style: preserve-3d;
-	/*transform: rotateX(-18deg) rotateY(-45deg) rotateZ(0deg);*/
 	margin: auto;
 	position: absolute;
 	transform-origin: 100% 100%;
@@ -26,7 +23,6 @@
 	height: 2px;
 	float: left;
 	overflow: hidden;
-	/*opacity: 0.85;*/
 }
 
 
@@ -74,8 +70,6 @@
 
 .textbox {
 	font-family: Futura;
-	border: all;/*
-	border-width: 3px;*/
 	color: inherit;
 	border-color: inherit;
 	background-color: inherit;
