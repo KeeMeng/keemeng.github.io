@@ -59,44 +59,17 @@ for (var x = 0; x < n; x++) {
 			document.getElementById("wrapper").insertAdjacentHTML("beforeend", cubehtml);
 			if (matrix[x][y][z].alpha == 0) {
 				document.getElementById(cubeid).style.display = "none";
-				// console.log(`${("000" + x).substr(-3)}_${("000" + y).substr(-3)}_${("000" + z).substr(-3)}`);
 			}
-			// console.log(`id="${("000" + x).substr(-3)}_${("000" + y).substr(-3)}_${("000" + z).substr(-3)}"`)
-			// document.getElementById("wrapper").appendChild(cubehtml);
 		}
 	}
 }
-
-
-// var c = document.getElementsByClassName("canvas1")[0];
-
-// // var c = $("#cube_000_000_000 cube.side.canvas1")[0];
-// // var c = document.getElementById("canvas1").getElementsByClassName("cube_000_000_000");
-// // var c = document.getElementById("cube_000_000_000").getElementsByClassName();
-// var ctx = c.getContext("2d");
-// var imgData = ctx.createImageData(n, n);
-// var i = 0;
-// for (var x = 0; x < n; x++) {
-// 	for (var y = 0; y < n; y++) {
-// 		for (var z = 0; z < n; z++) {
-// 			imgData.data[i+0] = matrix[x][y][z].red;
-// 			imgData.data[i+1] = matrix[x][y][z].green;
-// 			imgData.data[i+2] = matrix[x][y][z].blue;
-// 			imgData.data[i+3] = matrix[x][y][z].alpha;
-// 			i += 4;
-// 		}	
-// 	}
-// }
-
-// // document.getElementById("side1").style.backgroundImage 
-// ctx.putImageData(imgData, 0, 0);
 
 
 var input_count = 0;
 function add_input() {
 	input_count++;
 	var inputhtml = `
-	<div>
+	<div id="inputs${input_count}">
 		<input type="color" id="c${input_count}" value="#FFFFFF">
 		<input type="text" id="x${input_count}" placeholder="x" style="width: 25px">
 		<input type="text" id="y${input_count}" placeholder="y" style="width: 25px">
@@ -177,20 +150,25 @@ function set_inputs(number, color, x, y, z, a) {
 	document.getElementById("a"+String(number)).value = a;
 }
 
+function clear_inputs() {
+	for (var i = 1; i <= input_count; i++) {
+		var element = document.getElementById("inputs"+String(i));
+		element.parentNode.removeChild(element);
+	}
+	input_count = 0;
+}
+
 function rotate(varname, degrees) {
 	window[varname] = window[varname] + degrees;
 	rotate_cube(cubex, cubey, cubez);
 }
 
 function rotate_cube(degx, degy, degz){
-	// document.getElementsByClassName("cube").css({"transform":segs});
 	var allcubes = document.getElementsByClassName("cube");
 	let re = new RegExp("[0-9][0-9][0-9]", "g");
 	for (var i = 0; i < allcubes.length; i++) {
 		var c = String(allcubes[i].id).match(re);
 		var string = "scale("+String(128/n)+") rotateX("+degx+"deg) rotateY("+degy+"deg) rotateZ("+degz+"deg)"+" translate3d("+String(0+2*(-Number(n/2)+Number(c[0])))+"px,"+String(0+2*(-Number(n/2)+Number(c[1])))+"px,"+String(1+2*(-Number(n/2)+Number(c[2])))+"px)";
-		// console.log(allcubes[i].style.transform);
-		// console.log(string);
 		allcubes[i].style.transform = string;
 	}
 }
@@ -203,9 +181,7 @@ function turn_right() {
 }
 function flip_up() {
 	rotate("cubez", -90);
-	// rotate("cubey", -90);
 }
 function flip_down() {
 	rotate("cubez", 90);
-	// rotate("cubey", -90);
 }
