@@ -7,6 +7,19 @@ if (temp > 0) {n = temp;}
 var matrix = [];
 var input_count = 0;
 
+document.body.classList.toggle("lightmode");
+var dark = false;
+function dark_mode() {
+	dark = !dark;
+	document.body.classList.toggle("darkmode");
+	document.body.classList.toggle("lightmode");
+	if (dark) {
+		document.getElementById("wrapper").style.backgroundColor = "#222";
+	} else {
+		document.getElementById("wrapper").style.backgroundColor = "#EEE";
+	}
+}
+
 function set_matrix() {
 	matrix = [];
 	for (var i = 0; i < n; i++) {
@@ -70,10 +83,10 @@ function add_input() {
 	var inputhtml = `
 	<div id="inputs${input_count}">
 		<input type="color" id="c${input_count}" value="#FFFFFF">
-		<input type="text" id="x${input_count}" placeholder="x" style="width: 25px">
-		<input type="text" id="y${input_count}" placeholder="y" style="width: 25px">
-		<input type="text" id="z${input_count}" placeholder="z" style="width: 25px">
-		<input type="text" id="a${input_count}" placeholder="alpha" style="width: 30px">
+		<input type="text" class="textbox" id="x${input_count}" placeholder="x" style="width: 25px">
+		<input type="text" class="textbox" id="y${input_count}" placeholder="y" style="width: 25px">
+		<input type="text" class="textbox" id="z${input_count}" placeholder="z" style="width: 25px">
+		<input type="text" class="textbox" id="a${input_count}" placeholder="alpha" style="width: 30px">
 	</div>
 	`;
 	document.getElementById("inputs").insertAdjacentHTML("beforeend", inputhtml);
@@ -91,10 +104,6 @@ function update() {
 		xpos = Number(document.getElementById("x"+String(i)).value);
 		ypos = Number(document.getElementById("y"+String(i)).value);
 		zpos = Number(document.getElementById("z"+String(i)).value);
-		document.getElementById("a"+String(i)).style.backgroundColor = "#fff";
-		document.getElementById("x"+String(i)).style.backgroundColor = "#fff";
-		document.getElementById("y"+String(i)).style.backgroundColor = "#fff";
-		document.getElementById("z"+String(i)).style.backgroundColor = "#fff";
 
 		if ((document.getElementById("x"+String(i)).value != "") && (document.getElementById("y"+String(i)).value != "") && (document.getElementById("z"+String(i)).value != "")) {
 			if (document.getElementById("a"+String(i)).value == "") {
