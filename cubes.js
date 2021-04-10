@@ -177,6 +177,7 @@ function clear_inputs() {
 		element.parentNode.removeChild(element);
 	}
 	input_count = 0;
+	update();
 }
 
 function rotate(varname, degrees) {
