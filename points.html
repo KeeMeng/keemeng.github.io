@@ -120,14 +120,17 @@
 			}
 
 			document.body.classList.toggle("lightmode");
+			document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
 			var dark = false;
 			function dark_mode() {
 				dark = !dark;
 				if (dark) {
 					document.getElementById("mode").innerHTML = "Light";
+					document.getElementById("wrapper").style.backgroundColor = "#102344";
 				}
 				else {
 					document.getElementById("mode").innerHTML = "Dark";
+					document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
 				}
 				document.body.classList.toggle("darkmode");
 				document.body.classList.toggle("lightmode");
@@ -257,7 +260,7 @@
 			<span id="timer">30</span> minutes left
 		</div>
 		<hr>
-		<div style="background-color: #e4f8ff; margin:auto; margin-top: 20px; padding-top: 10px; width: 820px; align-content: center;border-radius: 40px">
+		<div id="wrapper" style="transition: 0.5s; background-color: #e4f8ff; margin:auto; margin-top: 20px; padding-top: 10px; width: 820px; align-content: center;border-radius: 40px">
 			<br>
 			<button class="button" style="background-color: #b3e3ff;" onmousedown="half(event,1)">
 				Beginner Challenge: <span id="clicks1" style="font-weight: bold">100</span> Points
