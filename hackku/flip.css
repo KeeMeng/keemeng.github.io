@@ -1,0 +1,20 @@
+.image {
+	margin: auto;
+	display: block;
+	animation: spin infinite;
+	animation-timing-function: cubic-bezier(0,0,0,1);
+	animation-duration: 4s;
+	animation-direction: alternate;
+}
+
+@keyframes spin {
+	0% {
+		transform: scaleY(0);
+	}
+
+	100% {
+		transform: scaleY(1);
+		;
+	}
+
+}

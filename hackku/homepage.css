@@ -1,0 +1,56 @@
+.button {
+	padding: 10px 10px;
+	font-family: Futura;
+	font-size: 32px;
+	outline: none;
+	color: #004990;
+	background-color: #b3e3ff;
+	border: none;
+	border-radius: 15px;
+	width: 500px;
+	margin: auto;
+	display: block;
+	transform: perspective(1px);
+	transition-duration: 0.2s;
+	transition-property: transform;
+}
+
+.button:hover,
+.button:focus {
+	transform: scale(1.05);
+}
+
+.button:active {
+	animation-duration: 0.1s;
+	transform: scale(1.08);
+}
+
+.thing {
+	transition-duration: 0.2s;
+	transition-property: transform;
+}
+
+.thing:hover, 
+.thing:focus {
+	transform: scale(1.02);
+}
+
+.thing:active {
+	animation-duration: 0.1s;
+	transform: scale(1.03);
+}
+
+.thing2 {
+	transition-duration: 0.2s;
+	transition-property: transform;
+}
+
+.thing2:hover, 
+.thing2:focus {
+	transform: scale(1.08);
+}
+
+.thing2:active {
+	animation-duration: 0.1s;
+	transform: scale(1.1);
+}
