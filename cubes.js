@@ -216,9 +216,9 @@ add_input();
 add_input();
 add_input();
 
-set_inputs(1, "#FF0000", 0, 0, 0, 0.75);
-set_inputs(2, "#00FF00", 0, 0, 1, 0.75);
-set_inputs(3, "#0000FF", 0, 1, 0, 0.75);
-set_inputs(4, "#FFFF00", 0, 1, 1, 0.75);
+set_inputs(1, "#FF0000", 0, 0, 0, 1);
+set_inputs(2, "#00FF00", 0, 0, 1, 1);
+set_inputs(3, "#0000FF", 0, 1, 0, 1);
+set_inputs(4, "#FFFF00", 0, 1, 1, 1);
 
 update();
