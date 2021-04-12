@@ -13,7 +13,7 @@ document.addEventListener("click", mouse_position);
 var count = 0;
 var count2 = 0;
 var urls = localStorage.getItem("urls").split(",");
-console.log(urls);
+// console.log(urls);
 function start() {
 
 	let screen_width = window.innerWidth;

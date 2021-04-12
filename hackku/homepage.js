@@ -14,7 +14,7 @@ function new_link() {
 	input_count++;
 	var inputhtml = `
 		<div id="input${input_count}">
-			<input id="link${input_count}" type="text" class="thing" placeholder="Link" style="width: 350px; display: inline; font-family: Futura; font-size: 16px; padding:5px; border-radius: 8px; border-color: transparent; margin-bottom: 8px; margin-left: 2px; margin-right: 4px">
+			<input id="link${input_count}" type="text" class="thing" placeholder="Link" style="width: 405px; display: inline; font-family: Futura; font-size: 16px; padding:5px; border-radius: 8px; border-color: transparent; margin-bottom: 8px; margin-left: 2px; margin-right: 4px">
 			<button onclick="del(${input_count})" class="thing2" style="width: 35px; display: inline; font-family: Futura; font-size: 16px; padding:5px; border-radius: 8px; border-color: transparent; background-color: #ff8080; color: #800000; margin-right: -5px; margin-bottom: 8px; margin-right: 0px">X</button>
 			<br>
 		</div>
