@@ -99,7 +99,6 @@ function load() {
 function add_transition() {
 	document.body.style.transitionDuration = "0.5s";
 	document.getElementById("wrapper").style.transitionDuration = "0.5s";
-	// document.getElementById("wrapper").style.display = "block";
 }
 
 function add_transition2() {
@@ -111,14 +110,10 @@ function add_transition2() {
 
 function show_text(id) {
 	document.getElementById(`${id}_light`).style.filter = "blur(10px)";
-	// document.getElementById(`${id}_light`).style.transitionDuration = "inherit";
 	document.getElementById(`${id}_dark`).style.filter = "blur(10px)";
-	// document.getElementById(`${id}_dark`).style.transitionDuration = "inherit";
 }
 
 function hide_text(id) {
 	document.getElementById(`${id}_light`).style.filter = "none";
-	// document.getElementById(`${id}_light`).style.transitionDuration = "inherit";
 	document.getElementById(`${id}_dark`).style.filter = "none";
-	// document.getElementById(`${id}_dark`).style.transitionDuration = "inherit";
 }
