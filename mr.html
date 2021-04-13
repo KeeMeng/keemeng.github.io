@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
-	<title>Molar Mass Calculator</title>
-	<body style="text-align: center; font-family: Futura; font-weight: bold;">
+	<head>
+		<title>Molar Mass Calculator</title>
+		<link rel="stylesheet" href="hackku/theme.css">
+		<link rel="stylesheet" href="hackku/buttons.css">
+		<script src="hackku/mode.js"></script>
+	</head>
+	<body style="text-align: center; font-family: Futura; font-weight: bold;" onload="load()">
 		<script type="text/javascript">
 			var letters = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Mt", "Ds", "Rg"];
 			var names = ["Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon", "Sodium", "Magnesium", "Aluminum", "Silicon", "Phosphorus", "Sulfur", "Chlorine", "Argon", "Potassium", "Calcium", "Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron", "Cobalt", "Nickel", "Copper", "Zinc", "Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton", "Rubidium", "Strontium", "Yttrium", "Zirconium", "Niobium", "Molybdenum", "Technetium", "Ruthenium", "Rhodium", "Palladium", "Silver", "Cadmium", "Indium", "Tin", "Antimony", "Tellurium", "Iodine", "Xenon", "Cesium", "Barium", "Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium", "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium", "Hafnium", "Tantalum", "Wolfram", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium", "Lead", "Bismuth", "Polonium", "Astatine", "Radon", "Francium", "Radium", "Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium", "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstadtium", "Roentgenium"];
@@ -76,53 +81,12 @@
 			}
 			setInterval(set_output, 0);
 
-			document.body.classList.toggle("lightmode");
-			var dark = false;
-			function dark_mode() {
-				dark = !dark;
-				document.body.classList.toggle("darkmode");
-				document.body.classList.toggle("lightmode");
-			}
-
 		</script>
-
-		<style>
-			.darkmode {
-				background-color: black;
-				color: white;
-				transition: 0.5s;
-				border-color: white;
-			}
-
-			.lightmode {
-				background-color: white;
-				color: black;
-				transition: 0.5s;
-				border-color: black;
-			}
-
-			.textbox {
-				border-radius: 1em;
-				border-width: 5px;
-				background-color: inherit;
-				color: inherit;
-				border-color: inherit;
-
-				-webkit-transform: perspective(1px);
-				transform: perspective(1px);
-				-webkit-transition-duration: 0.2s;
-				transition-duration: 0.2s;
-				-webkit-transition-property: transform;
-				transition-property: transform;
-			}
-			.textbox:hover, .textbox:active {
-				-webkit-transform: scale(1.05);
-				transform: scale(1.05);
-			}
-		</style>
-
-		<center style="font-size: 64px" onmousedown="dark_mode()">Molar Mass</center>
-		<input class="textbox" type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
+		
+		<button class="small_button" onclick="window.location.href='index.html';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
+		<center style="font-size: 64px">Molar Mass</center>
+		<input class="big_textbox" type="text" id="input_text" style="font-family: Futura; font-size: 32px; text-align: center">
 		<p style="font-size: 4px;"></p>
 		<span id="info" style="font-weight: normal; font-size: 32px;"></span>
 		<p style="font-size: 12px;"></p>

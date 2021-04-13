@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<body style= "font-family: Futura; font-weight: bold;">
+	<head>
+		<title>Homepage</title>
+		<link rel="stylesheet" href="hackku/theme.css">
+		<link rel="stylesheet" href="hackku/buttons.css">
+		<script src="hackku/mode.js"></script>
+	</head>
+	<script type="text/javascript">
+		if (localStorage.getItem("mode") === null) {
+				localStorage.setItem("mode", "light");
+			}
+	</script>
+	<style>
+		a:visited { 
+			text-decoration: none; 
+			color: inherit; 
+		}
+	</style>
+	<body style= "font-family: Futura; font-weight: bold;" onload="load()">
+		<button id="mode" class="small_button" style="text-align: left; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
 		<h1>
 			Hello World!
 		</h1>

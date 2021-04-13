@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
-	<title>Points Counter</title>
-	<body style= "text-align: center; font-family: Futura; font-weight: bold;">
+	<head>
+		<title>Points Counter</title>
+		<link rel="stylesheet" href="hackku/theme.css">
+		<link rel="stylesheet" href="hackku/buttons.css">
+		<!-- <script src="hackku/mode.js"></script> -->
+	</head>
+	<body style= "text-align: center; font-family: Futura; font-weight: bold;" onload="load()">
 		<script type="text/javascript">
 
 			var clicks = [100,500,1000,100,300,800];
@@ -119,22 +124,49 @@
 				}
 			}
 
-			document.body.classList.toggle("lightmode");
-			document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
-			var dark = false;
+			var dark = localStorage.getItem("mode");
 			function dark_mode() {
-				dark = !dark;
-				if (dark) {
-					document.getElementById("mode").innerHTML = "Light";
+				if (dark == "light") {
+					dark = "dark";
+					localStorage.setItem("mode", "dark");
+				}
+				else if (dark == "dark") {
+					dark = "light";
+					localStorage.setItem("mode", "light");
+				}
+				if (dark == "dark") {
+					document.getElementById("mode").innerHTML = "Light Mode";
 					document.getElementById("wrapper").style.backgroundColor = "#102344";
 				}
-				else {
-					document.getElementById("mode").innerHTML = "Dark";
+				else if (dark == "light") {
+					document.getElementById("mode").innerHTML = "Dark Mode";
 					document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
 				}
 				document.body.classList.toggle("darkmode");
 				document.body.classList.toggle("lightmode");
 			}
+
+			function load() {
+				document.body.style.transitionDuration = "0s";
+				document.getElementById("wrapper").style.transitionDuration = "0s";
+				if (dark == "dark") {
+					document.body.classList.toggle("darkmode");
+					document.getElementById("mode").innerHTML = "Light Mode";
+					document.getElementById("wrapper").style.backgroundColor = "#102344";
+				}
+				else if (dark == "light") {
+					document.body.classList.toggle("lightmode");
+					document.getElementById("mode").innerHTML = "Dark Mode";
+					document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
+				}
+				setTimeout(add_transition,500);
+			}
+
+			function add_transition() {
+				document.body.style.transitionDuration = "0.5s";
+				document.getElementById("wrapper").style.transitionDuration = "0.5s";
+			}
+
 
 			var showhint = false;
 			function show_hint() {
@@ -181,7 +213,7 @@
 				transform: scale(1.08);
 			}
 
-			.small_button {
+			.small_button2 {
 				padding: 5px 5px;
 				font-family: Futura;
 				font-size: 16px;
@@ -199,50 +231,48 @@
 				transition-property: transform;
 			}
 
-			.small_button:hover, .small_button:focus {
+			.small_button2:hover, .small_button2:focus {
 				-webkit-transform: scale(1.05);
 				transform: scale(1.05);
 			}
 
-			.small_button:active {
+			.small_button2:active {
 				-webkit-animation-duration: 0.1s;
 				animation-duration: 0.1s;
 				-webkit-transform: scale(1.08);
 				transform: scale(1.08);
 			}
 
-			.darkmode {
-				background-color: black;
-				color: white;
-				transition: 0.5s;
-				box-shadow: white;
-			}
-
-			.lightmode {
-				background-color: white;
-				color: black;
-				transition: 0.5s;
-				box-shadow: black;
-			}
-
-			.textbox {
-				box-shadow: 0;
+			.textbox2 {
+				box-shadow: 0px;
 				-webkit-transition-duration: 0.2s;
 				transition-duration: 0.2s;
 				-webkit-transition-property: box-shadow;
 				transition-property: box-shadow;
 				padding-left: 4px;
 				box-shadow: inset 0 0 0 0px transparent;
-				border-radius: 0em;
+				border-radius: 0px;
+				font-family: Futura; 
+				font-size: 16px; 
+				color: inherit; 
+				width: 600px; 
+				border-top-style: hidden; 
+				border-right-style: hidden; 
+				border-left-style: hidden; 
+				border-bottom-style: solid; 
+				background-color: transparent;
 			}
-			.textbox:hover, .textbox:focus, .textbox:active {
+			.textbox2:hover, .textbox2:focus, .textbox2:active {
 				box-shadow: inset 0 0 0 2px;
-				border-radius: 0.4em;
+				border-radius: 5px;
+
 			}
 
 		</style>
 
-		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; left: 10px; color: inherit; background-color: #A0A0A0; " onmousedown="show_hint()">Hint</button>
+		<button class="small_button" onclick="window.location.href='index.html';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
+		<button class="small_button" style="right: calc(100% - 48px);;" onmousedown="show_hint()">Hint</button>
 		<div id="hint_box" style="color: inherit; background-color: transparent; text-align: left; position: absolute; top: 42px; left:10px; display: none; ">
 			Top middle checkbox to toggle animation<br>
 			Click the time to change the timer<br>
@@ -250,7 +280,6 @@
 			Shift click challenges button to deduct points immediately<br>
 			Shift click reset button to reset immediately<br>
 		</div>
-		<button class="small_button" style="font-size: 16px; position: absolute; top: 10px; right: 10px; color: inherit; background-color: #A0A0A0; " onmousedown="dark_mode()"><span id="mode">Dark</span> Mode</button>
 		<div style="font-size: 48px;" onmousedown="change_title()">
 			<span id="title">Computer Science Society</span>
 		</div>
@@ -260,7 +289,7 @@
 			<span id="timer">30</span> minutes left
 		</div>
 		<hr>
-		<div id="wrapper" style="transition: 0.5s; background-color: #e4f8ff; margin:auto; margin-top: 20px; padding-top: 10px; width: 820px; align-content: center;border-radius: 40px">
+		<div id="wrapper" style="transition: 0.5s; margin: auto; margin-top: 20px; padding-top: 10px; width: 820px; align-content: center; border-radius: 40px">
 			<br>
 			<button class="button" style="background-color: #b3e3ff;" onmousedown="half(event,1)">
 				Beginner Challenge: <span id="clicks1" style="font-weight: bold">100</span> Points
@@ -271,7 +300,7 @@
 					Beginner Challenge Restriction: <span id="clicks4" style="font-weight: bold">100</span> Points
 				</button>
 				<input id="checkbox4" type="checkbox" onmousedown="swap(4)" style="opacity:0.5">
-				Restriction: <input type="text" class="textbox" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
+				Restriction: <input type="text" class="textbox2">
 			</div>
 			<p style="font-size: 1px"></p>
 			<input id="checkbox1" type="checkbox" onmousedown="swap(1)" style="opacity:0.5">
@@ -285,7 +314,7 @@
 					Intermediate Challenge Restriction: <span id="clicks5" style="font-weight: bold">300</span> Points
 				</button>
 				<input id="checkbox5" type="checkbox" onmousedown="swap(5)" style="opacity:0.5">
-				Restriction: <input type="text" class="textbox" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
+				Restriction: <input type="text" class="textbox2">
 			</div>
 			<p style="font-size: 1px"></p>
 			<input id="checkbox2" type="checkbox" onmousedown="swap(2)" style="opacity:0.5">
@@ -299,7 +328,7 @@
 					Advanced Challenge Restriction: <span id="clicks6" style="font-weight: bold">800</span> Points
 				</button>
 				<input id="checkbox6" type="checkbox" onmousedown="swap(6)" style="opacity:0.5">
-				Restriction: <input type="text" class="textbox" style="font-family: Futura; font-size: 16px; color: inherit; width: 600px; border-top-style: hidden; border-right-style: hidden; border-left-style: hidden; border-bottom-style: groove; background-color: transparent;">
+				Restriction: <input type="text" class="textbox2">
 			</div>
 			<p style="font-size: 1px"></p>
 			<input id="checkbox3" type="checkbox" onmousedown="swap(3)" style="opacity:0.5">

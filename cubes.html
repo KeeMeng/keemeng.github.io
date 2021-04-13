@@ -2,9 +2,14 @@
 <html>
 	<head>
 		<title>Cubes</title>
+		<link rel="stylesheet" href="hackku/theme.css">
+		<link rel="stylesheet" href="hackku/buttons.css">
+		<script src="hackku/mode.js"></script>
 	</head>
-	<body style="text-align: center; font-family: Futura; font-weight: bold;">
-		<center style="font-size: 64px" onmousedown="dark_mode()">3D Cubes</center>
+	<body style="text-align: center; font-family: Futura; font-weight: bold;" onload="load()">
+		<button class="small_button" onclick="window.location.href='index.html';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
+		<center style="font-size: 64px">3D Cubes</center>
 		<div id="wrapper">
 			<!-- <div class="cube" id="000_000_000" style="transform: rotateX(-18deg) rotateY(-45deg) rotateZ(0deg) translate3d(-128px,-128px,-128px);">
 				<div class="side1" id="000_000_000_1" style="transform: rotateX(90deg) translateZ(1px); background-color: #FFF"></div>
@@ -15,10 +20,10 @@
 				<div class="side6" id="000_000_000_6" style="transform: rotateX(-90deg) translateZ(1px); background-color: #f2f215"></div>
 			</div> -->
 		</div>
-		<button class="small_button" onclick="turn_left()">Left</button>
-		<button class="small_button" onclick="turn_right()">Right</button>
-		<button class="small_button" onclick="flip_up()">Up</button>
-		<button class="small_button" onclick="flip_down()">Down</button>
+		<button class="small_button2" onclick="turn_left()">Left</button>
+		<button class="small_button2" onclick="turn_right()">Right</button>
+		<button class="small_button2" onclick="flip_up()">Up</button>
+		<button class="small_button2" onclick="flip_down()">Down</button>
 		<br>
 		<br>
 		<div id="inputs">
@@ -31,9 +36,9 @@
 			</div> -->
 		</div>
 		<br>
-		<button class="small_button" onclick="add_input()">New Cube</button>
-		<button class="small_button" onclick="update()">Update</button>
-		<button class="small_button" onclick="clear_inputs()">Clear All</button>
+		<button class="small_button2" onclick="add_input()">New Cube</button>
+		<button class="small_button2" onclick="update()">Update</button>
+		<button class="small_button2" onclick="clear_inputs()">Clear All</button>
 
 		<link rel="stylesheet" type="text/css" href="cubes.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

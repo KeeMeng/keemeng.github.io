@@ -51,6 +51,26 @@
 	color: inherit;
 }
 
+.big_textbox {
+	border-radius: 25px;
+	border-width: 5px;
+	background-color: inherit;
+	color: inherit;
+	border-color: inherit;
+
+	-webkit-transform: perspective(1px);
+	transform: perspective(1px);
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+}
+.big_textbox:hover, 
+.big_textbox:active {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
 .smaller_button {
 	font-family: Futura; 
 	font-size: 16px;
