@@ -2,34 +2,52 @@
 <html>
 	<head>
 		<title>Homepage</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="index.js"></script>
 		<link rel="stylesheet" href="index.css">
 		<link rel="stylesheet" href="hackku/theme.css">
 		<link rel="stylesheet" href="hackku/buttons.css">
-		<script src="hackku/mode.js"></script>
+		<!-- <script src="hackku/mode.js"></script> -->
 	</head>
-	<body style= "font-family: Futura; font-weight: bold;" onload="load()">
-		<button id="mode" class="small_button" style="text-align: left; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
-		<h1>
+	<body style= "font-family: Futura; font-weight: bold; " onload="load(); setup()">
+		<button id="mode" class="small_button" style="text-align: left; font-size:16px;" onclick="dark_mode(); flip_images();">Dark Mode</button>
+		<center style="font-size: 64px">
 			Hello World!
-		</h1>
-		<a href="points.html">Points</a>
-		<br>
-		<a href="converter.html">SI Prefixes Converter</a>
-		<br>
-		<a href="pt.html">Periodic Table PIP</a>
-		<br>
-		<a href="mr.html">Molar Mass Calculator</a>
-		<br>
-		<a href="cubes.html">3D Cubes Visualizer</a>
-		<br>
-		<a href="hackku/homepage.html">Screensavers (HackKU)</a>
-		<br>
-		<a href="https://packagecontrol.io/packages/MKB">MKB Package</a>
-		<br>
-		<a href="links.html">Links</a>
-		<br>
-		<br>
-		<a href="https://github.com/KeeMeng">My Github</a>
+		</center>
+		<!-- <iframe id="frame" src="points.html"></iframe> -->
+		<div id="wrapper" style="text-align: center; opacity: 0">
+			<div class="projects" id="points" onclick="window.location.href='points.html';">
+				<img id="points_light" class="light" src="images/points_light.png"/>
+				<img id="points_dark" class="dark" src="images/points_dark.png"/>
+			</div>
+			<div class="projects" id="converter" onclick="window.location.href='converter.html';">
+				<img id="converter_light" class="light" src="images/converter_light.png"/>
+				<img id="converter_dark" class="dark" src="images/converter_dark.png"/>
+			</div>
+			<div class="projects" id="pt" onclick="window.location.href='pt.html';">
+				<img id="pt_light" class="light" src="images/pt_light.png"/>
+				<img id="pt_dark" class="dark" src="images/pt_dark.png"/>
+			</div>
+			<div class="projects" id="mr" onclick="window.location.href='mr.html';">
+				<img id="mr_light" class="light" src="images/mr_light.png"/>
+				<img id="mr_dark" class="dark" src="images/mr_dark.png"/>
+			</div>
+			<div class="projects" id="cubes" onclick="window.location.href='cubes.html';">
+				<img id="cubes_light" class="light" src="images/cubes_light.png"/>
+				<img id="cubes_dark" class="dark" src="images/cubes_dark.png"/>
+			</div>
+			<div class="projects" id="screensaver" onclick="window.location.href='hackku/homepage.html';">
+				<img id="screensaver_light" class="light" src="images/screensaver_light.png"/>
+				<img id="screensaver_dark" class="dark" src="images/screensaver_dark.png"/>
+			</div>
+			<div class="projects" id="mkb" onclick="window.location.href='https://packagecontrol.io/packages/MKB';">
+				<img id="mkb_light" class="light" src="images/mkb.png"/>
+				<img id="mkb_dark" class="dark" src="images/mkb.png"/>
+			</div>
+			<div class="projects" id="github" onclick="window.location.href='https://github.com/KeeMeng';">
+				<img id="github_light" class="light" src="images/github_light.png"/>
+				<img id="github_dark" class="dark" src="images/github_dark.png"/>
+			</div>
+		</div>
 	</body>
 </html>

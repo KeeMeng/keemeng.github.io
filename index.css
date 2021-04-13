@@ -2,3 +2,59 @@ a:visited {
 	text-decoration: none; 
 	color: inherit; 
 }
+
+/*.projects {
+	justify-content: center;
+	align-items: center;
+	border-radius: 6%;
+	display: flex; 
+	padding: 250px; 
+	margin: 50px;
+	color: #fff;
+	float: left; 
+	background-color: inherit;
+	position: relative;
+}
+
+.projects::before {
+    margin-top: 100%;
+}*/
+
+.projects {
+	border-radius: 6%;
+	display: inline-block;
+	width: 350px;
+	height: 350px;
+	margin: 50px;
+	margin-top: 40px;
+	color: #fff;
+	position: relative;
+	transition: 0.5s;
+}
+
+.projects:hover,
+.projects:focus {
+	
+}
+
+.projects:active {
+	
+}
+
+.light {
+	position: absolute;
+	left: 4%;
+	top: 4%;
+	width: 92%;
+	height: auto;
+	border-radius: 3%;
+}
+
+.dark {
+	position: absolute;
+	left: 4%;
+	top: 4%;
+	width: 92%;
+	height: auto;
+	border-radius: 3%;
+}
