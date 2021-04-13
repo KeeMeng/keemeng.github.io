@@ -48,9 +48,13 @@ function dark_mode() {
 		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
-			projects[i].style.transitionDuration = "0.5s";
-			projects[i].style.backgroundColor = "#102344";
-			texts[i].style.textShadow = "0 0 25px #102344, 0 0 25px #102344, 0 0 25px #102344";
+			setTimeout(function(i) {
+				var projects = document.getElementsByClassName("projects");
+				projects[i].style.transitionDuration = "0.5s";
+				projects[i].style.backgroundColor = "#102344";
+				texts[i].style.textShadow = "0 0 25px #102344, 0 0 25px #102344, 0 0 25px #102344";
+				texts[i].style.color = "white";
+			},25*i,i);
 		}
 		setTimeout(add_transition2,500);
 	}
@@ -59,9 +63,13 @@ function dark_mode() {
 		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
-			projects[i].style.transitionDuration = "0.5s";
-			projects[i].style.backgroundColor = "#e4f8ff";
-			texts[i].style.textShadow = "0 0 25px #e4f8ff, 0 0 25px #e4f8ff, 0 0 25px #e4f8ff";
+			setTimeout(function(i) {
+				var projects = document.getElementsByClassName("projects");
+				projects[i].style.transitionDuration = "0.5s";
+				projects[i].style.backgroundColor = "#e4f8ff";
+				texts[i].style.textShadow = "0 0 25px #e4f8ff, 0 0 25px #e4f8ff, 0 0 25px #e4f8ff";
+				texts[i].style.color = "black";
+			},25*i,i);
 		}
 		setTimeout(add_transition2,500);
 	}
