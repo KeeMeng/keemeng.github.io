@@ -3,42 +3,48 @@ a:visited {
 	color: inherit;
 }
 
-/*.projects {
-	justify-content: center;
-	align-items: center;
-	border-radius: 6%;
-	display: flex;
-	padding: 250px;
-	margin: 50px;
-	color: #fff;
-	float: left;
-	background-color: inherit;
-	position: relative;
-}
-
-.projects::before {
-	margin-top: 100%;
-}*/
-
-.projects {
+.projects{
 	border-radius: 6%;
 	display: inline-block;
 	width: 350px;
 	height: 350px;
 	margin: 50px;
 	margin-top: 40px;
-	color: #fff;
 	position: relative;
-	transition: 0.5s;
+	transition-duration: 0.2s;
+	text-shadow: inherit;
 }
 
 .projects:hover,
 .projects:focus {
-	
+	transform: scale(1.1);
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	/*filter: blur(1px);*/
 }
 
 .projects:active {
-	
+	transform: scale(1.05);
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+.hovertext {
+	position: absolute;
+	opacity: 0;
+	width: 310px;
+	height: 310px;
+	top: -8%;
+	transition-duration: 0.2s;
+
+	text-align: left;
+	font-size: 20px;
+	padding: 20px;
+}
+
+.hovertext:hover,
+.hovertext:focus {
+	opacity: 1;
 }
 
 .light {
