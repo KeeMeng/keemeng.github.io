@@ -20,7 +20,6 @@ a:visited {
 	transform: scale(1.1);
 	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
-	/*filter: blur(1px);*/
 }
 
 .projects:active {
