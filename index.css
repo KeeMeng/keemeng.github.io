@@ -1,23 +1,23 @@
 a:visited { 
-	text-decoration: none; 
-	color: inherit; 
+	text-decoration: none;
+	color: inherit;
 }
 
 /*.projects {
 	justify-content: center;
 	align-items: center;
 	border-radius: 6%;
-	display: flex; 
-	padding: 250px; 
+	display: flex;
+	padding: 250px;
 	margin: 50px;
 	color: #fff;
-	float: left; 
+	float: left;
 	background-color: inherit;
 	position: relative;
 }
 
 .projects::before {
-    margin-top: 100%;
+	margin-top: 100%;
 }*/
 
 .projects {
