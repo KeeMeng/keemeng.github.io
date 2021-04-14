@@ -24,20 +24,6 @@ function flip_images() {
 }
 
 
-function setup() {
-	var previews = document.getElementsByClassName("projects");
-	if (localStorage.getItem("mode") == "light") {
-		for (var i = 0; i < previews.length; i++) {
-			$(`#${previews[i].id}_dark`).fadeOut(0);
-		}
-	}
-	else if (localStorage.getItem("mode") == "dark") {
-		for (var i = 0; i < previews.length; i++) {
-			$(`#${previews[i].id}_light`).fadeOut(0);
-		}
-	}
-}
-
 var dark = localStorage.getItem("mode");
 function dark_mode() {
 	if (dark == "light") {
@@ -60,7 +46,7 @@ function dark_mode() {
 				if (grid_view == "grid") {
 					texts[i].style.textShadow = "0 0 25px #102344, 0 0 25px #102344, 0 0 25px #102344";
 				}
-				else {
+				else if (grid_view == "list") {
 					texts[i].style.textShadow = "none";
 				}
 				texts[i].style.color = "white";
@@ -80,7 +66,7 @@ function dark_mode() {
 				if (grid_view == "grid") {
 					texts[i].style.textShadow = "0 0 25px #e4f8ff, 0 0 25px #e4f8ff, 0 0 25px #e4f8ff";
 				}
-				else {
+				else if (grid_view == "list") {
 					texts[i].style.textShadow = "none";
 				}
 				texts[i].style.color = "black";
@@ -93,6 +79,19 @@ function dark_mode() {
 }
 
 function load() {
+
+	var previews = document.getElementsByClassName("projects");
+	if (localStorage.getItem("mode") == "light") {
+		for (var i = 0; i < previews.length; i++) {
+			$(`#${previews[i].id}_dark`).fadeOut(0);
+		}
+	}
+	else if (localStorage.getItem("mode") == "dark") {
+		for (var i = 0; i < previews.length; i++) {
+			$(`#${previews[i].id}_light`).fadeOut(0);
+		}
+	}
+
 	document.body.style.transitionDuration = "0s";
 	document.getElementById("wrapper").style.transitionDuration = "0s";
 	if (dark == "dark") {
@@ -114,11 +113,11 @@ function load() {
 				projects[i].style.width = "350px";
 				projects[i].style.height = "350px";
 			}
-			else {
+			else if (grid_view == "list") {
 				texts[i].style.textShadow = "none";
 				texts[i].style.opacity = "1";
 				texts[i].style.left = "150px";
-				texts[i].style.width = `${(window.grid-250)/1.11}px`;
+				texts[i].style.width = `${(window.innerWidth-250)/1.11}px`;
 				texts[i].style.height = "150px";
 				texts[i].style.margin = "0px";
 				projects[i].style.display = "block";
@@ -146,7 +145,7 @@ function load() {
 				projects[i].style.width = "350px";
 				projects[i].style.height = "350px";
 			}
-			else {
+			else if (grid_view == "list") {
 				texts[i].style.textShadow = "none";
 				texts[i].style.opacity = "1";
 				texts[i].style.left = "150px";
@@ -211,12 +210,12 @@ function view() {
 			if (dark == "dark") {
 				texts[i].style.textShadow = "0 0 25px #102344, 0 0 25px #102344, 0 0 25px #102344";
 			}
-			else {
+			else if (dark == "light") {
 				texts[i].style.textShadow = "0 0 25px #e4f8ff, 0 0 25px #e4f8ff, 0 0 25px #e4f8ff";
 			}
 		}
 	}
-	else {
+	else if (grid_view == "list") {
 		document.getElementById("view").innerHTML = "Grid View";
 		var texts = document.getElementsByClassName("hovertext");
 		var projects = document.getElementsByClassName("projects");
