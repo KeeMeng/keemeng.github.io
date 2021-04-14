@@ -11,11 +11,12 @@
 	</head>
 	<body style= "font-family: Futura; font-weight: bold; " onload="load(); setup()">
 		<button id="mode" class="small_button" style="text-align: left; font-size:16px;" onclick="dark_mode(); flip_images();">Dark Mode</button>
+		<button id="view" class="small_button" style="text-align: left; font-size:16px; right: auto" onclick="view();">List View</button>
 		<center style="font-size: 64px">
 			Hello World!
 		</center>
 		<!-- <iframe id="frame" src="points.html"></iframe> -->
-		<div id="wrapper" style="text-align: center; opacity: 0">
+		<div id="wrapper" style="text-align: center; opacity: 0;">
 			<div class="projects" id="github" onclick="window.location.href='https://github.com/KeeMeng';" onmouseenter="show_text('github')" onmouseleave="hide_text('github')">
 				<img id="github_light" class="light" src="images/github_light.png"/>
 				<img id="github_dark" class="dark" src="images/github_dark.png"/>
