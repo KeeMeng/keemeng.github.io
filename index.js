@@ -1,6 +1,7 @@
 if (localStorage.getItem("mode") === null) {
 	localStorage.setItem("mode", "light");
 }
+
 if (localStorage.getItem("view") === null) {
 	localStorage.setItem("view", "grid");
 }
