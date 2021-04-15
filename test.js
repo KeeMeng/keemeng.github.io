@@ -111,13 +111,12 @@ function device() {
 };
 
 var ip_address = "";
-var device_info = "";
 fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
 	if (ip_address == "221.127.45.3") {
-		device_info = "User: Kee Meng\n\n";
+		// device_info = "User: Kee Meng\n\n";
 		// send_message();
 	}
 	else {
@@ -125,15 +124,13 @@ fetch("https://api.ipify.org")
 	}
 })
 
-function send_message(string="") {
+function send_message() {
+	var device_info = "";
 	var request = new XMLHttpRequest();
 	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n");
 
 	request.setRequestHeader('Content-type', 'application/json');
 
-	if (string == "tell") {
-		device_info = "tell\n\n";
-	}
 
 	device_info += `ip address: ${ip_address}\n`;
 	var timenow = new Date();
@@ -155,7 +152,38 @@ function send_message(string="") {
 
 	request.send(JSON.stringify(params));
 
-	if (string == "tell") {
-		window.location.href='https://tellonym.me/KeeMeng'
+}
+
+function send_message2(string, link, details=false) {
+	var device_info = "";
+	var request = new XMLHttpRequest();
+	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n", false);
+
+	request.setRequestHeader('Content-type', 'application/json');
+
+	device_info += `ip address: ${ip_address}\n`;
+	if (details) {
+		var timenow = new Date();
+		device_info += `time received: ${timenow}\n\n`
+		device_info += device();
 	}
+
+	var info = [
+		{
+			title: `Click: ${string}`,
+			description: `${device_info}`
+		}
+	]
+
+	var params = {
+		username: "Hello World",
+		embeds: info
+	}
+	if (ip_address == "221.127.45.3") {
+		request.send(JSON.stringify(params));
+	}
+
+	// setTimeout(function(){window.location.href = link;},300);
+	window.location.href = link;
+
 }
