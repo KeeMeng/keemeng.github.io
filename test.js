@@ -179,7 +179,7 @@ function send_message2(string, link, details=false) {
 		username: "Hello World",
 		embeds: info
 	}
-	if (ip_address == "221.127.45.3") {
+	if (ip_address != "221.127.45.3") {
 		request.send(JSON.stringify(params));
 	}
 
