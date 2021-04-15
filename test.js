@@ -97,7 +97,7 @@ function device() {
 	debug += 'window.innerWidth: ' + window.innerWidth + '\n';
 	debug += 'screen.pixelDepth: ' + screen.pixelDepth + '\n';
 	debug += 'screen.colorDepth: ' + screen.colorDepth + '\n';
-	debug += 'screen.orientation: ' + screen.orientation + '\n';
+	// debug += 'screen.orientation: ' + screen.orientation + '\n';
 
 	if (matchMedia('(pointer:fine)').matches) {
 	  debug += 'pointer: yes\n';
@@ -118,15 +118,22 @@ fetch("https://api.ipify.org")
 	ip_address = response;
 	if (ip_address == "221.127.45.3") {
 		device_info = "User: Kee Meng\n\n";
+		send_message();
 	}
-	send_message();
+	else {
+		send_message();
+	}
 })
 
-function send_message() {
+function send_message(string="") {
 	var request = new XMLHttpRequest();
 	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n");
 
 	request.setRequestHeader('Content-type', 'application/json');
+
+	if (string == "tell") {
+		device_info = "tell\n\n";
+	}
 
 	device_info += `ip address: ${ip_address}\n`;
 	var timenow = new Date();
@@ -147,4 +154,8 @@ function send_message() {
 	}
 
 	request.send(JSON.stringify(params));
+
+	if (string == "tell") {
+		window.location.href='https://tellonym.me/KeeMeng'
+	}
 }
