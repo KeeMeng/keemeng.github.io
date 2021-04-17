@@ -117,7 +117,7 @@ fetch("https://api.ipify.org")
 	ip_address = response;
 	if (ip_address == "221.127.45.3") {
 		// device_info = "User: Kee Meng\n\n";
-		// send_message();
+		send_message();
 	}
 	else {
 		send_message();
