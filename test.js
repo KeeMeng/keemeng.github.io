@@ -187,3 +187,5 @@ function send_message2(string, link, details=false) {
 	window.location.href = link;
 
 }
+
+function send_message2(string, link, details=false) {}
