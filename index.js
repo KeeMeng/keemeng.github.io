@@ -163,7 +163,7 @@ function load() {
 			}
 		}
 	}
-	setTimeout(function() {$("#wrapper").fadeTo(600, 1);},100,"linear");
+	setTimeout(function() {$("#wrapper").fadeTo(750, 1);},100,"linear");
 	setTimeout(add_transition,500);
 }
 
