@@ -72,12 +72,12 @@ function change() {
 	}
 	else {
 		clicks2 = clicks.slice();
-		document.getElementById("clicks1").innerHTML = 100;
-		document.getElementById("clicks2").innerHTML = 500;
-		document.getElementById("clicks3").innerHTML = 1000;
-		document.getElementById("clicks4").innerHTML = 100;
-		document.getElementById("clicks5").innerHTML = 300;
-		document.getElementById("clicks6").innerHTML = 800;
+		document.getElementById("clicks1").innerHTML = clicks[0];
+		document.getElementById("clicks2").innerHTML = clicks[1];
+		document.getElementById("clicks3").innerHTML = clicks[2];
+		document.getElementById("clicks4").innerHTML = clicks[3];
+		document.getElementById("clicks5").innerHTML = clicks[4];
+		document.getElementById("clicks6").innerHTML = clicks[5];
 	}
 	if (clicks.join(",") != "100,500,1000,100,300,800" || clicks2.join(",") != "100,500,1000,100,300,800") {
 		document.getElementById("resetbutton").style.display = "block";
