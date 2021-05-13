@@ -160,9 +160,14 @@ function show_hint() {
 	}
 }
 
+var reorder_bool = true;
+function reordering() {
+	reorder_bool = ! reorder_bool;
+}
+
 var current_order = [0,3,1,4,2,5];
 function reorder() {
-	if (!animate) {
+	if (!reorder_bool) {
 		let children = document.querySelectorAll("#wrapper")[0].children;
 
 		var order = [];
