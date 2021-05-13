@@ -22,62 +22,71 @@
 		<div style="font-size: 48px;" onmousedown="change_title()">
 			<span id="title">Computer Science Society</span>
 		</div>
-		<input checked type="checkbox" onmousedown="animation()" style="opacity:0.5">
-
 		<div style="font-size: 36px;" onmousedown="change_time()">
 			<span id="timer">30</span> minutes left
 		</div>
+		<div>
+			Animations: 
+			<input checked type="checkbox" onmousedown="animation()" style="opacity:0.5">
+			 -- Add Restrictions:
+			<input type="checkbox" onclick="swap(1)" style="opacity:0.5">
+			<input type="checkbox" onclick="swap(2)" style="opacity:0.5">
+			<input type="checkbox" onclick="swap(3)" style="opacity:0.5">
+		</div>
 		<hr>
-		<div id="wrapper" style="transition: 0.5s; margin: auto; margin-top: 20px; padding-top: 10px; width: 820px; align-content: center; border-radius: 40px">
-			<br>
-			<button class="button" style="background-color: #b3e3ff;" onmousedown="half(event,1)">
-				Beginner Challenge: <span id="clicks1" style="font-weight: bold">100</span> Points
-			</button>
+		<div id="wrapper" style="transition: 0.5s; margin: auto; margin-top: 16px; padding-top: 18px; padding-bottom: 38px; width: 820px; align-content: center; border-radius: 40px">
+			<div>
+				<br>
+				<button class="button" style="background-color: #b3e3ff;" onmousedown="half(event,1)">
+					Beginner Challenge: <span id="clicks1" style="font-weight: bold">100</span> Points
+				</button>
+			</div>
 			<div id="restriction1" style="display: none;">
 				<br>
 				<button class="button" style="background-color: #b3e3ff;" onmousedown="half(event,4)">
 					Beginner Challenge Restriction: <span id="clicks4" style="font-weight: bold">100</span> Points
 				</button>
-				<input id="checkbox4" type="checkbox" onmousedown="swap(4)" style="opacity:0.5">
 				Restriction: <input type="text" class="textbox2">
 			</div>
-			<p style="font-size: 1px"></p>
-			<input id="checkbox1" type="checkbox" onmousedown="swap(1)" style="opacity:0.5">
-			<br><br>
-			<button class="button" style="background-color: #66ccff;" onmousedown="half(event,2)">
-				Intermediate Challenge: <span id="clicks2" style="font-weight: bold">500</span> Points
-			</button>
+			<div>
+				<br>
+				<button class="button" style="background-color: #66ccff;" onmousedown="half(event,2)">
+					Intermediate Challenge: <span id="clicks2" style="font-weight: bold">500</span> Points
+				</button>
+			</div>
 			<div id="restriction2" style="display: none;">
 				<br>
 				<button class="button" style="background-color: #66ccff;" onmousedown="half(event,5)">
 					Intermediate Challenge Restriction: <span id="clicks5" style="font-weight: bold">300</span> Points
 				</button>
-				<input id="checkbox5" type="checkbox" onmousedown="swap(5)" style="opacity:0.5">
 				Restriction: <input type="text" class="textbox2">
 			</div>
-			<p style="font-size: 1px"></p>
-			<input id="checkbox2" type="checkbox" onmousedown="swap(2)" style="opacity:0.5">
-			<br><br>
-			<button class="button" style="background-color: #22b8ff;" onmousedown="half(event,3)">
-				Advanced Challenge: <span id="clicks3" style="font-weight: bold">1000</span> Points
-			</button>
+			<div>
+				<br>
+				<button class="button" style="background-color: #22b8ff;" onmousedown="half(event,3)">
+					Advanced Challenge: <span id="clicks3" style="font-weight: bold">1000</span> Points
+				</button>
+			</div>
 			<div id="restriction3" style="display: none;">
 				<br>
 				<button class="button" style="background-color: #22b8ff;" onmousedown="half(event,6)">
 					Advanced Challenge Restriction: <span id="clicks6" style="font-weight: bold">800</span> Points
 				</button>
-				<input id="checkbox6" type="checkbox" onmousedown="swap(6)" style="opacity:0.5">
 				Restriction: <input type="text" class="textbox2">
 			</div>
-			<p style="font-size: 1px"></p>
-			<input id="checkbox3" type="checkbox" onmousedown="swap(3)" style="opacity:0.5">
-			<br><br>
-			<div id="resetbutton" style="display: none;">
-				<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset(event)">
-					<span id="reset_tip">Reset Points</span>
-				</button>
-				<br>
-			</div>
+		</div>
+		<br>
+		<div id="reset_button" style="display: none;">
+			<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reset(event)">
+				<span id="reset_tip">Reset Points</span>
+			</button>
+		</div>
+		<br>
+		<div style="display: none;">
+			<button class="button" style="background-color: #ff8080; color: #800000" onmousedown="reorder()">
+				<span>Reorder</span>
+			</button>
+			<br>
 		</div>
 		<br>
 	</body>

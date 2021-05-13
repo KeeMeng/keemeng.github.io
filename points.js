@@ -32,21 +32,11 @@ function animation() {
 }
 
 function swap(number) {
-	document.getElementById("checkbox1").checked = false;
-	document.getElementById("checkbox2").checked = false;
-	document.getElementById("checkbox3").checked = false;
-	document.getElementById("checkbox4").checked = true;
-	document.getElementById("checkbox5").checked = true;
-	document.getElementById("checkbox6").checked = true;
-
-	if (number == 1 || number == 2 || number == 3) {
-		document.getElementById("restriction"+String(number)).style.display = "block";
-		document.getElementById("checkbox"+String(number)).style.display = "none";
-	}
-	else if (number == 4 || number == 5 || number == 6) {
-		document.getElementById("restriction"+String(number-3)).style.display = "none";
-		document.getElementById("checkbox"+String(number-3)).style.display = "inline";
-	}
+		if (document.getElementById("restriction"+String(number)).style.display == "block") {
+			document.getElementById("restriction"+String(number)).style.display = "none";
+		} else {
+			document.getElementById("restriction"+String(number)).style.display = "block";
+		}
 }
 
 function half(event, number) {
@@ -55,6 +45,7 @@ function half(event, number) {
 		clicks2[number-1] = clicks[number-1];
 		document.getElementById("clicks"+String(number)).innerHTML = clicks[number-1];
 	}
+	reorder();
 }
 
 function change() {
@@ -80,10 +71,10 @@ function change() {
 		document.getElementById("clicks6").innerHTML = clicks[5];
 	}
 	if (clicks.join(",") != "100,500,1000,100,300,800" || clicks2.join(",") != "100,500,1000,100,300,800") {
-		document.getElementById("resetbutton").style.display = "block";
+		document.getElementById("reset_button").style.display = "block";
 	}
 	else {
-		document.getElementById("resetbutton").style.display = "none";
+		document.getElementById("reset_button").style.display = "none";
 		document.getElementById("reset_tip").innerHTML = "Reset Points";
 	}
 }
@@ -105,12 +96,13 @@ function reset(event) {
 		document.getElementById("clicks5").innerHTML = 300;
 		document.getElementById("clicks6").innerHTML = 800;
 		document.getElementById("reset_tip").innerHTML = "Reset Points";
-		document.getElementById("resetbutton").style.display = "none";
+		document.getElementById("reset_button").style.display = "none";
 	}
 	else {
 		document.getElementById("reset_tip").innerHTML = "Click again to quickly reset points";
 		clicks = [100,500,1000,100,300,800];
 	}
+	reorder();
 }
 
 var dark = localStorage.getItem("mode");
@@ -166,4 +158,87 @@ function show_hint() {
 	else {
 		document.getElementById("hint_box").style.display = "none";
 	}
+}
+
+// var current_order = [0,1,2,3,4,5];
+var current_order = [0,3,1,4,2,5];
+function reorder() {
+	if (!animate) {
+
+		// current_order_copy = [0,0,0,0,0,0];
+		// for(let i=0;i<6;i++){
+		// 	if (current_order[i] == 0) {
+		// 		current_order_copy[i] = 0;
+		// 	} else if (current_order[i] == 1) {
+		// 		current_order_copy[i] = 3;
+		// 	} else if (current_order[i] == 2) {
+		// 		current_order_copy[i] = 1;
+		// 	} else if (current_order[i] == 3) {
+		// 		current_order_copy[i] = 4;
+		// 	} else if (current_order[i] == 4) {
+		// 		current_order_copy[i] = 2;
+		// 	} else if (current_order[i] == 5) {
+		// 		current_order_copy[i] = 5;
+		// 	}
+		// }
+		
+		let children = document.querySelectorAll("#wrapper")[0].children;
+
+		var order = [];
+		var values = [];
+		var values_copy = [];
+
+		var current_order_copy = []
+		for(let i=0;i<6;i++){
+			current_order_copy.push(current_order[i]);
+		}
+		
+		// console.log(clicks);
+		for(let i=0;i<6;i++){
+			// console.log(current_order[i])
+			values.push(clicks[current_order[i]]);
+			values_copy.push(clicks[current_order[i]]);
+		}
+
+		// console.log(values);
+		values.sort(function(a, b){return b-a});
+		for(let i=0;i<6;i++){
+			order.push(values_copy.indexOf(values[i]));
+			values_copy[values_copy.indexOf(values[i])] = null;
+		}
+
+		// console.log(order);
+
+		var arr = [];
+		for(let i=0;i<6;i++){
+			// console.log(order[i]);
+			// console.log(children[order[i]]);
+			arr.push(children[order[i]]);
+		}
+
+		for(let i=0;i<6;i++){
+			// console.log(children);
+			wrapper.appendChild(arr[i]);
+		}
+
+		temp = [0,0,0,0,0,0];
+		for(let i=0;i<6;i++){
+			temp[i] = current_order_copy[order[i]];
+		}
+
+		current_order = [];
+
+		for(let i=0;i<6;i++){
+			current_order.push(temp[i])
+		}
+		// console.log(current_order);
+		// current_order = [0,0,0,0,0,0];
+		// for(let i=0;i<6;i++){
+		// 	current_order[i] = order.indexOf(i);
+		// }
+		// console.log(current_order);
+		// console.log("");
+	}
+
+	// current_order = order
 }
