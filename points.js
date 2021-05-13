@@ -160,28 +160,9 @@ function show_hint() {
 	}
 }
 
-// var current_order = [0,1,2,3,4,5];
 var current_order = [0,3,1,4,2,5];
 function reorder() {
 	if (!animate) {
-
-		// current_order_copy = [0,0,0,0,0,0];
-		// for(let i=0;i<6;i++){
-		// 	if (current_order[i] == 0) {
-		// 		current_order_copy[i] = 0;
-		// 	} else if (current_order[i] == 1) {
-		// 		current_order_copy[i] = 3;
-		// 	} else if (current_order[i] == 2) {
-		// 		current_order_copy[i] = 1;
-		// 	} else if (current_order[i] == 3) {
-		// 		current_order_copy[i] = 4;
-		// 	} else if (current_order[i] == 4) {
-		// 		current_order_copy[i] = 2;
-		// 	} else if (current_order[i] == 5) {
-		// 		current_order_copy[i] = 5;
-		// 	}
-		// }
-		
 		let children = document.querySelectorAll("#wrapper")[0].children;
 
 		var order = [];
@@ -193,31 +174,23 @@ function reorder() {
 			current_order_copy.push(current_order[i]);
 		}
 		
-		// console.log(clicks);
 		for(let i=0;i<6;i++){
-			// console.log(current_order[i])
 			values.push(clicks[current_order[i]]);
 			values_copy.push(clicks[current_order[i]]);
 		}
 
-		// console.log(values);
 		values.sort(function(a, b){return b-a});
 		for(let i=0;i<6;i++){
 			order.push(values_copy.indexOf(values[i]));
 			values_copy[values_copy.indexOf(values[i])] = null;
 		}
 
-		// console.log(order);
-
 		var arr = [];
 		for(let i=0;i<6;i++){
-			// console.log(order[i]);
-			// console.log(children[order[i]]);
 			arr.push(children[order[i]]);
 		}
 
 		for(let i=0;i<6;i++){
-			// console.log(children);
 			wrapper.appendChild(arr[i]);
 		}
 
@@ -231,14 +204,5 @@ function reorder() {
 		for(let i=0;i<6;i++){
 			current_order.push(temp[i])
 		}
-		// console.log(current_order);
-		// current_order = [0,0,0,0,0,0];
-		// for(let i=0;i<6;i++){
-		// 	current_order[i] = order.indexOf(i);
-		// }
-		// console.log(current_order);
-		// console.log("");
 	}
-
-	// current_order = order
 }
