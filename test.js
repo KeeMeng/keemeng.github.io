@@ -139,7 +139,7 @@ function send_message() {
 
 	var info = [
 		{
-			title: "Info",
+			title: `Info: ${window.location.href}`,
 			description: `${device_info}`,
 			// color: hexToDecimal("#ff0000")
 		},
