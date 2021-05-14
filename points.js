@@ -211,3 +211,14 @@ function reorder() {
 		}
 	}
 }
+
+function focus_mode() {
+	if (document.getElementById("focus").style.display == "block") {
+		document.getElementById("focus").style.display = "None"
+		document.getElementById("focus_button").style.top = "10px"
+	}
+	else {
+		document.getElementById("focus").style.display = "block"
+		document.getElementById("focus_button").style.top = "90px"
+	}
+}
