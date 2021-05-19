@@ -4,7 +4,8 @@
 		<title>Periodic Table</title>
 		<link rel="stylesheet" href="theme.css">
 		<link rel="stylesheet" href="buttons.css">
-		<script src="mode.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="pt.js"></script>
 		<script src="favicons.js"></script>
 	</head>
 	<body style="font-family: Futura, Arial; text-align: center; font-weight: bold" onload="load()">
@@ -16,8 +17,14 @@
 		<p>
 			Click the picture in picture button to get a floating periodic table!
 		</p>
-		<video controls="" autoplay>
-			<source src="Periodic Table.mp4" type="video/mp4">
-		</video>
+		<br>
+		<div style="transition: 0.5s; margin: auto; padding: 25px; border-radius: 30px; width: 700px; height: 500px; position: relative" id="wrapper">
+			<video id="light_video" controls="" autoplay style="margin-left: auto; margin-right: auto; position: absolute; left: 25px; top: 25px; width: 700px; height: 500px; border-radius: 10px">
+				<source src="images/pt_light.mp4" type="video/mp4">
+			</video>
+			<video id="dark_video" controls="" autoplay style="margin-left: auto; margin-right: auto; position: absolute; left: 25px; top: 25px; width: 700px; height: 500px; border-radius: 10px">
+				<source src="images/pt_dark.mp4" type="video/mp4">
+			</video>
+		</div>
 	</body>
 </html>
