@@ -54,12 +54,12 @@ function change() {
 			if (clicks2[i] > clicks[i]) {
 				clicks2[i] --;
 				document.getElementById("clicks"+String(i+1)).innerHTML = clicks2[i];
-				document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(215,100%," + String(85-clicks2[i]/40) + "%)";
+				document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(205,100%," + String(85-clicks2[i]/40) + "%)";
 			}
 			else if (clicks2[i] < clicks[i]) {
 				clicks2[i] ++;
 				document.getElementById("clicks"+String(i+1)).innerHTML = clicks2[i];
-				document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(215,100%," + String(85-clicks2[i]/40) + "%)";
+				document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(205,100%," + String(85-clicks2[i]/40) + "%)";
 			}
 		}
 
@@ -73,7 +73,7 @@ function change() {
 		document.getElementById("clicks5").innerHTML = clicks[4];
 		document.getElementById("clicks6").innerHTML = clicks[5];
 		for (var i = 0; i < 6; i++) {
-			document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(215,100%," + String(85-clicks2[i]/40) + "%)";
+			document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(205,100%," + String(85-clicks2[i]/40) + "%)";
 		}
 	}
 	if (clicks.join(",") != "100,500,1000,100,300,800" || clicks2.join(",") != "100,500,1000,100,300,800") {
@@ -104,7 +104,7 @@ function reset(event) {
 		document.getElementById("reset_tip").innerHTML = "Reset Points";
 		document.getElementById("reset_button").style.display = "none";
 		for (var i = 0; i < 6; i++) {
-			document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(215,100%," + String(85-clicks2[i]/40) + "%)";
+			document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(205,100%," + String(85-clicks2[i]/40) + "%)";
 		}
 	}
 	else {
@@ -151,7 +151,7 @@ function load() {
 	}
 	setTimeout(add_transition,500);
 	for (var i = 0; i < 6; i++) {
-		document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(215,100%," + String(85-clicks2[i]/40) + "%)";
+		document.getElementById("button"+String(i+1)).style.backgroundColor = "hsl(205,100%," + String(85-clicks2[i]/40) + "%)";
 	}
 }
 
