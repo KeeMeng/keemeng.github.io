@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spotify</title>
+		<link rel="stylesheet" href="spotify.css">
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="buttons.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="spotify.js"></script>
+		<script src="favicons.js"></script>
+	</head>
+	<body style="text-align: center; font-family: Futura, Arial; font-weight: bold;" onload="load();">
+		<button class="small_button" onclick="window.location.href='/';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
+		<center style="font-size: 64px">Spotify Audio Features</center>
+		<br>
+		<br>
+		<div id="starter">
+			<button style="display: block; text-align: center; margin: auto; " class="spotify_button" onclick="window.open('https://developer.spotify.com/console/get-users-currently-playing-track/')">1) Get Oauth Token</button>
+			<br>
+			<input style="display: block; text-align: center; margin: auto; " class="spotify_button" type="text" value="2) Paste Oauth Token Here" id="oauth_id" onfocus="this.value=''">
+			<br>
+			<button style="display: block; text-align: center; margin: auto; " class="spotify_button" onclick="start()">3) Click here to start</button>
+			<br>
+			<br>
+		</div>
+		<div style="display: inline;">
+			<div style="margin: auto; margin-right: 20px; padding: 15px; border-radius: 30px; display: none; vertical-align: top; width: 400px; height: 520px;" id="wrapper1">
+				<img id="image">
+				<p><span id="song"></span> (<span id="popularity"></span>%)</p>
+				<p><span id="album"></span></p>
+				<p><span id="artist"></span></p>
+			</div>
+			<div style="margin: auto; padding: 15px; padding-top: 30px; padding-bottom: 0px; border-radius: 30px; display: none; vertical-align: top; width: 300px; height: 520px;" id="wrapper2">
+				<span style="font-size: 32px">Audio Features: </span>
+				<p>Danceability: <span id="danceability"></span></p>
+				<p>Energy: <span id="energy"></span></p>
+				<p>Key: <span id="key"></span></p>
+				<p>Loudness: <span id="loudness"></span></p>
+				<p>Speechiness: <span id="speechiness"></span></p>
+				<p>Acousticness: <span id="acousticness"></span></p>
+				<p>Instrumentalness: <span id="instrumentalness"></span></p>
+				<p>Liveness: <span id="liveness"></span></p>
+				<p>Valence: <span id="valence"></span></p>
+				<p>Tempo: <span id="tempo"></span></p>
+				<p>Duration_ms: <span id="duration_ms"></span></p>
+				<p>Time_signature: <span id="time_signature"></span></p>
+			</div>
+		</div>
+
+		<p id="log"></p>
+	</body>
+</html>
