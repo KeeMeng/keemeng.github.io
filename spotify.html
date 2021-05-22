@@ -14,8 +14,8 @@
 		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
 		<center style="font-size: 64px">Spotify Audio Features</center>
 		<br>
-		<br>
 		<div id="starter">
+			<br>
 			<button style="display: block; text-align: center; margin: auto; " class="spotify_button" onclick="window.open('https://developer.spotify.com/console/get-users-currently-playing-track/')">1) Get Oauth Token</button>
 			<br>
 			<input style="display: block; text-align: center; margin: auto; " class="spotify_button" type="text" value="2) Paste Oauth Token Here" id="oauth_id" onfocus="this.value=''">
@@ -23,28 +23,34 @@
 			<button style="display: block; text-align: center; margin: auto; " class="spotify_button" onclick="start()">3) Click here to start</button>
 			<br>
 			<br>
+			<div class="spotify_button" id="error" style="color: #cc3622; display: none">Hi</div>
 		</div>
 		<div style="display: inline;">
-			<div style="margin: auto; margin-right: 20px; padding: 15px; border-radius: 30px; display: none; vertical-align: top; width: 400px; height: 520px;" id="wrapper1">
+			<div style="margin: auto; margin-right: 10px; padding: 15px; border-radius: 30px; display: none; vertical-align: top; width: 400px; height: 520px;" id="wrapper1">
 				<img id="image">
-				<p><span id="song"></span> (<span id="popularity"></span>%)</p>
-				<p><span id="album"></span></p>
-				<p><span id="artist"></span></p>
+				<p><span id="song" style="font-size: 16px"></span></p>
+				<p><span id="album" style="font-size: 16px"></span></p>
+				<p><span id="artist" style="font-size: 16px"></span></p>
 			</div>
-			<div style="margin: auto; padding: 15px; padding-top: 30px; padding-bottom: 0px; border-radius: 30px; display: none; vertical-align: top; width: 300px; height: 520px;" id="wrapper2">
-				<span style="font-size: 32px">Audio Features: </span>
-				<p>Danceability: <span id="danceability"></span></p>
-				<p>Energy: <span id="energy"></span></p>
-				<p>Key: <span id="key"></span></p>
-				<p>Loudness: <span id="loudness"></span></p>
-				<p>Speechiness: <span id="speechiness"></span></p>
-				<p>Acousticness: <span id="acousticness"></span></p>
-				<p>Instrumentalness: <span id="instrumentalness"></span></p>
-				<p>Liveness: <span id="liveness"></span></p>
-				<p>Valence: <span id="valence"></span></p>
-				<p>Tempo: <span id="tempo"></span></p>
-				<p>Duration_ms: <span id="duration_ms"></span></p>
-				<p>Time_signature: <span id="time_signature"></span></p>
+			<div style="margin: auto; padding: 15px; padding-top: 18px; padding-bottom: 12px; border-radius: 30px; display: none; vertical-align: top; width: 255px; height: 520px;" id="wrapper2">
+				<span style="font-size: 24px">Audio Features: </span>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 0)" onmouseleave="hover(-1)">- Acousticness: <span style="font-weight: normal;" id="acousticness"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 1)" onmouseleave="hover(-1)">- Danceability: <span style="font-weight: normal;" id="danceability"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 2)" onmouseleave="hover(-1)">- Duration: <span style="font-weight: normal;" id="duration_ms"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 3)" onmouseleave="hover(-1)">- Energy: <span style="font-weight: normal;" id="energy"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 4)" onmouseleave="hover(-1)">- Instrumentalness: <span style="font-weight: normal;" id="instrumentalness"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 5)" onmouseleave="hover(-1)">- Key: <span style="font-weight: normal;" id="key"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 6)" onmouseleave="hover(-1)">- Liveness: <span style="font-weight: normal;" id="liveness"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 7)" onmouseleave="hover(-1)">- Loudness: <span style="font-weight: normal;" id="loudness"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 8)" onmouseleave="hover(-1)">- Popularity: <span style="font-weight: normal;" id="popularity"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover( 9)" onmouseleave="hover(-1)">- Speechiness: <span style="font-weight: normal;" id="speechiness"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover(10)" onmouseleave="hover(-1)">- Tempo: <span style="font-weight: normal;" id="tempo"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover(11)" onmouseleave="hover(-1)">- Time Signature: <span style="font-weight: normal;" id="time_signature"></span></p>
+				<p style="text-align: left; font-size: 16px;" onmouseenter="hover(12)" onmouseleave="hover(-1)">- Valence: <span style="font-weight: normal;" id="valence"></span></p>
+			</div>
+			<div style="margin: auto; margin-top: 10px; padding: 15px; border-radius: 30px; display: none; vertical-align: top; width: 700px;" id="wrapper3">
+				<span style="font-size: 24px" id="info_title"></span>
+				<p style="font-size: 12px" id="info"></p>
 			</div>
 		</div>
 
