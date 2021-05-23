@@ -5,13 +5,14 @@
 		<link rel="stylesheet" href="spotify.css">
 		<link rel="stylesheet" href="theme.css">
 		<link rel="stylesheet" href="buttons.css">
+		<link rel="stylesheet" href="body.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="spotify.js"></script>
 		<script src="favicons.js"></script>
 	</head>
-	<body style="text-align: center; font-family: Futura, Arial; font-weight: bold;" onload="load();">
+	<body onload="load();">
 		<button class="small_button" onclick="window.location.href='/';">Homepage</button>
-		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
 		<center style="font-size: 64px">Spotify Audio Features</center>
 		<br>
 		<div id="starter">
@@ -25,7 +26,7 @@
 			<br>
 			<div class="spotify_button" id="error" style="color: #cc3622; display: none">Hi</div>
 		</div>
-		<div style="display: inline;">
+		<div id="wrapper0" style="display: inline;">
 			<div style="margin: auto; margin-right: 10px; padding: 15px; border-radius: 30px; display: none; vertical-align: top; width: 400px; height: 520px;" id="wrapper1">
 				<img id="image">
 				<p><span id="song" style="font-size: 16px"></span></p>

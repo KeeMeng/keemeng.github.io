@@ -74,7 +74,7 @@ function audio_features() {
 	request.setRequestHeader('Authorization', `Bearer ${oauth}`);
 	request.send(null);
 	var features = JSON.parse(request.responseText);
-	console.log(features);
+	// console.log(features);
 	// document.getElementById("log").innerHTML = request.responseText;
 	// console.log(document.getElementById("log").innerHTML)
 	document.getElementById("acousticness").innerHTML = String((features.acousticness*100).toFixed(0))+"%";
@@ -99,12 +99,12 @@ function current_song() {
 	request.setRequestHeader('Content-type', 'application/json');
 	request.setRequestHeader('Authorization', `Bearer ${oauth}`);
 	request.send(null);
-	if (String(request) == "") {
+	if (String(request.responseText) == "") {
 		document.getElementById("error").innerHTML = "Try playing a song on spotify";
 		document.getElementById("error").style.display = "block";
 	}
 	var response = JSON.parse(request.responseText);
-	console.log(response);
+	// console.log(response);
 	// console.log(response.status)
 	if (response.status != undefined) {
 		document.getElementById("error").innerHTML = response.error.message;
@@ -240,7 +240,10 @@ function load() {
 
 function add_transition() {
 	document.body.style.transitionDuration = "0.5s";
-	document.getElementById("wrapper1").style.transitionDuration = "0.5s";
-	document.getElementById("wrapper2").style.transitionDuration = "0.5s";
-	document.getElementById("wrapper3").style.transitionDuration = "0.5s";
+	// document.getElementById("wrapper1").style.transitionDuration = "0s";
+	// document.getElementById("wrapper2").style.transitionDuration = "0s";
+	// document.getElementById("wrapper3").style.transitionDuration = "0s";
+	document.getElementById("wrapper1").style.transition = "background-color 0.5s";
+	document.getElementById("wrapper2").style.transition = "background-color 0.5s";
+	document.getElementById("wrapper3").style.transition = "background-color 0.5s";
 }

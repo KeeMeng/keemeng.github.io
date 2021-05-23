@@ -7,6 +7,10 @@ if (temp > 0) {n = temp;}
 var matrix = [];
 var input_count = 0;
 
+if (localStorage.getItem("mode") === null) {
+	localStorage.setItem("mode", "light");
+}
+
 var dark = localStorage.getItem("mode");
 function dark_mode() {
 	if (dark == "light") {
@@ -47,7 +51,7 @@ function load() {
 
 function add_transition() {
 	document.body.style.transitionDuration = "0.5s";
-	document.getElementById("wrapper").style.transitionDuration = "0.5s";
+	document.getElementById("wrapper").style.transition = "background-color 0.5s";
 }
 
 

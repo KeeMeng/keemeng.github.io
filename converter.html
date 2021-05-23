@@ -2,15 +2,16 @@
 <html>
 	<head>
 		<title>SI Prefix Converter</title>
-		<script src="converter.js"></script>
-		<script src="mode.js"></script>
-		<script src="favicons.js"></script>
 		<link rel="stylesheet" href="theme.css">
 		<link rel="stylesheet" href="buttons.css">
+		<link rel="stylesheet" href="body.css">
+		<script src="converter.js"></script>
+		<script src="theme.js"></script>
+		<script src="favicons.js"></script>
 	</head>
-	<body style="text-align: center; font-family: Futura, Arial; font-weight: bold;" onload="load()">
+	<body onload="load()">
 		<button class="small_button" onclick="window.location.href='/';">Homepage</button>
-		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size:16px;" onclick="dark_mode()">Dark Mode</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
 		<center style="font-size: 64px">Converter</center>
 		<button style="font-family: Futura, Arial; font-size: 16px; background-color: inherit; color:inherit; border-color: inherit; border-radius: 12px; border-width: 3px;" onclick="example()">Click for Example</button>
 		<p style="font-size: 32;">Units: T, G, M, k, h, da, _ (1), d, c, m, u, n, p</p>

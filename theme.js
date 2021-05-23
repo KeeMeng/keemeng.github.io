@@ -1,3 +1,7 @@
+if (localStorage.getItem("mode") === null) {
+	localStorage.setItem("mode", "light");
+}
+
 var dark = localStorage.getItem("mode");
 function dark_mode() {
 	if (dark == "light") {
