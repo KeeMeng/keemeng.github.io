@@ -4,6 +4,7 @@ var image = "";
 var song = "";
 var album = "";
 var artist = "";
+var artist_image = "";
 var popularity = "";
 
 
@@ -92,6 +93,7 @@ function audio_features() {
 }
 
 
+var song_image = true;
 function current_song() {
 	var request = new XMLHttpRequest();
 	request.open("GET", "https://api.spotify.com/v1/me/player/currently-playing/", false);
@@ -105,29 +107,48 @@ function current_song() {
 	}
 	var response = JSON.parse(request.responseText);
 	// console.log(response);
-	// console.log(response.status)
-	if (response.status != undefined) {
-		document.getElementById("error").innerHTML = response.error.message;
-		document.getElementById("error").style.display = "block";
+	try {
+		if (response.error.status == 401) {
+			document.getElementById("error").innerHTML = "Invalid Oauth Token";
+			document.getElementById("error").style.display = "block";
+		}
 	}
-	if (id != response.item.id) {
-		id = response.item.id;
-		image = response.item.album.images[0].url;
-		song = response.item.name;
-		album = response.item.album.name;
-		track = response.item.track_number;
-		artist = response.item.artists[0].name;
-		popularity = response.item.popularity;
-		document.getElementById("image").src = image;
-		document.getElementById("image").alt = song;
-		document.getElementById("image").style.width = "400px";
-		document.getElementById("image").style.height = "400px";
-		document.getElementById("image").style.borderRadius = "20px";
-		document.getElementById("song").innerHTML = `${track} - ${song}`;
-		document.getElementById("album").innerHTML = album;
-		document.getElementById("artist").innerHTML = artist;
-		document.getElementById("popularity").innerHTML = popularity+"%";
-		audio_features();
+	catch (TypeError) {
+		if (id != response.item.id) {
+			setInterval(current_song, 5000);
+			document.getElementById("wrapper1").style.display = "inline-block";
+			document.getElementById("wrapper2").style.display = "inline-block";
+			document.getElementById("starter").style.display = "none";
+
+			id = response.item.id;
+			image = response.item.album.images[0].url;
+			song = response.item.name;
+			album = response.item.album.name;
+			track = response.item.track_number;
+			artist = response.item.artists[0].name;
+
+			var request_image = new XMLHttpRequest();
+			request_image.open("GET", `https://api.spotify.com/v1/artists/${response.item.artists[0].id}`, false);
+			request_image.setRequestHeader('Accept', 'application/json');
+			request_image.setRequestHeader('Content-type', 'application/json');
+			request_image.setRequestHeader('Authorization', `Bearer ${oauth}`);
+			request_image.send(null);
+			artist_image = JSON.parse(request_image.responseText).images[0].url
+			// console.log(artist_image);
+
+			popularity = response.item.popularity;
+			song_image = true;
+			document.getElementById("image").src = image;
+			document.getElementById("image").alt = song;
+			document.getElementById("image").style.width = "400px";
+			document.getElementById("image").style.height = "400px";
+			document.getElementById("image").style.borderRadius = "20px";
+			document.getElementById("song").innerHTML = `${track} - ${song}`;
+			document.getElementById("album").innerHTML = album;
+			document.getElementById("artist").innerHTML = artist;
+			document.getElementById("popularity").innerHTML = popularity+"%";
+			audio_features();
+		}
 	}
 }
 
@@ -138,11 +159,6 @@ function start() {
 	if (document.getElementById("oauth_id").value != "" && document.getElementById("oauth_id").value != "2) Paste Oauth Token Here") {
 		oauth = document.getElementById("oauth_id").value;
 		current_song();
-		var repeat = setInterval(current_song, 5000);
-		document.getElementById("wrapper1").style.display = "inline-block";
-		document.getElementById("wrapper2").style.display = "inline-block";
-		// document.getElementById("wrapper3").style.display = "block";
-		document.getElementById("starter").style.display = "none";
 	}
 	else {
 		document.getElementById("error").innerHTML = "Make sure to paste the token!";
@@ -178,6 +194,18 @@ function hover(number) {
 		document.getElementById("info_title").innerHTML = info[number][0];
 		document.getElementById("info").innerHTML = info[number][1];
 	}
+}
+
+
+
+function change_image() {
+	if (song_image) {
+		document.getElementById("image").src = artist_image;
+	}
+	else {
+		document.getElementById("image").src = image;
+	}
+	song_image = !song_image;
 }
 
 
