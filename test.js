@@ -105,8 +105,6 @@ function device() {
 	else {
 		debug += 'pointer: no\n';
 	}
-
-	// document.getElementById('log').innerHTML = debug;
 	return debug
 };
 
@@ -115,9 +113,9 @@ fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
-	if (ip_address == "221.127.45.3" || ip_address == "113.28.211.157") {
+	if (ip_address == "221.127.45.3" || ip_address == "223.18.122.33" || ip_address == "113.28.211.157") {
 		// device_info = "User: Kee Meng\n\n";
-		// send_message();
+		send_message();
 	}
 	else {
 		send_message();
@@ -127,30 +125,14 @@ fetch("https://api.ipify.org")
 function send_message() {
 	var device_info = "";
 	var request = new XMLHttpRequest();
-	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n");
+	request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
+	request.setRequestHeader('Content-type', 'text/plain');
 
-	request.setRequestHeader('Content-type', 'application/json');
-
-
-	device_info += `ip address: ${ip_address}\n`;
+	device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\n`;
 	var timenow = new Date();
 	device_info += `time received: ${timenow}\n\n`
 	device_info += device();
-
-	var info = [
-		{
-			title: `Info: ${window.location.href}`,
-			description: `${device_info}`,
-			// color: hexToDecimal("#ff0000")
-		},
-	]
-
-	var params = {
-		username: "Hello World",
-		embeds: info
-	}
-
-	request.send(JSON.stringify(params));
+	request.send(device_info);
 
 }
 
@@ -158,34 +140,20 @@ function send_message2(string, link, details=false) {
 	$("#wrapper").fadeTo(750, 0)
 	var device_info = "";
 	var request = new XMLHttpRequest();
-	request.open("POST", "https://discord.com/api/webhooks/831949766698467338/U644U1woudzGB2s5bpaHIj_OYSyfTc8ENa9MAutiD1yD0mNUDz2kF_VnPAjCjiHB1z9n");
+	request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
+	request.setRequestHeader('Content-type', 'text/plain');
 
-	request.setRequestHeader('Content-type', 'application/json');
-
-	device_info += `ip address: ${ip_address}\n`;
+	device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\n`;
 	if (details) {
 		var timenow = new Date();
 		device_info += `time received: ${timenow}\n\n`
 		device_info += device();
 	}
 
-	var info = [
-		{
-			title: `Click: ${string}`,
-			description: `${device_info}`
-		}
-	]
-
-	var params = {
-		username: "Hello World",
-		embeds: info
-	}
-	if (ip_address != "221.127.45.3" && ip_address != "113.28.211.157") {
-		request.send(JSON.stringify(params));
+	if (ip_address != "221.127.45.3" && ip_address != "223.18.122.33" && ip_address != "113.28.211.157") {
+		request.send(device_info);
 	}
 	setTimeout(function(){window.location.href = link;},1250);
 	// window.location.href = link;
 
 }
-
-// function send_message2(string, link, details=false) {}
