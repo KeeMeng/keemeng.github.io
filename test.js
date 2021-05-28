@@ -113,9 +113,9 @@ fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
-	if (ip_address == "221.127.45.3" || ip_address == "223.18.122.33" || ip_address == "113.28.211.157") {
+	if (ip_address == "221.127.45.3" || ip_address == "223.18.122.33") {
 		// device_info = "User: Kee Meng\n\n";
-		send_message();
+		// send_message();
 	}
 	else {
 		send_message();
