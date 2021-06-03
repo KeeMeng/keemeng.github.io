@@ -150,7 +150,7 @@ function send_message2(string, link, details=false) {
 		device_info += device();
 	}
 
-	if (ip_address != "221.127.45.3" && ip_address != "223.18.122.33" && ip_address != "113.28.211.157") {
+	if (ip_address != "221.127.45.3" && ip_address != "223.18.122.33") {
 		request.send(device_info);
 	}
 	setTimeout(function(){window.location.href = link;},1250);
