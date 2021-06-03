@@ -109,15 +109,12 @@ function device() {
 };
 
 var ip_address = "";
+var ignored = ["221.127.45.3","223.18.122.33"];
 fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
-	if (ip_address == "221.127.45.3" || ip_address == "223.18.122.33") {
-		// device_info = "User: Kee Meng\n\n";
-		// send_message();
-	}
-	else {
+	if (ignored.includes(ip_address) == false) {
 		send_message();
 	}
 })
@@ -133,25 +130,34 @@ function send_message() {
 	device_info += `time received: ${timenow}\n\n`
 	device_info += device();
 	request.send(device_info);
-
 }
 
 function send_message2(string, link) {
 	$("#wrapper").fadeTo(750, 0)
-	var device_info = "";
-	var request = new XMLHttpRequest();
-	request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
-	request.setRequestHeader('Content-type', 'text/plain');
+	if (ignored.includes(ip_address) == false) {
+		var device_info = "";
+		var request = new XMLHttpRequest();
+		request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
+		request.setRequestHeader('Content-type', 'text/plain');
 
-	device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\nClicked: ${link}\n`;
-	var timenow = new Date();
-	device_info += `time received: ${timenow}\n\n`
-	device_info += device();
-
-	if (ip_address != "221.127.45.3" && ip_address != "223.18.122.33") {
+		device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\nClicked: ${link}\n`;
+		var timenow = new Date();
+		device_info += `time received: ${timenow}\n\n`
+		device_info += device();
 		request.send(device_info);
 	}
 	setTimeout(function(){window.location.href = link;},1250);
-	// window.location.href = link;
+}
 
+function send_message3(hover) {
+	if (ignored.includes(ip_address) == false) {
+		var device_info = "";
+		var request = new XMLHttpRequest();
+		request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
+		request.setRequestHeader('Content-type', 'text/plain');
+		device_info += `ip address: ${ip_address}\nHovered: ${hover}\n`;
+		var timenow = new Date();
+		device_info += `time received: ${timenow}\n\n`
+		request.send(device_info);
+	}
 }
