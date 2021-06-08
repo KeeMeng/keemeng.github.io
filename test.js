@@ -105,7 +105,7 @@ function device() {
 	else {
 		debug += 'pointer: no\n';
 	}
-	return debug
+	return debug;
 };
 
 var ip_address = "";
@@ -114,22 +114,22 @@ fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
-	if (ignored.includes(ip_address) == false) {
-		send_message();
-	}
+	send_message();
 })
 
 function send_message() {
-	var device_info = "";
-	var request = new XMLHttpRequest();
-	request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
-	request.setRequestHeader('Content-type', 'text/plain');
+	if (ignored.includes(ip_address) == false) {
+		var device_info = "";
+		var request = new XMLHttpRequest();
+		request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
+		request.setRequestHeader('Content-type', 'text/plain');
 
-	device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\n`;
-	var timenow = new Date();
-	device_info += `time received: ${timenow}\n\n`
-	device_info += device();
-	request.send(device_info);
+		device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\n`;
+		var timenow = new Date();
+		device_info += `time received: ${timenow}\n\n`;
+		device_info += device();
+		request.send(device_info);
+	}
 }
 
 function send_message2(string, link) {
@@ -142,7 +142,7 @@ function send_message2(string, link) {
 
 		device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\nClicked: ${link}\n`;
 		var timenow = new Date();
-		device_info += `time received: ${timenow}\n\n`
+		device_info += `time received: ${timenow}\n\n`;
 		device_info += device();
 		request.send(device_info);
 	}
@@ -157,7 +157,7 @@ function send_message3(hover) {
 		request.setRequestHeader('Content-type', 'text/plain');
 		device_info += `ip address: ${ip_address}\nHovered: ${hover}\n`;
 		var timenow = new Date();
-		device_info += `time received: ${timenow}\n\n`
+		device_info += `time received: ${timenow}\n\n`;
 		request.send(device_info);
 	}
 }
