@@ -148,24 +148,28 @@ function update() {
 				a = parseFloat(document.getElementById("a"+String(i)).value);
 			}
 			var error = false;
-			if (a > 1.0) {
+			if (a > 1.0 || a < 0.0) {
 				document.getElementById("a"+String(i)).style.backgroundColor = "#f00";
 				error = true;
 			}
-			if (xpos >= n) {
+			if (xpos >= n || xpos < 0.0) {
 				document.getElementById("x"+String(i)).style.backgroundColor = "#f00";
 				error = true;
 			}
-			if (ypos >= n) {
+			if (ypos >= n || ypos < 0.0) {
 				document.getElementById("y"+String(i)).style.backgroundColor = "#f00";
 				error = true;
 			}
-			if (zpos >= n) {
+			if (zpos >= n || zpos < 0.0) {
 				document.getElementById("z"+String(i)).style.backgroundColor = "#f00";
 				error = true;
 			}
 			if (!error) {
 				setblock([xpos,ypos,zpos], [r,g,b,a]);
+				document.getElementById("a"+String(i)).style.backgroundColor = "inherit";
+				document.getElementById("x"+String(i)).style.backgroundColor = "inherit";
+				document.getElementById("y"+String(i)).style.backgroundColor = "inherit";
+				document.getElementById("z"+String(i)).style.backgroundColor = "inherit";
 			}
 		}
 	}
