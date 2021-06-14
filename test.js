@@ -100,7 +100,7 @@ function device() {
 	// debug += 'screen.orientation: ' + screen.orientation + '\n';
 
 	if (matchMedia('(pointer:fine)').matches) {
-	  debug += 'pointer: yes\n';
+		debug += 'pointer: yes\n';
 	}
 	else {
 		debug += 'pointer: no\n';
