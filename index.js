@@ -81,7 +81,17 @@ function dark_mode() {
 	document.body.classList.toggle("lightmode");
 }
 
+function set_images() {
+	var images = document.getElementsByTagName('img'); 
+	for(var i = 0; i < images.length; i++) {
+		if (images[i].id != "title2") {
+			images[i].src = `images/${images[i].id}.png`;
+		}
+	} 
+}
+
 function load() {
+	set_images();
 
 	var previews = document.getElementsByClassName("projects");
 	if (localStorage.getItem("mode") == "light") {
