@@ -42,6 +42,7 @@
 	position: absolute; 
 	left: calc(100% + 24px); 
 	top: 0px;
+	cursor: pointer;
 }
 
 .line {

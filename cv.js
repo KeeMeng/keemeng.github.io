@@ -46,7 +46,7 @@ function json() {
 		}
 
 		inputhtml += `<p class="hide" style="position: absolute; text-align: right; bottom: 24px; right: 24px; text-decoration: underline; cursor: pointer;" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
-		inputhtml += `<img id="img${i}" class="hide image">`;
+		inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
 		inputhtml += "</div>";
 
 		document.getElementById("cards").insertAdjacentHTML("beforeend", inputhtml);
