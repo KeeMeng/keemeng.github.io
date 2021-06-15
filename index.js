@@ -250,6 +250,8 @@ function view() {
 
 function change_title() {
 	let title = prompt("Please enter title");
-	document.getElementById("title").innerHTML = title;
-	send_message3(`Title - ${title}`)
+	if (title != "" && title !== null) {
+		document.getElementById("title").innerHTML = title;
+		send_message3(`Title - ${title}`)
+	}
 }
