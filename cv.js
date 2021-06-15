@@ -121,6 +121,14 @@ function filter_all() {
 		document.getElementById("box_music").checked = true;
 		filter();
 	}
+	else {
+		document.getElementById("cards").style.display = "none";
+		document.getElementById("box_education").checked = false;
+		document.getElementById("box_computer_science").checked = false;
+		document.getElementById("box_stem").checked = false;
+		document.getElementById("box_robotics").checked = false;
+		document.getElementById("box_music").checked = false;
+	}
 }
 
 
