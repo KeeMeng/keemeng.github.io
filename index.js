@@ -37,7 +37,6 @@ function dark_mode() {
 	}
 	if (dark == "dark") {
 		document.getElementById("mode").innerHTML = "Light Mode";
-		document.getElementById("title2").src = "images/hello_world_dark.png";
 		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
@@ -52,13 +51,12 @@ function dark_mode() {
 					texts[i].style.textShadow = "none";
 				}
 				texts[i].style.color = "white";
-			},25*i,i);
+			}, 25*i, i);
 		}
-		setTimeout(add_transition2,500);
+		setTimeout(add_transition2, 500);
 	}
 	else if (dark == "light") {
 		document.getElementById("mode").innerHTML = "Dark Mode";
-		document.getElementById("title2").src = "images/hello_world_light.png";
 		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
@@ -73,9 +71,9 @@ function dark_mode() {
 					texts[i].style.textShadow = "none";
 				}
 				texts[i].style.color = "black";
-			},25*i,i);
+			}, 25*i, i);
 		}
-		setTimeout(add_transition2,500);
+		setTimeout(add_transition2, 500);
 	}
 	document.body.classList.toggle("darkmode");
 	document.body.classList.toggle("lightmode");
@@ -110,7 +108,6 @@ function load() {
 	if (dark == "dark") {
 		document.body.classList.toggle("darkmode");
 		document.getElementById("mode").innerHTML = "Light Mode";
-		document.getElementById("title2").src = "images/hello_world_dark.png";
 		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
@@ -143,7 +140,6 @@ function load() {
 	else if (dark == "light") {
 		document.body.classList.toggle("lightmode");
 		document.getElementById("mode").innerHTML = "Dark Mode";
-		document.getElementById("title2").src = "images/hello_world_light.png";
 		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
@@ -173,13 +169,17 @@ function load() {
 			}
 		}
 	}
-	setTimeout(function() {$("#wrapper").fadeTo(750, 1);},100,"linear");
-	setTimeout(add_transition,500);
+	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
+	setTimeout(add_transition, 500);
+
+	document.getElementById("title").innerHTML = "Hello World!";
+	document.getElementById("title").style.display = "none";
 }
 
 function add_transition() {
 	document.body.style.transitionDuration = "0.5s";
 	document.getElementById("wrapper").style.transitionDuration = "0.5s";
+	$("#title").fadeIn(500);
 }
 
 function add_transition2() {
@@ -248,14 +248,8 @@ function view() {
 	}
 }
 
-var title_number = 2;
-function swap_title() {
-	document.getElementById(`title${title_number}`).style.display = "None";
-	if (title_number == 1) {
-		title_number = 2;
-	}
-	else if (title_number == 2) {
-		title_number = 1;
-	}
-	document.getElementById(`title${title_number}`).style.display = "block";
+function change_title() {
+	let title = prompt("Please enter title");
+	document.getElementById("title").innerHTML = title;
+	send_message3(`Title - ${title}`)
 }
