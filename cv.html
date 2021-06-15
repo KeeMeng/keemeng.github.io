@@ -16,13 +16,13 @@
 		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
 		<center style="font-size: 64px">Kee Meng's CV</center>
 		<div style="text-align: left; top: 5px; position: absolute;">
-			<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer;"> Filters: <br>
-			<input type="checkbox" id="box_education" onclick="filter()" style="opacity:0.5; cursor: pointer;"> Education <br>
-			<input type="checkbox" id="box_computer_science" onclick="filter()" style="opacity:0.5; cursor: pointer;"> Computer Science <br>
-			<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer;"> STEM <br>
-			<input type="checkbox" id="box_robotics" onclick="filter()" style="opacity:0.5; cursor: pointer;"> Robotics <br>
-			<input type="checkbox" id="box_music" onclick="filter()" style="opacity:0.5; cursor: pointer;"> Music <br><br>
-			<input type="checkbox" id="box_summary" onclick="summary()" style="opacity:0.5; cursor: pointer;"> Summary <br><br>
+			<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_filter').checked ^= 1; filter_all()" style="cursor: pointer;"> Filters: </span><br>
+			<input type="checkbox" id="box_education" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_education').checked ^= 1; filter()" style="cursor: pointer;"> Education </span><br>
+			<input type="checkbox" id="box_computer_science" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_computer_science').checked ^= 1; filter()" style="cursor: pointer;"> Computer Science </span><br>
+			<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_stem').checked ^= 1; filter()" style="cursor: pointer;"> STEM </span><br>
+			<input type="checkbox" id="box_robotics" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_robotics').checked ^= 1; filter()" style="cursor: pointer;"> Robotics </span><br>
+			<input type="checkbox" id="box_music" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_music').checked ^= 1; filter()" style="cursor: pointer;"> Music </span><br><br>
+			<input type="checkbox" id="box_summary" onclick="summary()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_summary').checked ^= 1; summary()" style="cursor: pointer;"> Summary </span><br><br>
 		</div>
 		<p></p>
 		<div id="cards" style="text-align: left;">
