@@ -15,7 +15,7 @@ function json() {
 		}
 
 		var inputhtml = `
-		<div id="card${i}" class="${data[i]["tags"]} events">
+		<div id="card${i}" class="${data[i]["tags"]} events" onmouseenter="expand(${i})" onmouseleave="shrink(${i})">
 			<span class="date">${date}</span>
 			<span class="dot" id="dot${i}"></span>
 			<span class="line" id="line${i}"></span>
@@ -154,6 +154,27 @@ function summary() {
 	details = !details;
 }
 
+function expand(id) {
+	if (!details) {
+		var div = document.getElementById(`card${id}`);
+		var els = div.getElementsByTagName("*");
+		for (var i = 0; i < els.length; i++) {
+			els[i].style.display = "block";
+		}
+	}
+}
+
+function shrink(id) {
+	if (!details) {
+		var elements = document.getElementsByClassName("hide");
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].style.display = "none";
+		}
+		for (var i = 0; i < data.length; i++) {
+			document.getElementById(`card${i}`).style.padding = "14px";
+		}
+	}
+}
 
 
 if (localStorage.getItem("mode") === null) {
