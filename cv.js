@@ -45,7 +45,7 @@ function json() {
 			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a> <a href="${data[i]["link"]}">(Repository link)</a></p>`;
 		}
 
-		inputhtml += `<p class="hide" style="position: absolute; text-align: right; bottom: 24px; right: 24px; text-decoration: underline; cursor: pointer;" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
+		inputhtml += `<p class="hide tags" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
 		inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
 		inputhtml += "</div>";
 
@@ -73,11 +73,7 @@ function filter() {
 		tags.push("robotics");
 		all += 1;
 	}
-	if (document.getElementById("box_music").checked) {
-		tags.push("music");
-		all += 1;
-	}
-	if (all == 5) {
+	if (all == 4) {
 		document.getElementById("box_filter").checked = true;
 	}
 	else {
@@ -106,7 +102,6 @@ function solo(id) {
 	document.getElementById("box_computer_science").checked = false;
 	document.getElementById("box_stem").checked = false;
 	document.getElementById("box_robotics").checked = false;
-	document.getElementById("box_music").checked = false;
 	document.getElementById(`box_${id}`).checked = true;
 	filter()
 }
@@ -118,7 +113,6 @@ function filter_all() {
 		document.getElementById("box_computer_science").checked = true;
 		document.getElementById("box_stem").checked = true;
 		document.getElementById("box_robotics").checked = true;
-		document.getElementById("box_music").checked = true;
 		filter();
 	}
 	else {
@@ -127,7 +121,6 @@ function filter_all() {
 		document.getElementById("box_computer_science").checked = false;
 		document.getElementById("box_stem").checked = false;
 		document.getElementById("box_robotics").checked = false;
-		document.getElementById("box_music").checked = false;
 	}
 }
 
@@ -241,7 +234,6 @@ function load() {
 	document.getElementById("box_computer_science").checked = true;
 	document.getElementById("box_stem").checked = true;
 	document.getElementById("box_robotics").checked = true;
-	document.getElementById("box_music").checked = true;
 }
 
 function add_transition() {

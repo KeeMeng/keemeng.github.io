@@ -234,6 +234,32 @@ cv = `[
 		"tags": "education"
 	},
 	{
+		"date": "2016",
+		"name": "International Competitions and Assessments",
+		"award": "",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "UNSW",
+		"details": "English: Distinction; Math: Distinction; Science: Distinction, Writing: Credit",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "education"
+	},
+	{
+		"date": "",
+		"name": "John Hopkins Center For Talented Youth",
+		"award": "Recognition for participating in the international talent search and for academic achievement",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "John Hopkins",
+		"details": "",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "education"
+	},
+	{
 		"date": "2021-04-08",
 		"name": "2021 World Robotics League (Factory Automation Robot)",
 		"award": "2nd in World",
@@ -388,5 +414,57 @@ cv = `[
 		"image_light": "",
 		"image_dark": "",
 		"tags": "music"
+	},
+	{
+		"date": "2018",
+		"name": "Singapore Youth Festival 2018 Art Exhibition",
+		"award": "Certificate of Recognition",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "Organized by: Ministry of Education Singapore",
+		"details": "'Citizens of the World' art exhibition",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "art"
+	},
+	{
+		"date": "2019-07",
+		"name": "Student First Aid certificate",
+		"award": "",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "Organized by: St John Ambulance",
+		"details": "",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "others"
+	},
+	{
+		"date": "2017",
+		"name": "Robotics Club",
+		"award": "Team Captain",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "Singapore International School Hong Kong",
+		"details": "",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "robotics"
+	},
+	{
+		"date": "2017",
+		"name": "Audio Visual Team",
+		"award": "Broadcast Team",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "Singapore International School Hong Kong",
+		"details": "",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "others"
 	}
 ]`;

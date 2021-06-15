@@ -54,3 +54,12 @@
 	left: calc(-6% - 3px);
 	transition: 0.5s;
 }
+
+.tags {
+	position: absolute; 
+	text-align: right; 
+	bottom: 24px; 
+	right: 24px; 
+	text-decoration: underline; 
+	cursor: pointer;
+}
