@@ -43,6 +43,8 @@ function load() {
 		$("#dark_video").fadeOut(0);
 		document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
 	}
+	document.getElementById("light_video").src = "/images/pt_light.mp4";
+	document.getElementById("dark_video").src = "/images/pt_dark.mp4";
 	setTimeout(add_transition,500);
 }
 
