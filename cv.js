@@ -53,23 +53,35 @@ function json() {
 	}
 }
 
-
 function filter() {
 	var tags = [];
+	document.getElementById("box_filter").checked = false;
+	var all = 0;
 	if (document.getElementById("box_education").checked) {
 		tags.push("education");
+		all += 1;
 	}
 	if (document.getElementById("box_computer_science").checked) {
 		tags.push("computer_science");
+		all += 1;
 	}
 	if (document.getElementById("box_stem").checked) {
 		tags.push("stem");
+		all += 1;
 	}
 	if (document.getElementById("box_robotics").checked) {
 		tags.push("robotics");
+		all += 1;
 	}
 	if (document.getElementById("box_music").checked) {
 		tags.push("music");
+		all += 1;
+	}
+	if (all == 5) {
+		document.getElementById("box_filter").checked = true;
+	}
+	else {
+		document.getElementById("box_filter").checked = false;
 	}
 	if (tags.join("|") == "") {
 		document.getElementById("cards").style.display = "none";
@@ -99,6 +111,17 @@ function solo(id) {
 	filter()
 }
 
+function filter_all() {
+	if (document.getElementById("box_filter").checked) {
+		document.getElementById("cards").style.display = "inline-block";
+		document.getElementById("box_education").checked = true;
+		document.getElementById("box_computer_science").checked = true;
+		document.getElementById("box_stem").checked = true;
+		document.getElementById("box_robotics").checked = true;
+		document.getElementById("box_music").checked = true;
+		filter();
+	}
+}
 
 
 if (localStorage.getItem("mode") === null) {
@@ -162,6 +185,7 @@ function load() {
 		}
 	}
 	setTimeout(add_transition,500);
+	document.getElementById("box_filter").checked = true;
 	document.getElementById("box_education").checked = true;
 	document.getElementById("box_computer_science").checked = true;
 	document.getElementById("box_stem").checked = true;
