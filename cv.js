@@ -166,12 +166,10 @@ function expand(id) {
 
 function shrink(id) {
 	if (!details) {
-		var elements = document.getElementsByClassName("hide");
-		for (var i = 0; i < elements.length; i++) {
-			elements[i].style.display = "none";
-		}
-		for (var i = 0; i < data.length; i++) {
-			document.getElementById(`card${i}`).style.padding = "14px";
+		var div = document.getElementById(`card${id}`);
+		var els = div.getElementsByClassName("hide");
+		for (var i = 0; i < els.length; i++) {
+			els[i].style.display = "none";
 		}
 	}
 }
