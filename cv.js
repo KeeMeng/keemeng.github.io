@@ -45,7 +45,7 @@ function json() {
 			inputhtml += `<p><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a> <a href="${data[i]["link"]}">(Repository link)</a></p>`;
 		}
 
-		inputhtml += `<p style="position: absolute; text-align: right; bottom: 24px; right: 24px; text-decoration: underline;" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
+		inputhtml += `<p style="position: absolute; text-align: right; bottom: 24px; right: 24px; text-decoration: underline; cursor: pointer;" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
 		inputhtml += `<img id="img${i}" class="image">`;
 		inputhtml += "</div>";
 

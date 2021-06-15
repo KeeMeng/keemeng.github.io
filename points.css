@@ -15,6 +15,7 @@
 	transition-duration: 0.2s;
 	-webkit-transition-property: transform;
 	transition-property: transform;
+	cursor: pointer;
 }
 
 .button:hover, .button:focus {

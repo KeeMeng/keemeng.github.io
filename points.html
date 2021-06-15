@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="buttons.css">
 		<link rel="stylesheet" href="body.css">
 		<script src="points.js"></script>
-		<script src="test.js"></script>
 		<script src="favicons.js"></script>
 	</head>
 	<body onload="load()">
@@ -23,21 +22,21 @@
 				Shift click challenges button to deduct immediately<br>
 				Shift click reset button to reset immediately<br>
 			</div>
-			<div style="font-size: 48px;" onclick="change_title()">
+			<div style="font-size: 48px; cursor: pointer;" onclick="change_title()">
 				<span id="title">Computer Science Society</span>
 			</div>
-			<div style="font-size: 36px;" onclick="change_time()">
+			<div style="font-size: 36px; cursor: pointer;" onclick="change_time()">
 				<span id="timer">30</span> minutes left
 			</div>
 			<div>
 				Animations: 
-				<input checked type="checkbox" onclick="animation()" style="opacity:0.5">
+				<input checked type="checkbox" onclick="animation()" style="opacity: 0.5; cursor: pointer;">
 				 -- Add Restrictions:
-				<input type="checkbox" onclick="swap(1)" style="opacity:0.5">
-				<input type="checkbox" onclick="swap(2)" style="opacity:0.5">
-				<input type="checkbox" onclick="swap(3)" style="opacity:0.5">
+				<input type="checkbox" onclick="swap(1)" style="opacity: 0.5; cursor: pointer;">
+				<input type="checkbox" onclick="swap(2)" style="opacity: 0.5; cursor: pointer;">
+				<input type="checkbox" onclick="swap(3)" style="opacity: 0.5; cursor: pointer;">
 				-- Auto reorder:
-				<input type="checkbox" onclick="reordering();" style="opacity:0.5">
+				<input type="checkbox" onclick="reordering();" style="opacity: 0.5; cursor: pointer;">
 			</div>
 			<hr>
 		</div>

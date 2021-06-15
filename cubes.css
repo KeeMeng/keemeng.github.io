@@ -33,7 +33,9 @@
 	font-size: 16px;
 	border-radius: 8px;
 	border-color: inherit;
-	margin: auto;
+	margin: -5px;
+	margin-left: 5px;
+	margin-right: 5px;
 	/*display: block;*/
 	vertical-align:middle;
 	transform: perspective(1px);
@@ -41,6 +43,7 @@
 	transition-property: transform;
 	color: inherit;
 	background-color: inherit;
+	cursor: pointer;
 }
 
 .small_button2:hover, 
@@ -74,4 +77,8 @@
 	color: inherit;
 	border-color: inherit;
 	background-color: inherit;
+}
+
+.textbox:hover, .textbox:focus, .textbox:active {
+	transform: none;
 }
