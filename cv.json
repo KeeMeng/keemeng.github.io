@@ -466,5 +466,18 @@ cv = `[
 		"image_light": "",
 		"image_dark": "",
 		"tags": "others"
+	},
+	{
+		"date": "2017",
+		"name": "The Armchair Specialist",
+		"award": "Video Producer",
+		"link": "",
+		"organizer_link": "https://www.youtube.com/channel/UCAcOQchkSqJhEGzLJlOZMSQ",
+		"organizer_link_name": "Youtube Channel Link",
+		"organizer": "Singapore International School Hong Kong",
+		"details": "Making videos explaining interesting topics",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "others"
 	}
 ]`;
