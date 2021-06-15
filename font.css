@@ -1,0 +1,12 @@
+@font-face {
+	font-family: 'ETIAW v3';
+	src: url('fonts/ETIAWv3.eot');
+	src: url('fonts/ETIAWv3.eot?#iefix') format('embedded-opentype'),
+		url('fonts/ETIAWv3.woff2') format('woff2'),
+		url('fonts/ETIAWv3.woff') format('woff'),
+		url('fonts/ETIAWv3.ttf') format('truetype'),
+		url('fonts/ETIAWv3.svg#ETIAWv3') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
