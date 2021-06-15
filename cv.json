@@ -10,7 +10,7 @@ cv = `[
 		"details": "Coding competition where students are tasked with creating anything using Swift",
 		"image_light": "images/swift_light.png",
 		"image_dark": "images/swift_dark.png",
-		"tags": "cs"
+		"tags": "computer_science"
 	},
 	{
 		"date": "2021-04-11",
@@ -23,7 +23,7 @@ cv = `[
 		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers",
 		"image_light": "images/screensaver_light.png",
 		"image_dark": "images/screensaver_dark.png",
-		"tags": "cs"
+		"tags": "computer_science"
 	},
 	{
 		"date": "2021-03-04",
@@ -62,7 +62,7 @@ cv = `[
 		"details": "Annual software programming competition for secondary students in Hong Kong, emphasizing on problem solving techniques and programming skills",
 		"image_light": "",
 		"image_dark": "",
-		"tags": "cs"
+		"tags": "computer_science"
 	},
 	{
 		"date": "2018-09-29",

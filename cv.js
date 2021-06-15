@@ -45,6 +45,7 @@ function json() {
 			inputhtml += `<p><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a> <a href="${data[i]["link"]}">(Repository link)</a></p>`;
 		}
 
+		inputhtml += `<p style="position: absolute; text-align: right; bottom: 24px; right: 24px" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
 		inputhtml += `<img id="img${i}" class="image">`;
 		inputhtml += "</div>";
 
@@ -52,6 +53,51 @@ function json() {
 	}
 }
 
+
+function filter() {
+	var tags = [];
+	if (document.getElementById("box_education").checked) {
+		tags.push("education");
+	}
+	if (document.getElementById("box_computer_science").checked) {
+		tags.push("computer_science");
+	}
+	if (document.getElementById("box_stem").checked) {
+		tags.push("stem");
+	}
+	if (document.getElementById("box_robotics").checked) {
+		tags.push("robotics");
+	}
+	if (document.getElementById("box_music").checked) {
+		tags.push("music");
+	}
+	if (tags.join("|") == "") {
+		document.getElementById("cards").style.display = "none";
+	}
+	else {
+		document.getElementById("cards").style.display = "block";
+		let re = new RegExp(tags.join("|"));
+		for (var i = 0; i < data.length; i++) {
+			if (data[i]["tags"].match(re) == null) {
+				document.getElementById(`card${i}`).style.display = "none";
+			}
+			else {
+				document.getElementById(`card${i}`).style.display = "inline-block";
+			}
+		}
+	}
+}
+
+
+function solo(id) {
+	document.getElementById("box_education").checked = false;
+	document.getElementById("box_computer_science").checked = false;
+	document.getElementById("box_stem").checked = false;
+	document.getElementById("box_robotics").checked = false;
+	document.getElementById("box_music").checked = false;
+	document.getElementById(`box_${id}`).checked = true;
+	filter()
+}
 
 
 
@@ -116,6 +162,11 @@ function load() {
 		}
 	}
 	setTimeout(add_transition,500);
+	document.getElementById("box_education").checked = true;
+	document.getElementById("box_computer_science").checked = true;
+	document.getElementById("box_stem").checked = true;
+	document.getElementById("box_robotics").checked = true;
+	document.getElementById("box_music").checked = true;
 }
 
 function add_transition() {
