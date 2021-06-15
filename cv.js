@@ -28,25 +28,25 @@ function json() {
 		inputhtml += "</p>";
 
 		if (data[i]["organizer"] != "") {
-			inputhtml += `<p>${data[i]["organizer"]}</p>`;
+			inputhtml += `<p class="hide">${data[i]["organizer"]}</p>`;
 		}
 
-		inputhtml += `<p style="font-style: italic;">${data[i]["details"]}</p>`;
+		inputhtml += `<p class="hide" style="font-style: italic;">${data[i]["details"]}</p>`;
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] == "") {
-			inputhtml += `<p><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a></p>`;
+			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] == "" && data[i]["link"] != "") {
-			inputhtml += `<p><a href="${data[i]["link"]}">(Repository link)</a></p>`;
+			inputhtml += `<p class="hide"><a href="${data[i]["link"]}">(Repository link)</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] != "") {
-			inputhtml += `<p><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a> <a href="${data[i]["link"]}">(Repository link)</a></p>`;
+			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a> <a href="${data[i]["link"]}">(Repository link)</a></p>`;
 		}
 
-		inputhtml += `<p style="position: absolute; text-align: right; bottom: 24px; right: 24px; text-decoration: underline; cursor: pointer;" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
-		inputhtml += `<img id="img${i}" class="image">`;
+		inputhtml += `<p class="hide" style="position: absolute; text-align: right; bottom: 24px; right: 24px; text-decoration: underline; cursor: pointer;" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
+		inputhtml += `<img id="img${i}" class="hide image">`;
 		inputhtml += "</div>";
 
 		document.getElementById("cards").insertAdjacentHTML("beforeend", inputhtml);
@@ -130,6 +130,30 @@ function filter_all() {
 		document.getElementById("box_music").checked = false;
 	}
 }
+
+var details = true;
+function summary() {
+	var elements = document.getElementsByClassName("hide");
+	if (details) {
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].style.display = "none";
+		}
+		for (var i = 0; i < data.length; i++) {
+			document.getElementById(`card${i}`).style.padding = "14px";
+		}
+	}
+	else {
+		for (var i = 0; i < elements.length; i++) {
+			elements[i].style.display = "block";
+		}
+		for (var i = 0; i < data.length; i++) {
+			document.getElementById(`card${i}`).style.padding = "24px";
+		}
+
+	}
+	details = !details;
+}
+
 
 
 if (localStorage.getItem("mode") === null) {
