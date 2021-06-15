@@ -58,8 +58,21 @@ cv = `[
 		"link": "https://github.com/KeeMeng/hkoi",
 		"organizer_link": "https://hkoi.org/en/",
 		"organizer_link_name": "Organizer Link",
-		"organizer": "Organized by: The Hong Kong Association for Computer Education,",
+		"organizer": "Organized by: The Hong Kong Association for Computer Education",
 		"details": "Annual software programming competition for secondary students in Hong Kong, emphasizing on problem solving techniques and programming skills",
+		"image_light": "",
+		"image_dark": "",
+		"tags": "computer_science"
+	},
+	{
+		"date": "2020-08-04",
+		"name": "MacroMod Jam",
+		"award": "Champion",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "",
+		"organizer": "",
+		"details": "Jam Theme: Build Recreator",
 		"image_light": "",
 		"image_dark": "",
 		"tags": "computer_science"
