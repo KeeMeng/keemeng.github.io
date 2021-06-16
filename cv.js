@@ -8,10 +8,10 @@ function json() {
 			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric'} );
 		}
 		if (data[i]["date"].length == 7) {
-			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'long'} );
+			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'short'} );
 		}
 		if (data[i]["date"].length == 10) {
-			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'long', day: 'numeric'} );
+			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'short', day: 'numeric'} );
 		}
 
 		var inputhtml = `
@@ -46,7 +46,7 @@ function json() {
 		}
 
 		inputhtml += `<p class="hide tags" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
-		inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
+		// inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
 		inputhtml += "</div>";
 
 		document.getElementById("cards").insertAdjacentHTML("beforeend", inputhtml);
@@ -186,18 +186,24 @@ function dark_mode() {
 		document.getElementById("mode").innerHTML = "Light Mode";
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#222";
+			document.getElementById("filterbox").style.backgroundColor = "#222";
+			document.getElementById("details").style.backgroundColor = "#222";
+			document.getElementById("title").style.backgroundColor = "#000";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
 			document.getElementById(`line${i}`).style.backgroundColor = "#EEE";
-			document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
+			// document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
 		}
 	}
 	else if (dark == "light") {
 		document.getElementById("mode").innerHTML = "Dark Mode";
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#EEE";
+			document.getElementById("filterbox").style.backgroundColor = "#EEE";
+			document.getElementById("details").style.backgroundColor = "#EEE";
+			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
 			document.getElementById(`line${i}`).style.backgroundColor = "#222";
-			document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
+			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
 		}
 	}
 	document.body.classList.toggle("darkmode");
@@ -213,9 +219,12 @@ function load() {
 		document.getElementById("mode").innerHTML = "Light Mode";
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#222";
+			document.getElementById("filterbox").style.backgroundColor = "#222";
+			document.getElementById("title").style.backgroundColor = "#000";
+			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
 			document.getElementById(`line${i}`).style.backgroundColor = "#EEE";
-			document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
+			// document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
 		}
 	}
 	else if (dark == "light") {
@@ -223,9 +232,12 @@ function load() {
 		document.getElementById("mode").innerHTML = "Dark Mode";
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#EEE";
+			document.getElementById("filterbox").style.backgroundColor = "#EEE";
+			document.getElementById("details").style.backgroundColor = "#EEE";
+			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
 			document.getElementById(`line${i}`).style.backgroundColor = "#222";
-			document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
+			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
 		}
 	}
 	setTimeout(add_transition,500);
