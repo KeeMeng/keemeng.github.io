@@ -7,7 +7,6 @@
 	position: relative;
 	margin-top: 12px;
 	margin-bottom: 12px;
-	transition: 0.125s;
 }
 
 .events p {
@@ -23,7 +22,6 @@
 	position: absolute;
 	top: calc(50% - 16px);
 	left: calc(-6% - 16px);
-	transition: 0.5s;
 }
 
 .date {
@@ -52,7 +50,6 @@
 	position: absolute;
 	top: 50%;
 	left: calc(-6% - 3px);
-	transition: 0.5s;
 }
 
 .tags {
@@ -62,4 +59,18 @@
 	right: 24px; 
 	text-decoration: underline; 
 	cursor: pointer;
+}
+
+.darkmode {
+	background-color: black;
+	color: white;
+	box-shadow: white;
+	border-color: white;
+}
+
+.lightmode {
+	background-color: white;
+	color: black;
+	box-shadow: black;
+	border-color: black;
 }

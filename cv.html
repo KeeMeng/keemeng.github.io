@@ -3,7 +3,7 @@
 	<head>
 		<title>CV</title>
 		<link rel="stylesheet" href="cv.css">
-		<link rel="stylesheet" href="theme.css">
+		<!-- <link rel="stylesheet" href="theme.css"> -->
 		<link rel="stylesheet" href="buttons.css">
 		<link rel="stylesheet" href="body.css">
 		<script src="cv.json"></script>
@@ -12,17 +12,17 @@
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	</head>
 	<body onload="load()">
-		<div id="title" style="position: fixed; width: 100%; z-index: 1; opacity: 1; top: 0px">
+		<div id="title" style="position: fixed; width: 100%; z-index: 1; top: 0px;">
 			<button class="small_button" onclick="window.location.href='/';">Homepage</button>
 			<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
 			<center style="font-size: 64px">Kee Meng Tan</center>
-			<hr>
+			<div id="details" style="text-align: left; top: 10px; padding: 12px; border-radius: 12px; word-wrap: break-word; position: absolute;">
+				<span>Email: tankeemeng@gmail.com</span>
+			</div>
+			<hr style="margin-bottom: 0px">
 		</div>
 		<br><br><br><br>
 		<div style="position: fixed; top: 110px; left: 10px; width: 25%;">
-			<div id="details" style="text-align: left; top: 200px; padding: 12px; border-radius: 12px; width: 100%; word-wrap: break-word;">
-				<span>Email: tankeemeng@gmail.com</span>
-			</div>
 			<br>
 			<div id="filterbox" style="text-align: left; padding: 12px; border-radius: 12px; width: 100%;">
 				<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_filter').checked ^= 1; filter_all()" style="cursor: pointer;"> Filters: </span><br>

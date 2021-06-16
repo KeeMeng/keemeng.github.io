@@ -213,7 +213,6 @@ function dark_mode() {
 
 function load() {
 	json();
-	document.body.style.transitionDuration = "0s";
 	if (dark == "dark") {
 		document.body.classList.toggle("darkmode");
 		document.getElementById("mode").innerHTML = "Light Mode";
@@ -240,14 +239,9 @@ function load() {
 			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
 		}
 	}
-	setTimeout(add_transition,500);
 	document.getElementById("box_filter").checked = true;
 	document.getElementById("box_education").checked = true;
 	document.getElementById("box_computer_science").checked = true;
 	document.getElementById("box_stem").checked = true;
 	document.getElementById("box_robotics").checked = true;
-}
-
-function add_transition() {
-	document.body.style.transitionDuration = "0.5s";
 }
