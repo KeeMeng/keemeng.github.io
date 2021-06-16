@@ -1,12 +1,26 @@
-.events {
-	margin-left: 45%;
-	width: 50%;
+.row {
+	margin-top: 12px;
+	margin-bottom: 12px;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.card {
+	left: calc(17.5% + 63px);
+	width: calc(81.5% - 111px);
 	border-radius: 24px;
 	padding: 24px;
 	display: inline-block;
 	position: relative;
-	margin-top: 12px;
-	margin-bottom: 12px;
+}
+
+.events {
+	margin-left: 24.5%;
+	width: 74.5%;
+	display: inline-block;
+	position: relative;
+	margin-top: -10px;
 }
 
 .events p {
@@ -18,38 +32,24 @@
 	height: 32px;
 	width: 32px;
 	border-radius: 50%;
-	display: inline-block;
 	position: absolute;
-	top: calc(50% - 16px);
-	left: calc(-6% - 16px);
+	left: 17.5%;
 }
 
 .date {
 	text-align: right;
-	display: inline-block;
 	position: absolute;
-	top: calc(50% - 12px);
-	right: 112%;
-	white-space: nowrap;
-}
-
-.image {
-	height: 100%; 
-	width: auto; 
-	border-radius: 24px; 
-	position: absolute; 
-	left: calc(100% + 24px); 
-	top: 0px;
-	cursor: pointer;
+	margin-top: auto;
+	margin-bottom: auto;
+	right: 85%;
+	white-space: normal;
 }
 
 .line {
-	height: calc(200% + 24px);
+	height: 160%;
 	width: 6px;
-	display: inline-block;
 	position: absolute;
-	top: 50%;
-	left: calc(-6% - 3px);
+	left: calc(17.5% + 13px);
 }
 
 .tags {

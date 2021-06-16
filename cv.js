@@ -8,18 +8,19 @@ function json() {
 			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric'} );
 		}
 		if (data[i]["date"].length == 7) {
-			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'short'} );
+			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'long'} );
 		}
 		if (data[i]["date"].length == 10) {
-			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'short', day: 'numeric'} );
+			date = new Date(data[i]["date"]).toLocaleDateString("default", {year: 'numeric', month: 'long', day: 'numeric'} );
 		}
 
 		var inputhtml = `
-		<div id="card${i}" class="${data[i]["tags"]} events" onmouseenter="expand(${i})" onmouseleave="shrink(${i})">
+		<div id="row${i}" class="row">
 			<span class="date">${date}</span>
 			<span class="dot" id="dot${i}"></span>
 			<span class="line" id="line${i}"></span>
-			<p style="font-weight: bold">${data[i]["name"]}`
+			<div id="card${i}" class="${data[i]["tags"]} card" onmouseenter="expand(${i})" onmouseleave="shrink(${i})">
+				<p style="font-weight: bold">${data[i]["name"]}`
 
 		if (data[i]["award"] != "") {
 			inputhtml += ` - ${data[i]["award"]}`;
@@ -34,20 +35,20 @@ function json() {
 		inputhtml += `<p class="hide" style="font-style: italic;">${data[i]["details"]}</p>`;
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] == "") {
-			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a></p>`;
+			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">${data[i]["organizer_link_name"]}</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] == "" && data[i]["link"] != "") {
-			inputhtml += `<p class="hide"><a href="${data[i]["link"]}">(Repository link)</a></p>`;
+			inputhtml += `<p class="hide"><a href="${data[i]["link"]}">Repository link</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] != "") {
-			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">(${data[i]["organizer_link_name"]})</a> <a href="${data[i]["link"]}">(Repository link)</a></p>`;
+			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">${data[i]["organizer_link_name"]}</a> <a href="${data[i]["link"]}">Repository link</a></p>`;
 		}
 
 		inputhtml += `<p class="hide tags" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
 		// inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
-		inputhtml += "</div>";
+		inputhtml += "</div></div>";
 
 		document.getElementById("cards").insertAdjacentHTML("beforeend", inputhtml);
 	}
@@ -83,14 +84,14 @@ function filter() {
 		document.getElementById("cards").style.display = "none";
 	}
 	else {
-		document.getElementById("cards").style.display = "block";
+		document.getElementById("cards").style.display = "inline-block";
 		let re = new RegExp(tags.join("|"));
 		for (var i = 0; i < data.length; i++) {
-			if (data[i]["tags"].match(re) == null) {
-				document.getElementById(`card${i}`).style.display = "none";
+			if (data[i]["tags"].match(re) == null || ["art","music","others"].includes(data[i]["tags"].match(re))) {
+				document.getElementById(`row${i}`).style.display = "none";
 			}
 			else {
-				document.getElementById(`card${i}`).style.display = "inline-block";
+				document.getElementById(`row${i}`).style.display = "flex";
 			}
 		}
 	}
@@ -113,7 +114,9 @@ function filter_all() {
 		document.getElementById("box_computer_science").checked = true;
 		document.getElementById("box_stem").checked = true;
 		document.getElementById("box_robotics").checked = true;
-		filter();
+		for (var i = 0; i < data.length; i++) {
+			document.getElementById(`row${i}`).style.display = "flex";
+		}
 	}
 	else {
 		document.getElementById("cards").style.display = "none";
@@ -133,6 +136,7 @@ function summary() {
 		}
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.padding = "14px";
+			document.getElementById(`card${i}`).style.width = "calc(81.5% - 91px)";
 		}
 	}
 	else {
@@ -141,6 +145,7 @@ function summary() {
 		}
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.padding = "24px";
+			document.getElementById(`card${i}`).style.width = "calc(81.5% - 111px)";
 		}
 
 	}
@@ -153,6 +158,10 @@ function expand(id) {
 		var els = div.getElementsByTagName("*");
 		for (var i = 0; i < els.length; i++) {
 			els[i].style.display = "block";
+		}
+		var links = div.getElementsByTagName("a");
+		for (var i = 0; i < links.length; i++) {
+			links[i].style.display = "inline";
 		}
 	}
 }
@@ -187,6 +196,7 @@ function dark_mode() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#222";
 			document.getElementById("filterbox").style.backgroundColor = "#222";
+			document.getElementById("contact").style.backgroundColor = "#222";
 			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById("title").style.backgroundColor = "#000";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
@@ -199,6 +209,7 @@ function dark_mode() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#EEE";
 			document.getElementById("filterbox").style.backgroundColor = "#EEE";
+			document.getElementById("contact").style.backgroundColor = "#EEE";
 			document.getElementById("details").style.backgroundColor = "#EEE";
 			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
@@ -220,6 +231,7 @@ function load() {
 			document.getElementById(`card${i}`).style.backgroundColor = "#222";
 			document.getElementById("filterbox").style.backgroundColor = "#222";
 			document.getElementById("title").style.backgroundColor = "#000";
+			document.getElementById("contact").style.backgroundColor = "#222";
 			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
 			document.getElementById(`line${i}`).style.backgroundColor = "#EEE";
@@ -232,6 +244,7 @@ function load() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#EEE";
 			document.getElementById("filterbox").style.backgroundColor = "#EEE";
+			document.getElementById("contact").style.backgroundColor = "#EEE";
 			document.getElementById("details").style.backgroundColor = "#EEE";
 			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
