@@ -13,8 +13,8 @@
 	</head>
 	<body onload="load()">
 		<div id="title" style="position: fixed; width: 100%; z-index: 1; top: 0px;">
-			<button class="small_button" onclick="window.location.href='/';">Homepage</button>
-			<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
+			<button class="small_button" style="right: 20px;" onclick="window.location.href='/';">Homepage</button>
+			<button id="mode" class="small_button" style="text-align: left; top: 50px; right: 20px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
 			<span style="font-size: 64px; ">Kee Meng Tan</span>
 			<div id="contact" style="text-align: left; top: 25px; left: 85%; padding: 12px; border-radius: 24px; word-wrap: break-word; position: absolute;" onclick="window.location.href = 'mailto:tankeemeng@gmail.com'">
 				<span>Email</span>
@@ -49,9 +49,9 @@
 			<div id="filterbox" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%;">
 				<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_filter').checked ^= 1; filter_all()" style="cursor: pointer;"> Filters: </span><br>
 				<input type="checkbox" id="box_education" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_education').checked ^= 1; filter()" style="cursor: pointer;"> Education </span><br>
-				<input type="checkbox" id="box_computer_science" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_computer_science').checked ^= 1; filter()" style="cursor: pointer;"> Comp_sci </span><br>
-				<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_stem').checked ^= 1; filter()" style="cursor: pointer;"> STEM </span><br>
-				<input type="checkbox" id="box_robotics" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_robotics').checked ^= 1; filter()" style="cursor: pointer;"> Robotics </span><br><br>
+				<input type="checkbox" id="box_computer_science" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_computer_science').checked ^= 1; filter()" style="cursor: pointer;"> Computer Science </span><br>
+				<input type="checkbox" id="box_robotics" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_robotics').checked ^= 1; filter()" style="cursor: pointer;"> Robotics </span><br>
+				<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_stem').checked ^= 1; filter()" style="cursor: pointer;"> STEM </span><br><br>
 				<input type="checkbox" id="box_summary" onclick="summary()" style="opacity:0.5; cursor: pointer;"><span onclick="document.getElementById('box_summary').checked ^= 1; summary()" style="cursor: pointer;"> Summary </span>
 			</div>
 		</div>

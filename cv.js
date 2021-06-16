@@ -73,8 +73,8 @@ function filter() {
 		tags.push("computer_science");
 		all += 1;
 	}
-	if (document.getElementById("box_stem").checked) {
 		tags.push("stem");
+	if (document.getElementById("box_stem").checked) {
 		all += 1;
 	}
 	if (document.getElementById("box_robotics").checked) {
@@ -108,8 +108,8 @@ function filter() {
 function solo(id) {
 	document.getElementById("box_education").checked = false;
 	document.getElementById("box_computer_science").checked = false;
-	document.getElementById("box_stem").checked = false;
 	document.getElementById("box_robotics").checked = false;
+	document.getElementById("box_stem").checked = false;
 	document.getElementById(`box_${id}`).checked = true;
 	filter()
 }
@@ -119,8 +119,8 @@ function filter_all() {
 		document.getElementById("cards").style.display = "inline-block";
 		document.getElementById("box_education").checked = true;
 		document.getElementById("box_computer_science").checked = true;
-		document.getElementById("box_stem").checked = true;
 		document.getElementById("box_robotics").checked = true;
+		document.getElementById("box_stem").checked = true;
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`row${i}`).style.display = "flex";
 		}
@@ -129,8 +129,8 @@ function filter_all() {
 		document.getElementById("cards").style.display = "none";
 		document.getElementById("box_education").checked = false;
 		document.getElementById("box_computer_science").checked = false;
-		document.getElementById("box_stem").checked = false;
 		document.getElementById("box_robotics").checked = false;
+		document.getElementById("box_stem").checked = false;
 	}
 }
 
@@ -265,6 +265,6 @@ function load() {
 	document.getElementById("box_filter").checked = true;
 	document.getElementById("box_education").checked = true;
 	document.getElementById("box_computer_science").checked = true;
-	document.getElementById("box_stem").checked = true;
 	document.getElementById("box_robotics").checked = true;
+	document.getElementById("box_stem").checked = true;
 }
