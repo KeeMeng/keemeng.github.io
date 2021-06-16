@@ -73,12 +73,12 @@ function filter() {
 		tags.push("computer_science");
 		all += 1;
 	}
-		tags.push("stem");
-	if (document.getElementById("box_stem").checked) {
-		all += 1;
-	}
 	if (document.getElementById("box_robotics").checked) {
 		tags.push("robotics");
+		all += 1;
+	}
+	if (document.getElementById("box_stem").checked) {
+		tags.push("stem");
 		all += 1;
 	}
 	if (all == 4) {
