@@ -1,5 +1,12 @@
-var data = JSON.parse(cv);
-data = data.sort((a, b) => Date.parse(b["date"]) - Date.parse(a["date"]));
+var data1 = JSON.parse(cv);
+data2 = data1.sort((a, b) => Date.parse(b["date"]) - Date.parse(a["date"]));
+var data = [];
+for (var i = 0; i < data2.length; i++) {
+	if (data2[i]["ignore"] == false) {
+		data.push(data2[i]);
+	}
+}
+console.log(data);
 function json() {
 	for (var i = 0; i < data.length; i++) {
 		

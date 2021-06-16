@@ -8,9 +8,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: Apple",
 		"details": "Coding competition where students are tasked with creating anything using Swift",
-		"image_light": "images/swift_light.png",
-		"image_dark": "images/swift_dark.png",
-		"tags": "computer_science"
+		"tags": "computer_science",
+		"ignore": false
 	},
 	{
 		"date": "2021-04-11",
@@ -21,9 +20,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The University of Kansas",
 		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers",
-		"image_light": "images/screensaver_light.png",
-		"image_dark": "images/screensaver_dark.png",
-		"tags": "computer_science"
+		"tags": "computer_science",
+		"ignore": false
 	},
 	{
 		"date": "2021-03-04",
@@ -34,9 +32,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: British Physics Olympiad",
 		"details": "Competition to stretch problem solving skills and apply fundamental physical principles to novel situations",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "stem"
+		"tags": "stem",
+		"ignore": false
 	},
 	{
 		"date": "2021-02-05",
@@ -47,9 +44,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: Mathematical Association of America",
 		"details": "Multiple-choice examinations designed to promote the development and enhancement of problem-solving skills",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "stem"
+		"tags": "stem",
+		"ignore": false
 	},
 	{
 		"date": "2021-01-23",
@@ -60,9 +56,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The Hong Kong Association for Computer Education",
 		"details": "Annual software programming competition for secondary students in Hong Kong, emphasizing on problem solving techniques and programming skills",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "computer_science"
+		"tags": "computer_science",
+		"ignore": false
 	},
 	{
 		"date": "2020-08-04",
@@ -73,9 +68,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "",
 		"details": "Jam Theme: Build Recreator",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "computer_science"
+		"tags": "computer_science",
+		"ignore": false
 	},
 	{
 		"date": "2018-09-29",
@@ -86,9 +80,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: Hong Kong Academy of Gifted Education",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "stem"
+		"tags": "stem",
+		"ignore": false
 	},
 	{
 		"date": "2019-05-04",
@@ -99,9 +92,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: Gifted Education Section of the Education Bureau",
 		"details": "Creating a proposal to a future world problem",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "stem"
+		"tags": "stem",
+		"ignore": false
 	},
 	{
 		"date": "2020-08",
@@ -112,9 +104,8 @@ cv = `[
 		"organizer_link_name": "School Link",
 		"organizer": "Granted by: Harrow International School Hong Kong",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2019-08",
@@ -125,9 +116,8 @@ cv = `[
 		"organizer_link_name": "School Link",
 		"organizer": "Granted by: Singapore International School Hong Kong",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2018-08",
@@ -138,9 +128,8 @@ cv = `[
 		"organizer_link_name": "School Link",
 		"organizer": "Granted by: Singapore International School Hong Kong",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2020-06",
@@ -151,9 +140,8 @@ cv = `[
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
 		"details": "Economics (0455), Computer Science (0478), First Language English (0500), Additional Mathematics (0606), Biology (0610), Physics (0625), Chemistry (0971)",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2019-06",
@@ -164,9 +152,8 @@ cv = `[
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2019-06",
@@ -177,9 +164,8 @@ cv = `[
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2019-06",
@@ -190,9 +176,8 @@ cv = `[
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
 		"details": "Full marks",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2018-03-29",
@@ -203,9 +188,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Granted by: Hong Kong Academy of Gifted Education",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2018",
@@ -216,9 +200,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The International Schools' Assessment",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": true
 	},
 	{
 		"date": "2018",
@@ -229,9 +212,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The International Schools' Assessment",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": true
 	},
 	{
 		"date": "2016",
@@ -242,9 +224,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "UNSW",
 		"details": "English: Distinction; Math: Distinction; Science: Distinction, Writing: Credit",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": true
 	},
 	{
 		"date": "2016",
@@ -255,9 +236,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "John Hopkins",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "education"
+		"tags": "education",
+		"ignore": false
 	},
 	{
 		"date": "2021-04-08",
@@ -268,9 +248,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: World Robotics League",
 		"details": "Robotics competition where teams have to pick up and move blocks into specific storage areas. Our team used a H-Drive powered by VEX V5 robot to complete the task",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2018-12-13",
@@ -281,9 +260,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: First & Lego",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2018-12-22",
@@ -294,9 +272,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: First & Lego",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2018-12-13",
@@ -307,9 +284,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The Institute of Engineering and Technology",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2017-12-22",
@@ -320,9 +296,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: First & Lego",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2016",
@@ -333,9 +308,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: World Robot Olympiad",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2016",
@@ -346,9 +320,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: World Robot Olympiad",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2015",
@@ -359,9 +332,8 @@ cv = `[
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: World Robot Olympiad",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2018",
@@ -372,9 +344,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "ABRSM",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "music"
+		"tags": "music",
+		"ignore": false
 	},
 	{
 		"date": "2016",
@@ -385,9 +356,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "ABRSM",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "music"
+		"tags": "music",
+		"ignore": false
 	},
 	{
 		"date": "2016",
@@ -398,9 +368,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "music"
+		"tags": "music",
+		"ignore": false
 	},
 	{
 		"date": "2015",
@@ -411,9 +380,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "ABRSM",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "music"
+		"tags": "music",
+		"ignore": false
 	},
 	{
 		"date": "2018",
@@ -424,9 +392,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "Organized by: Ministry of Education Singapore",
 		"details": "'Citizens of the World' art exhibition",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "art"
+		"tags": "art",
+		"ignore": true
 	},
 	{
 		"date": "2019-07",
@@ -437,9 +404,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "Organized by: St John Ambulance",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "others"
+		"tags": "others",
+		"ignore": true
 	},
 	{
 		"date": "2017",
@@ -450,9 +416,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "Singapore International School Hong Kong",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "robotics"
+		"tags": "robotics",
+		"ignore": false
 	},
 	{
 		"date": "2017",
@@ -463,9 +428,8 @@ cv = `[
 		"organizer_link_name": "",
 		"organizer": "Singapore International School Hong Kong",
 		"details": "",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "others"
+		"tags": "others",
+		"ignore": false
 	},
 	{
 		"date": "2017",
@@ -476,8 +440,7 @@ cv = `[
 		"organizer_link_name": "Youtube Channel Link",
 		"organizer": "Singapore International School Hong Kong",
 		"details": "Making videos explaining interesting topics",
-		"image_light": "",
-		"image_dark": "",
-		"tags": "others"
+		"tags": "others",
+		"ignore": false
 	}
 ]`;
