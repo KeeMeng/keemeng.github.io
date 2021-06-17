@@ -117,7 +117,7 @@ cv = `[
 		"organizer": "Granted by: Singapore International School Hong Kong",
 		"details": "",
 		"tags": "education",
-		"ignore": false
+		"ignore": true
 	},
 	{
 		"date": "2018-08",
@@ -127,43 +127,19 @@ cv = `[
 		"organizer_link": "https://www.singapore.edu.hk",
 		"organizer_link_name": "School Link",
 		"organizer": "Granted by: Singapore International School Hong Kong",
-		"details": "",
+		"details": "Scholarship for 2 years",
 		"tags": "education",
 		"ignore": false
 	},
 	{
 		"date": "2020-06",
-		"name": "Cambridge IGCSE",
-		"award": "7A*",
+		"name": "Cambridge IGCSE Results",
+		"award": "7A*, 1B",
 		"link": "",
 		"organizer_link": "https://www.cambridgeinternational.org",
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
 		"details": "Economics (0455), Computer Science (0478), First Language English (0500), Additional Mathematics (0606), Biology (0610), Physics (0625), Chemistry (0971)",
-		"tags": "education",
-		"ignore": false
-	},
-	{
-		"date": "2019-06",
-		"name": "Cambridge IGCSE Mathematics (Without Coursework) 0580",
-		"award": "A* 100%",
-		"link": "",
-		"organizer_link": "https://www.cambridgeinternational.org",
-		"organizer_link_name": "Exam Board Link",
-		"organizer": "Exam Board: Cambridge Assessment International Education",
-		"details": "",
-		"tags": "education",
-		"ignore": false
-	},
-	{
-		"date": "2019-06",
-		"name": "Cambridge IGCSE Chinese as a second language 0523",
-		"award": "A 85%",
-		"link": "",
-		"organizer_link": "https://www.cambridgeinternational.org",
-		"organizer_link_name": "Exam Board Link",
-		"organizer": "Exam Board: Cambridge Assessment International Education",
-		"details": "",
 		"tags": "education",
 		"ignore": false
 	},
@@ -175,7 +151,19 @@ cv = `[
 		"organizer_link": "https://www.cambridgeinternational.org",
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
-		"details": "Full marks",
+		"details": "",
+		"tags": "education",
+		"ignore": false
+	},
+	{
+		"date": "2019-06",
+		"name": "Cambridge IGCSE Mathematics (Without Coursework) 0580 and IGCSE Chinese as a second language 0523",
+		"award": "A*, A",
+		"link": "",
+		"organizer_link": "https://www.cambridgeinternational.org",
+		"organizer_link_name": "Exam Board Link",
+		"organizer": "Exam Board: Cambridge Assessment International Education",
+		"details": "",
 		"tags": "education",
 		"ignore": false
 	},
@@ -234,7 +222,7 @@ cv = `[
 		"link": "",
 		"organizer_link": "",
 		"organizer_link_name": "",
-		"organizer": "John Hopkins",
+		"organizer": "Organized by: John Hopkins",
 		"details": "",
 		"tags": "education",
 		"ignore": false
@@ -252,7 +240,7 @@ cv = `[
 		"ignore": false
 	},
 	{
-		"date": "2018-12-13",
+		"date": "2019-12-13",
 		"name": "Hong Kong First Lego League Robotics Tournament",
 		"award": "Participation",
 		"link": "",

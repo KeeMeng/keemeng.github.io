@@ -42,15 +42,15 @@ function json() {
 		inputhtml += `<p class="hide" style="font-style: italic;">${data[i]["details"]}</p>`;
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] == "") {
-			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">${data[i]["organizer_link_name"]}</a></p>`;
+			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["organizer_link"]}">${data[i]["organizer_link_name"]}</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] == "" && data[i]["link"] != "") {
-			inputhtml += `<p class="hide"><a href="${data[i]["link"]}">Repository link</a></p>`;
+			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["link"]}">Repository link</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] != "") {
-			inputhtml += `<p class="hide"><a href="${data[i]["organizer_link"]}">${data[i]["organizer_link_name"]}</a> <a href="${data[i]["link"]}">Repository link</a></p>`;
+			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["organizer_link"]}" style="margin-right: 15px">${data[i]["organizer_link_name"]}</a> &#10140; <a href="${data[i]["link"]}">Repository link</a></p>`;
 		}
 
 		inputhtml += `<p id="tag${i}" class="hide tags" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
