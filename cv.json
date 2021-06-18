@@ -134,12 +134,12 @@ cv = `[
 	{
 		"date": "2020-06",
 		"name": "Cambridge IGCSE Results",
-		"award": "7A*, 1B",
+		"award": "7A*",
 		"link": "",
 		"organizer_link": "https://www.cambridgeinternational.org",
 		"organizer_link_name": "Exam Board Link",
 		"organizer": "Exam Board: Cambridge Assessment International Education",
-		"details": "Economics (0455), Computer Science (0478), First Language English (0500), Additional Mathematics (0606), Biology (0610), Physics (0625), Chemistry (0971)",
+		"details": "World Literature (0408) - B, Economics (0455), Computer Science (0478), First Language English (0500), Additional Mathematics (0606), Biology (0610), Physics (0625), Chemistry (0971)",
 		"tags": "education",
 		"ignore": false
 	},
