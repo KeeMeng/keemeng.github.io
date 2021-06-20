@@ -7,7 +7,7 @@ cv = `[
 		"organizer_link": "https://developer.apple.com/wwdc21/swift-student-challenge/",
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: Apple",
-		"details": "Coding competition where students are tasked with creating anything using Swift",
+		"details": "Coding competition where students are tasked with creating anything using Swift. I created a program that allows users to draw, and the drawings will be reflected and rotated, forming symmetrical shapes. ",
 		"tags": "computer_science",
 		"ignore": false
 	},
@@ -19,7 +19,7 @@ cv = `[
 		"organizer_link": "https://hackku-2021.devpost.com",
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The University of Kansas",
-		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers",
+		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers with your own images",
 		"tags": "computer_science",
 		"ignore": false
 	},
@@ -134,7 +134,7 @@ cv = `[
 	{
 		"date": "2020-06",
 		"name": "Cambridge IGCSE Results",
-		"award": "7A*",
+		"award": "7A*, 1B",
 		"link": "",
 		"organizer_link": "https://www.cambridgeinternational.org",
 		"organizer_link_name": "Exam Board Link",
