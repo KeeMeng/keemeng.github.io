@@ -46,7 +46,7 @@
 }
 
 .linea {
-	height: calc(50% + 12px);
+	height: calc(50% + 6px);
 	width: 6px;
 	position: absolute;
 	left: calc(17.5% + 13px);
@@ -54,7 +54,7 @@
 }
 
 .lineb {
-	height: calc(50% + 12px);
+	height: calc(50% + 6px);
 	width: 6px;
 	position: absolute;
 	left: calc(17.5% + 13px);
