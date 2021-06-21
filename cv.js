@@ -113,8 +113,27 @@ function solo(id) {
 	document.getElementById("box_computer_science").checked = false;
 	document.getElementById("box_robotics").checked = false;
 	document.getElementById("box_stem").checked = false;
-	document.getElementById(`box_${id}`).checked = true;
-	filter()
+	var err = false;
+	try {
+		document.getElementById(`box_${id}`).checked = true;
+	}
+	catch(error) {
+		document.getElementById("box_filter").checked = false;
+		document.getElementById("cards").style.display = "inline-block";
+		for (var i = 0; i < data.length; i++) {
+			if (data[i]["tags"] != id) {
+				document.getElementById(`row${i}`).style.display = "none";
+			}
+			else {
+				document.getElementById(`row${i}`).style.display = "flex";
+			}
+		}
+
+		err = true;
+	}
+	if (!err) {
+		filter()
+	}
 }
 
 function filter_all() {
@@ -150,6 +169,7 @@ function summary() {
 			document.getElementById(`tag${i}`).style.bottom = "12px";
 			document.getElementById(`tag${i}`).style.right = "12px";
 		}
+		document.getElementById("view").innerHTML = "Expand Events"
 	}
 	else {
 		for (var i = 0; i < elements.length; i++) {
@@ -160,6 +180,7 @@ function summary() {
 			document.getElementById(`card${i}`).style.width = "calc(81.5% - 111px)";
 			document.getElementById(`tag${i}`).style.right = "24px";
 		}
+		document.getElementById("view").innerHTML = "Collapse Events"
 
 	}
 	details = !details;
@@ -209,7 +230,6 @@ function dark_mode() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#222";
 			document.getElementById("filterbox").style.backgroundColor = "#222";
-			document.getElementById("contact").style.backgroundColor = "#222";
 			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById("title").style.backgroundColor = "#000";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
@@ -223,7 +243,6 @@ function dark_mode() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#EEE";
 			document.getElementById("filterbox").style.backgroundColor = "#EEE";
-			document.getElementById("contact").style.backgroundColor = "#EEE";
 			document.getElementById("details").style.backgroundColor = "#EEE";
 			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
@@ -246,7 +265,6 @@ function load() {
 			document.getElementById(`card${i}`).style.backgroundColor = "#222";
 			document.getElementById("filterbox").style.backgroundColor = "#222";
 			document.getElementById("title").style.backgroundColor = "#000";
-			document.getElementById("contact").style.backgroundColor = "#222";
 			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
 			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
@@ -260,12 +278,11 @@ function load() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.backgroundColor = "#EEE";
 			document.getElementById("filterbox").style.backgroundColor = "#EEE";
-			document.getElementById("contact").style.backgroundColor = "#EEE";
 			document.getElementById("details").style.backgroundColor = "#EEE";
 			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
-			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
-			document.getElementById(`line${i}b`).style.backgroundColor = "#EEE";
+			document.getElementById(`line${i}a`).style.backgroundColor = "#222";
+			document.getElementById(`line${i}b`).style.backgroundColor = "#222";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
 		}
 	}

@@ -16,22 +16,21 @@
 			<button class="small_button" style="right: 20px;" onclick="window.location.href='/';">Homepage</button>
 			<button id="mode" class="small_button" style="text-align: left; top: 50px; right: 20px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
 			<span style="font-size: 64px; ">Kee Meng Tan</span>
-			<div id="contact" style="text-align: left; top: 25px; right: 150px ; padding: 12px; border-radius: 24px; word-wrap: break-word; position: absolute;" onclick="window.location.href = 'mailto:tankeemeng@gmail.com'">
-				<span>Email</span>
-			</div>
-			<hr style="margin-bottom: 0px; width: 75%; margin-left: 25%;">
+			<button class="small_button" style="left: 5px; right: auto" onclick="window.location.href = 'mailto:tankeemeng@gmail.com'">Email</button>
+			<button class="small_button" style="left: 5px; top: 50px; right: auto" onclick="summary()"><span id="view">Compress Events</span></button>
+			<hr style="margin-bottom: 0px; ">
 		</div>
 		<br><br><br><br>
-		<div style="position: fixed; top: 15px; left: 15px; width: calc(25% - 39px); z-index: 2;">
-			<div id="details" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%;">
+		<div style="position: fixed; top: 110px; left: 15px; width: calc(35% - 39px); z-index: 2;">
+			<div id="details" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%; margin-bottom: 12px;">
 				<p style="font-weight: bold; margin: 0px;">Education: </p>
-				<p onclick="window.location.href = 'https://www.harrowschool.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Harrow International School Hong Kong</p>
-				<p style="font-weight: normal; margin: 0px;">(2020-2022)</p>
-				<p style="font-weight: normal; margin: 0px; margin-top: 5px;">A Levels - Physics, Chemistry, Mathematics, Further Mathematics, EPQ</p>
+				<span onclick="window.location.href = 'https://www.harrowschool.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Harrow International School Hong Kong</span>
+				<span style="font-weight: normal; margin: 0px; display: inline;">(2020-2022)</span>
+				<p style="font-weight: normal; margin: 0px; ">A Levels - Physics, Chemistry, Mathematics, Further Mathematics, EPQ</p>
 				<br>
-				<p onclick="window.location.href = 'https://www.singapore.edu.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Singapore International School Hong Kong</p>
-				<p style="font-weight: normal; margin: 0px;">(2009-2020)</p>
-				<p style="font-weight: normal; margin: 0px; margin-top: 5px;">IGCSE 8A*,1A,1B - Computer Science, Physics, Chemistry, Biology, Mathematics, Additional Mathematics, Economics, First Language English, Second Language Chinese, World Literature</p>
+				<span onclick="window.location.href = 'https://www.singapore.edu.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Singapore International School Hong Kong</span>
+				<span style="font-weight: normal; margin: 0px;">(2009-2020)</span>
+				<p style="font-weight: normal; margin: 0px; ">IGCSE 8A*,1A,1B - Computer Science, Physics, Chemistry, Biology, Mathematics, Additional Mathematics, Economics, First Language English, Second Language Chinese, World Literature</p>
 				<br>
 				<p style="font-weight: bold; margin: 0px;">Languages: </p>
 				<p style="font-weight: normal; margin: 0px;">English, Mandarin, Cantonese</p>
@@ -40,19 +39,17 @@
 				<p style="font-weight: normal; margin: 0px;">Python, Javascript, Swift, C++</p>
 				<br>
 				<p style="font-weight: bold; margin: 0px;">Skills</p>
-				<p style="font-weight: normal; margin: 0px;">Google Suite, Microsoft Office, Video editing</p>
+				<p style="font-weight: normal; margin: 0px;">Google Suite, Microsoft Office, Video editing, Problem Solving</p>
 				<br>
 				<p style="font-weight: bold; margin: 0px;">Hobbies</p>
-				<p style="font-weight: normal; margin: 0px;">Coding, cycling, hiking, badminton, piano, </p>
+				<p style="font-weight: normal; margin: 0px;">Coding, cycling, hiking, badminton, piano, learning</p>
 			</div>
-			<br>
-			<div id="filterbox" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%;">
+			<div id="filterbox" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%; margin-top: 12px;">
 				<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_filter').checked ^= 1; filter_all()" style="cursor: pointer; margin-top: 0px"> Filters: </span><span style="font-weight: normal;"> Either click the #tags or </span><input type="checkbox"><br>
 				<input type="checkbox" id="box_education" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_education').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> Education </span><br>
 				<input type="checkbox" id="box_computer_science" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_computer_science').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> Computer Science </span><br>
 				<input type="checkbox" id="box_robotics" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_robotics').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> Robotics </span><br>
-				<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_stem').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> STEM </span><br>
-				<input type="checkbox" id="box_summary" onclick="summary()" style="opacity:0.5; cursor: pointer; margin-top: 15px"><span onclick="document.getElementById('box_summary').checked ^= 1; summary()" style="cursor: pointer; margin-top: 0px"> Summary </span>
+				<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_stem').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> STEM </span>
 			</div>
 		</div>
 		<p></p>
