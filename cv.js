@@ -6,7 +6,7 @@ for (var i = 0; i < data2.length; i++) {
 		data.push(data2[i]);
 	}
 }
-console.log(data);
+
 function json() {
 	for (var i = 0; i < data.length; i++) {
 		
@@ -25,7 +25,8 @@ function json() {
 		<div id="row${i}" class="row">
 			<span class="date">${date}</span>
 			<span class="dot" id="dot${i}"></span>
-			<span class="line" id="line${i}"></span>
+			<span class="linea" id="line${i}a"></span>
+			<span class="lineb" id="line${i}b"></span>
 			<div id="card${i}" class="${data[i]["tags"]} card" onmouseenter="expand(${i})" onmouseleave="shrink(${i})">
 				<p style="font-weight: bold">${data[i]["name"]}`
 
@@ -59,6 +60,8 @@ function json() {
 
 		document.getElementById("cards").insertAdjacentHTML("beforeend", inputhtml);
 	}
+	document.getElementById("line0a").style.display = "none";
+	document.getElementById(`line${data.length - 1}b`).style.display = "none";
 }
 
 function filter() {
@@ -210,7 +213,8 @@ function dark_mode() {
 			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById("title").style.backgroundColor = "#000";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
-			document.getElementById(`line${i}`).style.backgroundColor = "#EEE";
+			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
+			document.getElementById(`line${i}b`).style.backgroundColor = "#EEE";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
 		}
 	}
@@ -223,7 +227,8 @@ function dark_mode() {
 			document.getElementById("details").style.backgroundColor = "#EEE";
 			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
-			document.getElementById(`line${i}`).style.backgroundColor = "#222";
+			document.getElementById(`line${i}a`).style.backgroundColor = "#222";
+			document.getElementById(`line${i}b`).style.backgroundColor = "#222";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
 		}
 	}
@@ -244,7 +249,8 @@ function load() {
 			document.getElementById("contact").style.backgroundColor = "#222";
 			document.getElementById("details").style.backgroundColor = "#222";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#EEE";
-			document.getElementById(`line${i}`).style.backgroundColor = "#EEE";
+			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
+			document.getElementById(`line${i}b`).style.backgroundColor = "#EEE";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
 		}
 	}
@@ -258,7 +264,8 @@ function load() {
 			document.getElementById("details").style.backgroundColor = "#EEE";
 			document.getElementById("title").style.backgroundColor = "#FFF";
 			document.getElementById(`dot${i}`).style.backgroundColor = "#222";
-			document.getElementById(`line${i}`).style.backgroundColor = "#222";
+			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
+			document.getElementById(`line${i}b`).style.backgroundColor = "#EEE";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
 		}
 	}

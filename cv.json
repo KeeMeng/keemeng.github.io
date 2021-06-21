@@ -19,7 +19,7 @@ cv = `[
 		"organizer_link": "https://hackku-2021.devpost.com",
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The University of Kansas",
-		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers with your own images",
+		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers",
 		"tags": "computer_science",
 		"ignore": false
 	},

@@ -45,11 +45,20 @@
 	white-space: normal;
 }
 
-.line {
-	height: 160%;
+.linea {
+	height: calc(50% + 12px);
 	width: 6px;
 	position: absolute;
 	left: calc(17.5% + 13px);
+	bottom: 50%;
+}
+
+.lineb {
+	height: calc(50% + 12px);
+	width: 6px;
+	position: absolute;
+	left: calc(17.5% + 13px);
+	top: 50%;
 }
 
 .tags {
