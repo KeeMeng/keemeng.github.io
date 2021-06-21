@@ -19,7 +19,7 @@ cv = `[
 		"organizer_link": "https://hackku-2021.devpost.com",
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: The University of Kansas",
-		"details": "36 hour hackathon. Our team made a website where you can easily customizable screensavers",
+		"details": "36 hour hackathon. Our team made a website where you can make DIY screensavers",
 		"tags": "computer_science",
 		"ignore": false
 	},
@@ -235,7 +235,7 @@ cv = `[
 		"organizer_link": "https://worldroboticsleague.com/2021/02/06/2021-challenge1-factory-automation-bot/",
 		"organizer_link_name": "Organizer Link",
 		"organizer": "Organized by: World Robotics League",
-		"details": "Robotics competition where teams have to pick up and move blocks into specific storage areas. Our team used a H-Drive powered by VEX V5 robot to complete the task",
+		"details": "Our task was to pick up and move blocks into specific storage areas. Our team used a H-Drive powered by VEX V5 robot to complete the task",
 		"tags": "robotics",
 		"ignore": false
 	},
