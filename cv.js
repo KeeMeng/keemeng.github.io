@@ -1,6 +1,7 @@
 var data1 = JSON.parse(cv);
 data2 = data1.sort((a, b) => Date.parse(b["date"]) - Date.parse(a["date"]));
 var data = [];
+var exclude = [];
 for (var i = 0; i < data2.length; i++) {
 	if (data2[i]["ignore"] == false) {
 		data.push(data2[i]);
@@ -27,7 +28,7 @@ function json() {
 			<span class="dot" id="dot${i}"></span>
 			<span class="linea" id="line${i}a"></span>
 			<span class="lineb" id="line${i}b"></span>
-			<div id="card${i}" class="${data[i]["tags"]} card" onmouseenter="expand(${i})" onmouseleave="shrink(${i})">
+			<div id="card${i}" class="${data[i]["tags"]} card" onmouseenter="expand(${i})" onmouseleave="shrink(${i})" onclick="toggle(${i})">
 				<p style="font-weight: bold">${data[i]["name"]}`
 
 		if (data[i]["award"] != "") {
@@ -158,6 +159,7 @@ function filter_all() {
 
 var details = true;
 function summary() {
+	exclude = []
 	var elements = document.getElementsByClassName("hide");
 	if (details) {
 		for (var i = 0; i < elements.length; i++) {
@@ -187,7 +189,7 @@ function summary() {
 }
 
 function expand(id) {
-	if (!details) {
+	if (!details && !exclude.includes(id)) {
 		var div = document.getElementById(`card${id}`);
 		var els = div.getElementsByTagName("*");
 		for (var i = 0; i < els.length; i++) {
@@ -201,11 +203,51 @@ function expand(id) {
 }
 
 function shrink(id) {
-	if (!details) {
+	if (!details && !exclude.includes(id)) {
 		var div = document.getElementById(`card${id}`);
 		var els = div.getElementsByClassName("hide");
 		for (var i = 0; i < els.length; i++) {
 			els[i].style.display = "none";
+		}
+	}
+}
+
+function removeItem(array, item){
+    for(var i in array){
+        if(array[i]==item){
+            array.splice(i,1);
+            break;
+        }
+    }
+}
+
+function toggle(id) {
+	if (!details) {
+		if (exclude.includes(id)) {
+			removeItem(exclude, id);
+		}
+		else {
+			exclude.push(id);
+		}
+	}
+	else {
+		if (document.getElementById(`tag${id}`).style.display == "none") {
+			var div = document.getElementById(`card${id}`);
+			var els = div.getElementsByTagName("*");
+			for (var i = 0; i < els.length; i++) {
+				els[i].style.display = "block";
+			}
+			var links = div.getElementsByTagName("a");
+			for (var i = 0; i < links.length; i++) {
+				links[i].style.display = "inline";
+			}
+		}
+		else {
+			var div = document.getElementById(`card${id}`);
+			var els = div.getElementsByClassName("hide");
+			for (var i = 0; i < els.length; i++) {
+				els[i].style.display = "none";
+			}
 		}
 	}
 }
