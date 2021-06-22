@@ -55,7 +55,7 @@ function json() {
 			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["organizer_link"]}" style="margin-right: 15px">${data[i]["organizer_link_name"]}</a> &#10140; <a href="${data[i]["link"]}">Repository link</a></p>`;
 		}
 
-		inputhtml += `<p id="tag${i}" class="hide tags" onclick="solo('${data[i]["tags"]}')">#${data[i]["tags"]}</p>`;
+		inputhtml += `<p id="tag${i}" class="hide tags" onclick="solo('${data[i]["tags"]}', ${i})">#${data[i]["tags"]}</p>`;
 		// inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
 		inputhtml += "</div></div>";
 
@@ -67,6 +67,7 @@ function json() {
 
 function filter() {
 	var tags = [];
+	exclude = [];
 	document.getElementById("box_filter").checked = false;
 	var all = 0;
 	if (document.getElementById("box_education").checked) {
@@ -109,7 +110,9 @@ function filter() {
 }
 
 
-function solo(id) {
+function solo(id, num) {
+	exclude = [];
+	toggle(num);
 	document.getElementById("box_education").checked = false;
 	document.getElementById("box_computer_science").checked = false;
 	document.getElementById("box_robotics").checked = false;
@@ -138,6 +141,7 @@ function solo(id) {
 }
 
 function filter_all() {
+	exclude = [];
 	if (document.getElementById("box_filter").checked) {
 		document.getElementById("cards").style.display = "inline-block";
 		document.getElementById("box_education").checked = true;

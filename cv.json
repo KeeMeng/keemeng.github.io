@@ -1,8 +1,8 @@
 cv = `[
 	{
 		"date": "2021-06-30",
-		"name": "Year 12 Physics Prize",
-		"award": "Highly Commended",
+		"name": "Team Award - Robotics Society",
+		"award": "Prize Winners",
 		"link": "",
 		"organizer_link": "https://www.harrowschool.hk",
 		"organizer_link_name": "Organizer Link",
@@ -13,8 +13,8 @@ cv = `[
 	},
 	{
 		"date": "2021-06-30",
-		"name": "Team Award - Robotics Society",
-		"award": "Prize Winners",
+		"name": "Year 12 Physics Prize",
+		"award": "Highly Commended",
 		"link": "",
 		"organizer_link": "https://www.harrowschool.hk",
 		"organizer_link_name": "Organizer Link",
