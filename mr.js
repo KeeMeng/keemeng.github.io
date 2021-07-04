@@ -5,6 +5,7 @@ var mass = [1.0, 4.0, 6.9, 9.0, 10.8, 12.0, 14.0, 16.0, 19.0, 20.2, 23.0, 24.3, 
 function set_output() {
 	var molar_mass = 0;
 	var array = new Array(111).fill(0);
+	var fancy_string = "";
 
 	let re1 = new RegExp("\\([^\)]+\\)[0-9]+", "g");
 	let re2 = new RegExp("([A-Z][a-z]?[0-9]*)", "g");
@@ -14,6 +15,7 @@ function set_output() {
 		inside = String(item[0]).match(/\(([^\)]+)\)/);
 		match_inside = inside[0].matchAll(re2);
 		repeat = String(item[0]).match(/[0-9]+$/);
+		fancy_string = fancy_string + "<span>(";
 
 		for (item of match_inside) {
 			molecule = String(item[0]).match(/^[A-Z][a-z]?/);
@@ -24,6 +26,18 @@ function set_output() {
 			index = letters.indexOf(String(molecule));
 			molar_mass = molar_mass + (mass[index] * repeat * number);
 			array[index] = parseInt(array[index]) + parseInt(repeat) * parseInt(number);
+			if (number == 1) {
+				fancy_string = fancy_string + molecule;
+			}
+			else {
+				fancy_string = fancy_string + molecule + "<sub>" + number + "</sub>";
+			}
+		}
+		if (repeat == 1) {
+			fancy_string = fancy_string + ")" + "</span>";
+		}
+		else {
+			fancy_string = fancy_string + ")" + "<sub>" + repeat + "</sub>" + "</span>";
 		}
 	}
 
@@ -37,10 +51,12 @@ function set_output() {
 		if (number == null) {
 			molar_mass = molar_mass + (mass[index]);
 			array[index] = parseInt(array[index]) + 1;
+			fancy_string = fancy_string + "<span>" + molecule + "</span>";
 		}
 		else {
 			molar_mass = molar_mass + (mass[index] * number);
 			array[index] = parseInt(array[index]) + parseInt(number);
+			fancy_string = fancy_string + "<span>" + molecule + "</span>" + "<sub>" + number + "</sub>";
 		}
 	}
 
@@ -58,15 +74,17 @@ function set_output() {
 	document.getElementById("info").innerHTML = output_string;
 	if (molar_mass > 0) {
 		if (count == 1) {
-			document.getElementById("output").innerHTML = "Total: " + molar_mass;	
+			document.getElementById("output").innerHTML = "Molar Mass: " + molar_mass;
 		}
 		else {
-			document.getElementById("output").innerHTML = "Total: " + sum + " = " + molar_mass;	
+			document.getElementById("output").innerHTML = "Molar Mass: " + sum + " = " + molar_mass;
 		}
 	}
 	else if (count == 0) {
 		document.getElementById("output").innerHTML = "";
 	}
+
+	document.getElementById("display").innerHTML = fancy_string;
 
 }
 setInterval(set_output, 0);
