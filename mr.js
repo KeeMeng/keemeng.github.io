@@ -7,6 +7,18 @@ function set_output() {
 	var array = new Array(111).fill(0);
 	var fancy_string = "";
 
+	let re = new RegExp("[A-Z][a-z]?|[0-9]+|\\(|\\)", "g");
+	m = document.getElementById("input_text").value.matchAll(re);
+	for (i of m) {
+		if (Number(i[0]) != 1 && !isNaN(i[0])) {
+			fancy_string = fancy_string + "<sub>" + String(i[0]) + "</sub>";
+		}
+		else if (letters.includes(i[0]) || i[0] == "(" || i[0] == ")") {
+			fancy_string = fancy_string + "<span>" + String(i[0]) + "</span>";
+		}
+	}
+
+
 	let re1 = new RegExp("\\([^\)]+\\)[0-9]+", "g");
 	let re2 = new RegExp("([A-Z][a-z]?[0-9]*)", "g");
 	match = document.getElementById("input_text").value.matchAll(re1);
@@ -15,7 +27,7 @@ function set_output() {
 		inside = String(item[0]).match(/\(([^\)]+)\)/);
 		match_inside = inside[0].matchAll(re2);
 		repeat = String(item[0]).match(/[0-9]+$/);
-		fancy_string = fancy_string + "<span>(";
+		// fancy_string = fancy_string + "<span>(";
 
 		for (item of match_inside) {
 			molecule = String(item[0]).match(/^[A-Z][a-z]?/);
@@ -26,19 +38,20 @@ function set_output() {
 			index = letters.indexOf(String(molecule));
 			molar_mass = molar_mass + (mass[index] * repeat * number);
 			array[index] = parseInt(array[index]) + parseInt(repeat) * parseInt(number);
-			if (number == 1) {
-				fancy_string = fancy_string + molecule;
-			}
-			else {
-				fancy_string = fancy_string + molecule + "<sub>" + number + "</sub>";
-			}
 		}
-		if (repeat == 1) {
-			fancy_string = fancy_string + ")" + "</span>";
-		}
-		else {
-			fancy_string = fancy_string + ")" + "<sub>" + repeat + "</sub>" + "</span>";
-		}
+		// 	if (number == 1) {
+		// 		fancy_string = fancy_string + molecule;
+		// 	}
+		// 	else {
+		// 		fancy_string = fancy_string + molecule + "<sub>" + number + "</sub>";
+		// 	}
+		// }
+		// if (repeat == 1) {
+		// 	fancy_string = fancy_string + ")" + "</span>";
+		// }
+		// else {
+		// 	fancy_string = fancy_string + ")" + "<sub>" + repeat + "</sub>" + "</span>";
+		// }
 	}
 
 	let string = document.getElementById("input_text").value.replace(re1, "");
@@ -51,12 +64,12 @@ function set_output() {
 		if (number == null) {
 			molar_mass = molar_mass + (mass[index]);
 			array[index] = parseInt(array[index]) + 1;
-			fancy_string = fancy_string + "<span>" + molecule + "</span>";
+			// fancy_string = fancy_string + "<span>" + molecule + "</span>";
 		}
 		else {
 			molar_mass = molar_mass + (mass[index] * number);
 			array[index] = parseInt(array[index]) + parseInt(number);
-			fancy_string = fancy_string + "<span>" + molecule + "</span>" + "<sub>" + number + "</sub>";
+			// fancy_string = fancy_string + "<span>" + molecule + "</span>" + "<sub>" + number + "</sub>";
 		}
 	}
 
