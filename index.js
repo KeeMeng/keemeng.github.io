@@ -35,6 +35,7 @@ function dark_mode() {
 		dark = "light";
 		localStorage.setItem("mode", "light");
 	}
+	send_message3(`View: ${dark}`);
 	if (dark == "dark") {
 		document.getElementById("mode").innerHTML = "Light Mode";
 		var projects = document.getElementsByClassName("projects");
@@ -252,6 +253,6 @@ function change_title() {
 	let title = prompt("Please enter title");
 	if (title != "" && title !== null) {
 		document.getElementById("title").innerHTML = title;
-		send_message3(`Title - ${title}`)
+		send_message3(`Title: ${title}`);
 	}
 }

@@ -22,6 +22,8 @@ var html = `
 document.head.insertAdjacentHTML("beforeend", html);
 
 
+window.onbeforeunload = function() {send_message3("Left Page"); return null};
+
 
 function device() {
 	var module = {
@@ -173,13 +175,13 @@ function send_message2(string, link) {
 	setTimeout(function(){window.location.href = link;},1250);
 }
 
-function send_message3(hover) {
+function send_message3(info) {
 	if (localStorage.getItem("send") === null) {
 		var device_info = "";
 		var request = new XMLHttpRequest();
 		request.open("POST", "https://3e86042ccfb699208ee3460e8c255e43.m.pipedream.net");
 		request.setRequestHeader('Content-type', 'text/plain');
-		device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\nHovered: ${hover}\n`;
+		device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\n${info}\n`;
 		var timenow = new Date();
 		device_info += `time received: ${timenow}\n\n`;
 		request.send(device_info);
