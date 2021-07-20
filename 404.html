@@ -10,9 +10,9 @@
 		<script src="/favicons.js"></script>
 		<script>
 			function redirect() {
-				let re = new RegExp("=(\\w+)");
+				let re = new RegExp("\/\/(\\w+)$");
 				let id = window.location.href.match(re);
-				window.location.href = `https://shrtco.de/${id[1]}`
+				window.location.href = `https://shrtco.de/${id[1]}`;
 			}
 		</script>
 	</head>
