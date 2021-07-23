@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quit Warn</title>
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="buttons.css">
+		<link rel="stylesheet" href="body.css">
+		<script src="favicons.js"></script>
+		<script>
+
+			if (localStorage.getItem("mode") === null) {
+				localStorage.setItem("mode", "light");
+			}
+
+			var dark = localStorage.getItem("mode");
+			function dark_mode() {
+				if (dark == "light") {
+					dark = "dark";
+					localStorage.setItem("mode", "dark");
+				}
+				else if (dark == "dark") {
+					dark = "light";
+					localStorage.setItem("mode", "light");
+				}
+				if (dark == "dark") {
+					document.getElementById("button").style.backgroundColor = "#222";
+					document.getElementById("button").style.borderColor = "white";
+					document.getElementById("button").style.color = "white";
+					document.getElementById("mode").innerHTML = "Light Mode";
+				}
+				else if (dark == "light") {
+					document.getElementById("button").style.backgroundColor = "#EEE";
+					document.getElementById("button").style.borderColor = "black";
+					document.getElementById("button").style.color = "black";
+					document.getElementById("mode").innerHTML = "Dark Mode";
+				}
+				document.body.classList.toggle("darkmode");
+				document.body.classList.toggle("lightmode");
+			}
+
+			function load() {
+				document.body.style.transitionDuration = "0s";
+				if (dark == "dark") {
+					document.body.classList.toggle("darkmode");
+					document.getElementById("button").style.backgroundColor = "#222";
+					document.getElementById("button").style.borderColor = "white";
+					document.getElementById("button").style.color = "white";
+					document.getElementById("mode").innerHTML = "Light Mode";
+				}
+				else if (dark == "light") {
+					document.body.classList.toggle("lightmode");
+					document.getElementById("button").style.backgroundColor = "#EEE";
+					document.getElementById("button").style.borderColor = "black";
+					document.getElementById("button").style.color = "black";
+					document.getElementById("mode").innerHTML = "Dark Mode";
+				}
+				setTimeout(add_transition,500);
+			}
+
+			function add_transition() {
+				document.body.style.transitionDuration = "0.5s";
+				document.getElementById("button").style.transitionDuration = "0.5s";
+			}
+
+
+			var toggle = true;
+			function warn() {
+				if (toggle) {
+					window.onbeforeunload = function(event) {return 'Are you sure you want to quit?'};
+					document.getElementById("button").innerHTML = "Click to deactivate";
+				}
+				else {
+					window.onbeforeunload = function(event) {return null};
+					document.getElementById("button").innerHTML = "Click to activate";
+				}
+				toggle = !toggle;
+			}
+		</script>
+	</head>
+	<body onload="load();">
+		<button class="small_button" onclick="window.location.href='/';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
+		<center style="font-size: 64px">Quit Warn</center>
+		<br>
+		<h4>This page prevents your browser from closing this page without a prompt, preventing quitting your browser accidentaly. Click the button to activate/deactivate and keep the page open in the background</h4>
+		<br>
+		<button id="button" style="width: 400px; height: 75px; border-radius: 16px; font-size: 40px; font-weight: bold; border-width: 4px;" onclick="warn();">Click to activate</button>
+	</body>
+</html>
