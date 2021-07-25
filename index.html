@@ -12,8 +12,9 @@
 		<script src="favicons.js"></script>
 	</head>
 	<body onload="load();">
-		<button id="mode" class="small_button" style="text-align: left; font-size: 16px;" onclick="dark_mode(); flip_images(); send_message3('Hovered: theme')">Dark Mode</button>
-		<button id="view" class="small_button" style="text-align: left; left: 10px; font-size: 16px; right: auto" onclick="view(); send_message3('Hovered: view')">List View</button>
+		<button id="mode" class="small_button" style="text-align: left; font-size: 16px; top: 50px" onclick="dark_mode(); flip_images(); send_message3('Clicked: theme')">Dark Mode</button>
+		<button id="view" class="small_button" style="text-align: left; left: 10px; font-size: 16px; right: auto" onclick="view(); send_message3('Clicked: view')">List View</button>
+		<button class="small_button" style="text-align: left; font-size: 16px" onclick="send_message2('about','/about.html')">About Me</button>
 		<center id="title" title="Click to change title text" style="padding: auto; margin: auto; margin-top: 10px; font-size: 64px; font-family: 'ETIAW v3'; cursor: pointer;" onclick="change_title()"></center>
 		<div id="wrapper" style="text-align: center; opacity: 0;">
 			<div class="projects" id="github" onclick="send_message2('github','https://github.com/KeeMeng');" onmouseenter="send_message3('Hovered: github'); show_text('github')" onmouseleave="hide_text('github')">

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>About Me</title>
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="buttons.css">
+		<link rel="stylesheet" href="body.css">
+		<script src="favicons.js"></script>
+		<script>
+
+			if (localStorage.getItem("mode") === null) {
+				localStorage.setItem("mode", "light");
+			}
+
+			var dark = localStorage.getItem("mode");
+			function dark_mode() {
+				if (dark == "light") {
+					dark = "dark";
+					localStorage.setItem("mode", "dark");
+				}
+				else if (dark == "dark") {
+					dark = "light";
+					localStorage.setItem("mode", "light");
+				}
+				if (dark == "dark") {
+					document.getElementById("wrapper").style.backgroundColor = "#222";
+					document.getElementById("mode").innerHTML = "Light Mode";
+				}
+				else if (dark == "light") {
+					document.getElementById("wrapper").style.backgroundColor = "#EEE";
+					document.getElementById("mode").innerHTML = "Dark Mode";
+				}
+				document.body.classList.toggle("darkmode");
+				document.body.classList.toggle("lightmode");
+			}
+
+			function load() {
+				document.body.style.transitionDuration = "0s";
+				if (dark == "dark") {
+					document.body.classList.toggle("darkmode");
+					document.getElementById("wrapper").style.backgroundColor = "#222";
+					document.getElementById("mode").innerHTML = "Light Mode";
+				}
+				else if (dark == "light") {
+					document.body.classList.toggle("lightmode");
+					document.getElementById("wrapper").style.backgroundColor = "#EEE";
+					document.getElementById("mode").innerHTML = "Dark Mode";
+				}
+				setTimeout(add_transition,500);
+			}
+
+			function add_transition() {
+				document.body.style.transitionDuration = "0.5s";
+				document.getElementById("wrapper").style.transitionDuration = "0.5s";
+			}
+
+		</script>
+	</head>
+	<body onload="load()">
+		<button class="small_button" onclick="window.location.href='/';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
+		<center style="font-size: 64px">About Me</center>
+		<br>
+		<h3>
+			Hello, I am Kee Meng! A little bit about me: <br>
+			<ul style="display: inline-block; text-align: left; border-width: 4px; border-radius: 16px; border-style: solid; padding: 16px; padding-left: 36px; max-width: 80%;">
+				<li>I am currently in my last year in high school.</li>
+				<li>I love to code in my free time, solve problems, or create automations.</li>
+				<li>If you have time, click <a href="/">here</a> to view my best projects!</li>
+			</ul>
+		</h3>
+		<div id="wrapper" style="padding: 24px; border-radius: 16px; display: inline-block; max-width: 80%;">
+			<p style="font-weight: bold; font-size: 20px; margin: 0px;">Education: </p>
+			<span onclick="window.location.href = 'https://www.harrowschool.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Harrow International School Hong Kong</span>
+			<span style="font-weight: normal; margin: 0px; display: inline;">(2020-2022)</span>
+			<p style="font-weight: normal; margin: 0px; ">A Levels - Physics, Chemistry, Mathematics, Further Mathematics, EPQ</p>
+			<br>
+			<span onclick="window.location.href = 'https://www.singapore.edu.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Singapore International School Hong Kong</span>
+			<span style="font-weight: normal; margin: 0px;">(2009-2020)</span>
+			<p style="font-weight: normal; margin: 0px; ">IGCSE 8A*,1A,1B - Computer Science, Physics, Chemistry, Biology, Mathematics, Additional Mathematics, Economics, First Language English, Second Language Chinese, World Literature</p>
+			<br>
+			<p style="font-weight: bold; font-size: 20px; margin: 0px;">Languages: </p>
+			<p style="font-weight: normal; margin: 0px;">English, Mandarin, Cantonese</p>
+			<br>
+			<p style="font-weight: bold; font-size: 20px; margin: 0px;">Programming Languages: </p>
+			<p style="font-weight: normal; margin: 0px;">Python, Javascript, Swift, C++</p>
+			<br>
+			<p style="font-weight: bold; font-size: 20px; margin: 0px;">Skills:</p>
+			<p style="font-weight: normal; margin: 0px;">Google Suite, Microsoft Office, Video Editing</p>
+			<br>
+			<p style="font-weight: bold; font-size: 20px; margin: 0px;">Hobbies:</p>
+			<p style="font-weight: normal; margin: 0px;">Coding, Cycling, Hiking, Badminton, Piano</p>
+		</div>
+	</body>
+</html>

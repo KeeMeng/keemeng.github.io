@@ -48,11 +48,11 @@ function json() {
 		}
 
 		if (data[i]["organizer_link"] == "" && data[i]["link"] != "") {
-			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["link"]}">Repository link</a></p>`;
+			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["link"]}">Repository</a></p>`;
 		}
 
 		if (data[i]["organizer_link"] != "" && data[i]["link"] != "") {
-			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["organizer_link"]}" style="margin-right: 15px">${data[i]["organizer_link_name"]}</a> &#10140; <a href="${data[i]["link"]}">Repository link</a></p>`;
+			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["organizer_link"]}" style="margin-right: 15px">${data[i]["organizer_link_name"]}</a> &#10140; <a href="${data[i]["link"]}">Repository</a></p>`;
 		}
 
 		inputhtml += `<p id="tag${i}" class="hide tags" onclick="solo('${data[i]["tags"]}', ${i})">#${data[i]["tags"]}</p>`;
@@ -184,6 +184,7 @@ function summary() {
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.padding = "24px";
 			document.getElementById(`card${i}`).style.width = "calc(81.5% - 111px)";
+			document.getElementById(`tag${i}`).style.bottom = "24px";
 			document.getElementById(`tag${i}`).style.right = "24px";
 		}
 		document.getElementById("view").innerHTML = "Collapse Events"
