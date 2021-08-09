@@ -159,7 +159,6 @@ function send_message() {
 }
 
 function send_message2(string, link) {
-	$("#wrapper").fadeTo(750, 0)
 	if (localStorage.getItem("send") === null) {
 		var device_info = "";
 		var request = new XMLHttpRequest();
@@ -172,7 +171,7 @@ function send_message2(string, link) {
 		device_info += device();
 		request.send(device_info);
 	}
-	setTimeout(function(){window.location.href = link;},1250);
+	setTimeout(function(){window.location.href = link;},1500);
 }
 
 function send_message3(info) {

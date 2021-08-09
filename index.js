@@ -83,9 +83,7 @@ function dark_mode() {
 function set_images() {
 	var images = document.getElementsByTagName('img'); 
 	for(var i = 0; i < images.length; i++) {
-		if (images[i].id != "title2") {
-			images[i].src = `images/${images[i].id}.png`;
-		}
+		images[i].src = `images/${images[i].id}.png`;
 	} 
 }
 
@@ -106,6 +104,7 @@ function load() {
 
 	document.body.style.transitionDuration = "0s";
 	document.getElementById("wrapper").style.transitionDuration = "0s";
+	document.getElementById("wrapper2").style.transitionDuration = "0s";
 	if (dark == "dark") {
 		document.body.classList.toggle("darkmode");
 		document.getElementById("mode").innerHTML = "Light Mode";
@@ -170,17 +169,19 @@ function load() {
 			}
 		}
 	}
-	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
-	setTimeout(add_transition, 500);
-
 	document.getElementById("title").innerHTML = "Hello World!";
-	document.getElementById("title").style.display = "none";
+	document.getElementById("title").style.opacity = "0";
+
+	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
+	setTimeout(function() {$("#wrapper2").fadeTo(750, 1);}, 100, "linear");
+	setTimeout(function() {$("#title").fadeTo(750, 1);}, 100, "linear");
+	setTimeout(add_transition, 500);
 }
 
 function add_transition() {
 	document.body.style.transitionDuration = "0.5s";
 	document.getElementById("wrapper").style.transitionDuration = "0.5s";
-	$("#title").fadeIn(500);
+	document.getElementById("wrapper2").style.transitionDuration = "0.5s";
 }
 
 function add_transition2() {
@@ -247,6 +248,11 @@ function view() {
 			projects[i].style.height = "150px";
 		}
 	}
+}
+
+function fade_out() {
+	$("#wrapper").fadeTo(750, 0);
+	$("#wrapper2").fadeTo(1250, 0)
 }
 
 function change_title() {

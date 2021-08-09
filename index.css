@@ -28,6 +28,33 @@ a:visited {
 	transition-timing-function: ease-in-out;
 }
 
+.small_projects{
+	border-radius: 6%/21%;
+	display: inline-block;
+	width: 350px;
+	height: 100px;
+	margin: 36px;
+	position: relative;
+	transition-duration: 0.2s;
+	text-shadow: inherit;
+	cursor: pointer;
+	border-width: 10px;
+	border-style: solid;
+}
+
+.small_projects:hover,
+.small_projects:focus {
+	transform: scale(1.1);
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+.small_projects:active {
+	transform: scale(1.05);
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
 .hovertext {
 	position: absolute;
 	opacity: 0;
