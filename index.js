@@ -87,6 +87,26 @@ function set_images() {
 	} 
 }
 
+function change_title(title=undefined) {
+	if (title == undefined) {
+		title = prompt("Please enter title");
+	}
+	if (title != "" && title !== null) {
+	
+		var output_title = "";
+		for (var i = 0; i < title.length; i++) {
+			if (title[i] == title[i].toLowerCase()) {
+				output_title += title[i].toUpperCase();
+			} else {
+				output_title += title[i].toLowerCase();
+			}
+		}
+
+		document.getElementById("title").innerHTML = output_title;
+		send_message3(`Title: ${title}`);
+	}
+}
+
 function load() {
 	set_images();
 
@@ -118,7 +138,7 @@ function load() {
 				texts[i].style.opacity = "";
 				texts[i].style.left = "0px";
 				texts[i].style.width = "310px";
-				texts[i].style.height = "350px";
+				texts[i].style.height = "310px";
 				texts[i].style.margin = "";
 				projects[i].style.display = "inline-block";
 				projects[i].style.width = "350px";
@@ -150,7 +170,7 @@ function load() {
 				texts[i].style.opacity = "";
 				texts[i].style.left = "0px";
 				texts[i].style.width = "310px";
-				texts[i].style.height = "350px";
+				texts[i].style.height = "310px";
 				texts[i].style.margin = "";
 				projects[i].style.display = "inline-block";
 				projects[i].style.width = "350px";
@@ -169,8 +189,9 @@ function load() {
 			}
 		}
 	}
-	document.getElementById("title").innerHTML = "Hello World!";
+	
 	document.getElementById("title").style.opacity = "0";
+	change_title("KeeMeng's Gallery")
 
 	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(function() {$("#wrapper2").fadeTo(750, 1);}, 100, "linear");
@@ -219,7 +240,7 @@ function view() {
 			texts[i].style.opacity = "";
 			texts[i].style.left = "0px";
 			texts[i].style.width = "310px";
-			texts[i].style.height = "350px";
+			texts[i].style.height = "310px";
 			texts[i].style.margin = "";
 			projects[i].style.display = "inline-block";
 			projects[i].style.width = "350px";
@@ -253,12 +274,4 @@ function view() {
 function fade_out() {
 	$("#wrapper").fadeTo(750, 0);
 	$("#wrapper2").fadeTo(1250, 0)
-}
-
-function change_title() {
-	let title = prompt("Please enter title");
-	if (title != "" && title !== null) {
-		document.getElementById("title").innerHTML = title;
-		send_message3(`Title: ${title}`);
-	}
 }
