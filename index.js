@@ -103,7 +103,7 @@ function change_title(title=undefined) {
 		}
 
 		document.getElementById("title").innerHTML = output_title;
-		send_message3(`Title: ${title}`);
+		send_message3(`Title: ${output_title}`);
 	}
 }
 
