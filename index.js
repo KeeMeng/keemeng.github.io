@@ -87,7 +87,7 @@ function set_images() {
 	} 
 }
 
-function change_title(title=undefined) {
+function change_title(title=undefined, ignore=false) {
 	if (title == undefined) {
 		title = prompt("Please enter title");
 	}
@@ -95,7 +95,7 @@ function change_title(title=undefined) {
 	
 		var output_title = "";
 		for (var i = 0; i < title.length; i++) {
-			if (title[i] == title[i].toLowerCase()) {
+			aif (title[i] == title[i].toLowerCase()) {
 				output_title += title[i].toUpperCase();
 			} else {
 				output_title += title[i].toLowerCase();
@@ -103,7 +103,9 @@ function change_title(title=undefined) {
 		}
 
 		document.getElementById("title").innerHTML = output_title;
-		send_message3(`Title: ${output_title}`);
+		if (!ignore) {
+			send_message3(`Title: ${output_title}`);
+		}
 	}
 }
 
@@ -191,7 +193,7 @@ function load() {
 	}
 	
 	document.getElementById("title").style.opacity = "0";
-	change_title("KeeMeng's Gallery")
+	change_title("KeeMeng's Gallery", true)
 
 	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(function() {$("#wrapper2").fadeTo(750, 1);}, 100, "linear");
