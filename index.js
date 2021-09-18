@@ -95,7 +95,7 @@ function change_title(title=undefined, ignore=false) {
 	
 		var output_title = "";
 		for (var i = 0; i < title.length; i++) {
-			aif (title[i] == title[i].toLowerCase()) {
+			if (title[i] == title[i].toLowerCase()) {
 				output_title += title[i].toUpperCase();
 			} else {
 				output_title += title[i].toLowerCase();
