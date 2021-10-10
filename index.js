@@ -35,7 +35,7 @@ function dark_mode() {
 		dark = "light";
 		localStorage.setItem("mode", "light");
 	}
-	send_message3(`View: ${dark}`);
+	log(`View: ${dark}`);
 	if (dark == "dark") {
 		document.getElementById("mode").innerHTML = "Light Mode";
 		var projects = document.getElementsByClassName("projects");
@@ -104,7 +104,7 @@ function change_title(title=undefined, ignore=false) {
 
 		document.getElementById("title").innerHTML = output_title;
 		if (!ignore) {
-			send_message3(`Title: ${output_title}`);
+			log(`Title: ${output_title}`);
 		}
 	}
 }
@@ -215,6 +215,7 @@ function add_transition2() {
 }
 
 function show_text(id) {
+	log(`Hovered: ${id}`);
 	if (grid_view == "grid") {
 		document.getElementById(`${id}_light`).style.filter = "blur(10px)";
 		document.getElementById(`${id}_dark`).style.filter = "blur(10px)";

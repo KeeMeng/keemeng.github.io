@@ -22,7 +22,7 @@ var html = `
 document.head.insertAdjacentHTML("beforeend", html);
 
 
-window.onbeforeunload = function() {send_message3("Left Page"); return null};
+window.onbeforeunload = function() {log("Left Page"); return null};
 
 
 function device() {
@@ -140,10 +140,10 @@ fetch("https://api.ipify.org")
 .then(response => response.text())
 .then((response) => {
 	ip_address = response;
-	send_message();
+	send();
 })
 
-function send_message() {
+function send() {
 	if (localStorage.getItem("send") === null) {
 		var device_info = "";
 		var request = new XMLHttpRequest();
@@ -158,7 +158,7 @@ function send_message() {
 	}
 }
 
-function send_message2(string, link) {
+function go_to(string, link) {
 	if (localStorage.getItem("send") === null) {
 		var device_info = "";
 		var request = new XMLHttpRequest();
@@ -174,7 +174,7 @@ function send_message2(string, link) {
 	setTimeout(function(){window.location.href = link;},1500);
 }
 
-function send_message3(info) {
+function log(info) {
 	if (localStorage.getItem("send") === null) {
 		var device_info = "";
 		var request = new XMLHttpRequest();
