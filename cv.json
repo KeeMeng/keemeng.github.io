@@ -1,5 +1,17 @@
 cv = `[
 	{
+		"date": "2021-08-26",
+		"name": "Australia Informatics Olympiad",
+		"award": "Bronze Award",
+		"link": "https://github.com/KeeMeng/aio_2021",
+		"organizer_link": "https://www.amt.edu.au/australian-informatics-olympiad",
+		"organizer_link_name": "Organizer",
+		"organizer": "Australian Maths Trust",
+		"details": "Writing computer programs to solve 6 problems varying in difficulty",
+		"tags": "computer_science",
+		"ignore": false
+	}
+	{
 		"date": "2021-06-30",
 		"name": "Team Award - Robotics Society",
 		"award": "Prize Winners",
