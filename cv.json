@@ -10,7 +10,7 @@ cv = `[
 		"details": "Writing computer programs to solve 6 problems varying in difficulty",
 		"tags": "computer_science",
 		"ignore": false
-	}
+	},
 	{
 		"date": "2021-06-30",
 		"name": "Team Award - Robotics Society",
