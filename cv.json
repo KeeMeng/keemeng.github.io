@@ -1,5 +1,17 @@
 cv = `[
 	{
+		"date": "2021-10-25",
+		"name": "British Physics Olympiad Physics Challenge",
+		"award": "Merit",
+		"link": "",
+		"organizer_link": "https://www.bpho.org.uk/bpho/a2-challenge",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: British Physics Olympiad",
+		"details": "Competition to stretch thinking into the applications and ideas rather than to keep to the narrow content of the syllabus",
+		"tags": "stem",
+		"ignore": false
+	},
+	{
 		"date": "2021-08-26",
 		"name": "Australia Informatics Olympiad",
 		"award": "Bronze Award",
@@ -20,7 +32,7 @@ cv = `[
 		"organizer_link_name": "Organizer",
 		"organizer": "Awarded by: Harrow International School",
 		"details": "Upper School Speech Day Awards",
-		"tags": "education",
+		"tags": "robotics",
 		"ignore": false
 	},
 	{
