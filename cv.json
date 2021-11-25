@@ -1,5 +1,17 @@
 cv = `[
 	{
+		"date": "2021-11-11",
+		"name": "Senior Mathematical Challenge",
+		"award": "Gold Award",
+		"link": "",
+		"organizer_link": "https://www.ukmt.org.uk/smc",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: Unite Kingdom Mathematics Trust",
+		"details": "Challenge that encourages mathematical reasoning, precision of thought, and fluency in mathematical techiniques",
+		"tags": "stem",
+		"ignore": false
+	},
+	{
 		"date": "2021-10-25",
 		"name": "British Physics Olympiad Physics Challenge",
 		"award": "Merit",
