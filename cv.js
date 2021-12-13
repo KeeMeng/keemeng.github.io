@@ -283,6 +283,7 @@ function dark_mode() {
 			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
 			document.getElementById(`line${i}b`).style.backgroundColor = "#EEE";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
+			document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
 		}
 	}
 	else if (dark == "light") {
@@ -296,6 +297,7 @@ function dark_mode() {
 			document.getElementById(`line${i}a`).style.backgroundColor = "#222";
 			document.getElementById(`line${i}b`).style.backgroundColor = "#222";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
+			document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
 		}
 	}
 	document.body.classList.toggle("darkmode");
@@ -317,6 +319,7 @@ function load() {
 			document.getElementById(`line${i}a`).style.backgroundColor = "#EEE";
 			document.getElementById(`line${i}b`).style.backgroundColor = "#EEE";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_dark"]}`;
+			document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
 		}
 	}
 	else if (dark == "light") {
@@ -331,6 +334,7 @@ function load() {
 			document.getElementById(`line${i}a`).style.backgroundColor = "#222";
 			document.getElementById(`line${i}b`).style.backgroundColor = "#222";
 			// document.getElementById(`img${i}`).src = `${data[i]["image_light"]}`;
+			document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
 		}
 	}
 	document.getElementById("box_filter").checked = true;

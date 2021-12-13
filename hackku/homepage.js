@@ -86,11 +86,13 @@ function dark_mode() {
 		document.getElementById("mode").innerHTML = "Light Mode";
 		document.getElementById("wrapper").style.backgroundColor = "#102344";
 		document.getElementById("info").style.backgroundColor = "#102344";
+		document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
 	}
 	else if (dark == "light") {
 		document.getElementById("mode").innerHTML = "Dark Mode";
 		document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
 		document.getElementById("info").style.backgroundColor = "#e4f8ff";
+		document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
 	}
 	document.body.classList.toggle("darkmode");
 	document.body.classList.toggle("lightmode");
@@ -104,12 +106,14 @@ function load() {
 		document.getElementById("mode").innerHTML = "Light Mode";
 		document.getElementById("wrapper").style.backgroundColor = "#102344";
 		document.getElementById("info").style.backgroundColor = "#102344";
+		document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
 	}
 	else if (dark == "light") {
 		document.body.classList.toggle("lightmode");
 		document.getElementById("mode").innerHTML = "Dark Mode";
 		document.getElementById("wrapper").style.backgroundColor = "#e4f8ff";
 		document.getElementById("info").style.backgroundColor = "#e4f8ff";
+		document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
 	}
 	setTimeout(add_transition,500);
 

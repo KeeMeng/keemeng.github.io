@@ -182,7 +182,7 @@ function log(info) {
 		request.setRequestHeader('Content-type', 'text/plain');
 		device_info += `ip address: ${ip_address}\nLink: ${window.location.href}\n${info}\n`;
 		var timenow = new Date();
-		device_info += `time received: ${timenow}\n\n`;
+		device_info += `time received: ${timenow}`;
 		request.send(device_info);
 	}
 }
