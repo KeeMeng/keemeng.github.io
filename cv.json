@@ -30,9 +30,21 @@ cv = `[
 		"link": "https://github.com/KeeMeng/aio_2021",
 		"organizer_link": "https://www.amt.edu.au/australian-informatics-olympiad",
 		"organizer_link_name": "Organizer",
-		"organizer": "Australian Maths Trust",
+		"organizer": "Organized by: Australian Maths Trust",
 		"details": "Writing computer programs to solve 6 problems varying in difficulty",
 		"tags": "computer_science",
+		"ignore": false
+	},
+	{
+		"date": "2021-07-23",
+		"name": "International Symposium on STEM Education 2021",
+		"award": "SDG Champion",
+		"link": "",
+		"organizer_link": "https://talented.hku.hk/scholarships-and-awards/international-symposium-on-stem-education-2021",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: University Of Hong Kong Academy for the Talented",
+		"details": "Worked in groups to design a new product to achieve the goal of 'Innovation and Transformation for a Better World'",
+		"tags": "stem",
 		"ignore": false
 	},
 	{
@@ -60,6 +72,30 @@ cv = `[
 		"ignore": false
 	},
 	{
+		"date": "2021-05-25",
+		"name": "Photo Series Competition"
+		"award": "Highly Commended",
+		"link": "https://artspaces.kunstmatrix.com/de/exhibition/6960006/catalog",
+		"organizer_link": "https://www.harrowschool.hk",
+		"organizer_link_name": "Organizer",
+		"organizer": "Awarded by: Harrow International School",
+		"details": "",
+		"tags": "education",
+		"ignore": false
+	},
+	{
+		"date": "2021-04-27",
+		"name": "Coding and Computational Thinking with VEX V5 Course",
+		"award": "Completed Course",
+		"link": "https://www.cs2n.org/shared_achievement/UserCertificate/0e8c94960e02",
+		"organizer_link": "https://www.cs2n.org/u/track_progress?id=419",
+		"organizer_link_name": "Organizer",
+		"organizer": "Made by: Carnegie Mellon Robotics Academy",
+		"details": "This curriculum provides a structured sequence of programming activities in real-world project-based contexts. ",
+		"tags": "robotics",
+		"ignore": false
+	},
+	{
 		"date": "2021-04-19",
 		"name": "WWDC21 Swift Student Challenge",
 		"award": "Award Recipient",
@@ -67,7 +103,7 @@ cv = `[
 		"organizer_link": "https://developer.apple.com/wwdc21/swift-student-challenge/",
 		"organizer_link_name": "Organizer",
 		"organizer": "Organized by: Apple",
-		"details": "Coding competition where students are tasked with creating anything using Swift. I created a program that allows users to draw, and the drawings will be reflected and rotated, forming symmetrical shapes. ",
+		"details": "Coding competition where students are tasked with creating anything using Swift. I created a program that allows users to draw kaleidoscopes. ",
 		"tags": "computer_science",
 		"ignore": false
 	},
