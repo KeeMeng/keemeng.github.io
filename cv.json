@@ -1,5 +1,17 @@
 cv = `[
 	{
+		"date": "2021-11-15",
+		"name": "British Physics Olympiad Physics Challenge",
+		"award": "Bronze I Award",
+		"link": "",
+		"organizer_link": "https://www.bpho.org.uk/bpho/round-1",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: British Physics Olympiad",
+		"details": "BPho is a physics challenge and is not an A level replica or a guide to A level performance",
+		"tags": "stem",
+		"ignore": false
+	},
+	{
 		"date": "2021-11-11",
 		"name": "Senior Mathematical Challenge",
 		"award": "Gold Award",
