@@ -204,8 +204,8 @@ function load() {
 		<br>
 		<center style="font-size: 32px">My Github Contribution Chart!</center>
 		<br>
-		<a href="https://github.com/KeeMeng" style="background-color: white; border-radius: 24px; display: inline-block; padding-left: 32px; padding-right: 32px">
-			<img src="https://ghchart.rshah.org/FF00FF/KeeMeng" alt="KeeMeng's Github chart" style="height: 25vh; width: auto; max-width: 70vw" />
+		<a href="https://github.com/KeeMeng" style="background-color: white; border-radius: 24px; display: inline-block; padding: 32px">
+			<img src="https://ghchart.rshah.org/FF00FF/KeeMeng" alt="KeeMeng's Github chart" style="width: 70vw" />
 		</a>
 		<br>
 		<br>
