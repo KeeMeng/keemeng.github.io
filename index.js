@@ -199,6 +199,19 @@ function load() {
 	document.getElementById("title").style.opacity = "0";
 	change_title("KeeMeng's Gallery", true)
 
+	var chart = `
+		<br>
+		<br>
+		<center style="font-size: 32px">My Github Contribution Chart!</center>
+		<br>
+		<a href="https://github.com/KeeMeng" style="background-color: white; border-radius: 24px; display: inline-block; padding-left: 32px; padding-right: 32px">
+			<img src="https://ghchart.rshah.org/FF00FF/KeeMeng" alt="KeeMeng's Github chart" style="height: 25vh; width: auto; max-width: 70vw" />
+		</a>
+		<br>
+		<br>
+	`;
+	document.body.insertAdjacentHTML("beforeend", chart);
+
 	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(function() {$("#wrapper2").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(function() {$("#title").fadeTo(750, 1);}, 100, "linear");
