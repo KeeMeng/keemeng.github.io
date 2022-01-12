@@ -7,7 +7,7 @@ cv = `[
 		"organizer_link": "https://www.bpho.org.uk/bpho/round-1",
 		"organizer_link_name": "Organizer",
 		"organizer": "Organized by: British Physics Olympiad",
-		"details": "BPho is a physics challenge and is not an A level replica or a guide to A level performance",
+		"details": "",
 		"tags": "stem",
 		"ignore": false
 	},
@@ -19,7 +19,7 @@ cv = `[
 		"organizer_link": "https://www.ukmt.org.uk/smc",
 		"organizer_link_name": "Organizer",
 		"organizer": "Organized by: Unite Kingdom Mathematics Trust",
-		"details": "Challenge that encourages mathematical reasoning, precision of thought, and fluency in mathematical techiniques",
+		"details": "Challenge that encourages mathematical reasoning, precision of thought, and fluency",
 		"tags": "stem",
 		"ignore": false
 	},
@@ -31,7 +31,7 @@ cv = `[
 		"organizer_link": "https://www.bpho.org.uk/bpho/a2-challenge",
 		"organizer_link_name": "Organizer",
 		"organizer": "Organized by: British Physics Olympiad",
-		"details": "Competition to stretch thinking into the applications and ideas rather than to keep to the narrow content of the syllabus",
+		"details": "Competition to stretch thinking into the applications and ideas beyond the physics syllabus",
 		"tags": "stem",
 		"ignore": false
 	},
@@ -103,7 +103,7 @@ cv = `[
 		"organizer_link": "https://www.cs2n.org/u/track_progress?id=419",
 		"organizer_link_name": "Organizer",
 		"organizer": "Made by: Carnegie Mellon Robotics Academy",
-		"details": "This curriculum provides a structured sequence of programming activities in real-world project-based contexts. ",
+		"details": "This curriculum provides a structured sequence of programming activities in real-world project-based contexts",
 		"tags": "robotics",
 		"ignore": false
 	},
@@ -115,7 +115,7 @@ cv = `[
 		"organizer_link": "https://developer.apple.com/wwdc21/swift-student-challenge/",
 		"organizer_link_name": "Organizer",
 		"organizer": "Organized by: Apple",
-		"details": "Coding competition where students are tasked with creating anything using Swift. I created a program that allows users to draw kaleidoscopes. ",
+		"details": "Coding competition where students are tasked with creating playgrounds using Swift",
 		"tags": "computer_science",
 		"ignore": false
 	},
