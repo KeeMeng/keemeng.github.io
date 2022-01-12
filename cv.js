@@ -96,7 +96,7 @@ function filter() {
 		document.getElementById("cards").style.display = "none";
 	}
 	else {
-		document.getElementById("cards").style.display = "inline-block";
+		document.getElementById("cards").style.display = "block";
 		let re = new RegExp(tags.join("|"));
 		for (var i = 0; i < data.length; i++) {
 			if (data[i]["tags"].match(re) == null || ["art","music","others"].includes(data[i]["tags"].match(re))) {
@@ -123,7 +123,7 @@ function solo(id, num) {
 	}
 	catch(error) {
 		document.getElementById("box_filter").checked = false;
-		document.getElementById("cards").style.display = "inline-block";
+		document.getElementById("cards").style.display = "block";
 		for (var i = 0; i < data.length; i++) {
 			if (data[i]["tags"] != id) {
 				document.getElementById(`row${i}`).style.display = "none";
@@ -143,7 +143,7 @@ function solo(id, num) {
 function filter_all() {
 	exclude = [];
 	if (document.getElementById("box_filter").checked) {
-		document.getElementById("cards").style.display = "inline-block";
+		document.getElementById("cards").style.display = "block";
 		document.getElementById("box_education").checked = true;
 		document.getElementById("box_computer_science").checked = true;
 		document.getElementById("box_robotics").checked = true;

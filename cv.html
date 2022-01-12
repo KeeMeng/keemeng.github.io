@@ -9,20 +9,19 @@
 		<script src="cv.json"></script>
 		<script src="cv.js"></script>
 		<script src="/favicons/favicons.js"></script>
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	<body onload="load()">
-		<div id="title" style="position: fixed; width: 100%; z-index: 1; top: 0px;">
-			<button class="small_button" style="right: 20px;" onclick="window.location.href='/';">Homepage</button>
-			<button id="mode" class="small_button" style="text-align: left; top: 50px; right: 20px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
-			<span style="font-size: 64px; ">Kee Meng Tan</span>
-			<button class="small_button" style="left: 5px; right: auto" onclick="window.location.href = 'mailto:tankeemeng@gmail.com'">Email</button>
-			<button class="small_button" style="left: 5px; top: 50px; right: auto" onclick="summary()"><span id="view">Compress Events</span></button>
+	<body onload="load()" style="margin: 0px;">
+		<div id="title" style="position: fixed; width: 100%; top: 0px; z-index: 2;">
+			<button class="small_button" style="right: 12px;" onclick="window.location.href='/';">Homepage</button>
+			<button id="mode" class="small_button" style="text-align: left; top: 50px; right: 12px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
+			<span class="cvname">Kee Meng Tan</span>
+			<button class="small_button" style="left: 12px; right: auto" onclick="window.location.href = 'mailto:tankeemeng@gmail.com'">Email</button>
+			<button class="small_button" style="left: 12px; top: 50px; right: auto" onclick="summary()"><span id="view">Compress Events</span></button>
 			<hr style="margin-bottom: 0px; ">
 		</div>
-		<br><br><br><br>
-		<div style="position: fixed; top: 110px; left: 15px; width: calc(35% - 39px); z-index: 2;">
-			<div id="details" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%; margin-bottom: 12px;">
+		<div class="leftcol">
+			<div id="details" style="text-align: left; padding: 16px; border-radius: 24px; width: calc(100% - 32px); margin-bottom: 16px;">
 				<p style="font-weight: bold; margin: 0px;">Education: </p>
 				<span onclick="window.location.href = 'https://www.harrowschool.hk'" style="font-weight: normal; margin: 0px; cursor: pointer; text-decoration: underline;">Harrow International School Hong Kong</span>
 				<span style="font-weight: normal; margin: 0px; display: inline;">(2020-2022)</span>
@@ -44,16 +43,15 @@
 				<p style="font-weight: bold; margin: 0px;">Hobbies:</p>
 				<p style="font-weight: normal; margin: 0px;">Coding, Cycling, Hiking, Badminton, Piano</p>
 			</div>
-			<div id="filterbox" style="text-align: left; padding: 12px; border-radius: 24px; width: 100%; margin-top: 12px;">
-				<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_filter').checked ^= 1; filter_all()" style="cursor: pointer; margin-top: 0px"> Filters: </span><span style="font-weight: normal;"> Either click the #tags or </span><input type="checkbox"><br>
+			<div id="filterbox" style="text-align: left; padding: 16px; border-radius: 24px; width: calc(100% - 32px); margin-top: 16px; margin-bottom: 32px;">
+				<input type="checkbox" id="box_filter" onclick="filter_all()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_filter').checked ^= 1; filter_all()" style="cursor: pointer; margin-top: 0px"> Filters: </span><span style="font-weight: normal;"> Either click #tags or checkboxes<br>
 				<input type="checkbox" id="box_education" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_education').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> Education </span><br>
 				<input type="checkbox" id="box_computer_science" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_computer_science').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> Computer Science </span><br>
 				<input type="checkbox" id="box_robotics" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_robotics').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> Robotics </span><br>
 				<input type="checkbox" id="box_stem" onclick="filter()" style="opacity:0.5; cursor: pointer; margin-top: 0px"><span onclick="document.getElementById('box_stem').checked ^= 1; filter()" style="cursor: pointer; margin-top: 0px"> STEM </span>
 			</div>
 		</div>
-		<p></p>
-		<div id="cards" class="events" style="text-align: left;">
+		<div id="cards" class="events">
 		</div>
 	</body>
 </html>

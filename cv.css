@@ -1,14 +1,15 @@
 .row {
-	margin-top: 12px;
+	/*margin-top: 12px;*/
 	margin-bottom: 12px;
+	margin-left: 0px;
 	position: relative;
 	display: flex;
 	align-items: center;
 }
 
 .card {
-	left: calc(17.5% + 63px);
-	width: calc(81.5% - 111px);
+	left: calc(15vw + 32px);
+	width: calc(var(--width) - 96px);
 	border-radius: 24px;
 	padding: 24px;
 	display: inline-block;
@@ -16,11 +17,13 @@
 }
 
 .events {
-	margin-left: 34.5%;
-	width: 64.5%;
-	display: inline-block;
-	position: relative;
-	margin-top: -10px;
+	/*margin-top: 6px;*/
+	margin-left: var(--left);
+	width: calc(var(--spacing1) - 16px);
+	top: 110px;
+	text-align: left;
+	display: block;
+	position: absolute;
 }
 
 .events p {
@@ -33,7 +36,7 @@
 	width: 32px;
 	border-radius: 50%;
 	position: absolute;
-	left: 17.5%;
+	left: calc(15vw - 16px);
 }
 
 .date {
@@ -41,15 +44,17 @@
 	position: absolute;
 	margin-top: auto;
 	margin-bottom: auto;
-	right: 85%;
+	right: calc(var(--date) + 16px);
 	white-space: normal;
+	word-break: break-word;
+	padding-left: 16px;
 }
 
 .linea {
 	height: calc(50% + 6px);
 	width: 6px;
 	position: absolute;
-	left: calc(17.5% + 13px);
+	left: calc(15vw - 3px);
 	bottom: 50%;
 }
 
@@ -57,7 +62,7 @@
 	height: calc(50% + 6px);
 	width: 6px;
 	position: absolute;
-	left: calc(17.5% + 13px);
+	left: calc(15vw - 3px);
 	top: 50%;
 }
 
@@ -82,4 +87,47 @@
 	color: black;
 	box-shadow: black;
 	border-color: black;
+}
+
+.leftcol {
+	 position: fixed; 
+	 display: block;
+	 top: 110px; 
+	 left: 16px; 
+	 width: calc(35vw - 16px);
+}
+
+.cvname {
+	font-size: 64px;
+}
+:root {
+	--spacing1: 65vw;
+	--width: 50vw;
+	--left: 35vw;
+	--date: 50vw;
+}
+
+@media (max-width: 700px) {
+	:root {
+		--spacing1: 90vw;
+		--width: 75vw;
+		--left: 10vw;
+		--date: 75vw;
+	}
+	.leftcol {
+		position: relative;
+		display: block;
+		width: calc(100vw - 32px);
+	}
+	.events {
+		display: block;
+		position: relative;
+	}
+	.date {
+		word-break: unset;
+	}
+	.cvname {
+		font-size: 32px;
+		line-height: 2.5;
+	}
 }
