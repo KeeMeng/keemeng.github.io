@@ -100,6 +100,11 @@
 .cvname {
 	font-size: 64px;
 }
+
+.extrabr {
+	display: none;
+}
+
 :root {
 	--spacing1: 65vw;
 	--width: 50vw;
@@ -126,5 +131,8 @@
 	.cvname {
 		font-size: 32px;
 		line-height: 2.5;
+	}
+	.extrabr {
+		display: unset;
 	}
 }

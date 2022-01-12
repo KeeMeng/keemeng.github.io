@@ -54,7 +54,7 @@ function json() {
 		if (data[i]["organizer_link"] != "" && data[i]["link"] != "") {
 			inputhtml += `<p class="hide">&#10140; <a href="${data[i]["organizer_link"]}" style="margin-right: 15px">${data[i]["organizer_link_name"]}</a> &#10140; <a href="${data[i]["link"]}">Repository</a></p>`;
 		}
-
+		inputhtml += `<br class="extrabr">`
 		inputhtml += `<p id="tag${i}" class="hide tags" onclick="solo('${data[i]["tags"]}', ${i})">#${data[i]["tags"]}</p>`;
 		// inputhtml += `<img id="img${i}" class="hide image" onclick="window.location.href = '${data[i]["link"]}'">`;
 		inputhtml += "</div></div>";
