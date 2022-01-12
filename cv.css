@@ -123,9 +123,6 @@
 		display: block;
 		position: relative;
 	}
-	.date {
-		word-break: unset;
-	}
 	.cvname {
 		font-size: 32px;
 		line-height: 2.5;
