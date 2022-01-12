@@ -175,7 +175,7 @@ function summary() {
 			document.getElementById(`tag${i}`).style.bottom = "12px";
 			document.getElementById(`tag${i}`).style.right = "12px";
 		}
-		document.getElementById("view").innerHTML = "Expand Events"
+		document.getElementById("view").innerHTML = "Expand"
 	}
 	else {
 		for (var i = 0; i < elements.length; i++) {
@@ -187,7 +187,7 @@ function summary() {
 			document.getElementById(`tag${i}`).style.bottom = "24px";
 			document.getElementById(`tag${i}`).style.right = "24px";
 		}
-		document.getElementById("view").innerHTML = "Collapse Events"
+		document.getElementById("view").innerHTML = "Collapse"
 
 	}
 	details = !details;
