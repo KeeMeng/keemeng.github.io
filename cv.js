@@ -170,8 +170,8 @@ function summary() {
 			elements[i].style.display = "none";
 		}
 		for (var i = 0; i < data.length; i++) {
-			document.getElementById(`card${i}`).style.padding = "14px";
-			document.getElementById(`card${i}`).style.width = "calc(81.5% - 91px)";
+			document.getElementById(`card${i}`).style.padding = "12px";
+			document.getElementById(`card${i}`).style.width = "calc(var(--width) - 72px)";
 			document.getElementById(`tag${i}`).style.bottom = "12px";
 			document.getElementById(`tag${i}`).style.right = "12px";
 		}
@@ -183,7 +183,7 @@ function summary() {
 		}
 		for (var i = 0; i < data.length; i++) {
 			document.getElementById(`card${i}`).style.padding = "24px";
-			document.getElementById(`card${i}`).style.width = "calc(81.5% - 111px)";
+			document.getElementById(`card${i}`).style.width = "calc(var(--width) - 96px)";
 			document.getElementById(`tag${i}`).style.bottom = "24px";
 			document.getElementById(`tag${i}`).style.right = "24px";
 		}
