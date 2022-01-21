@@ -24,6 +24,18 @@ cv = `[
 		"ignore": false
 	},
 	{
+		"date": "2021-11-09",
+		"name": "Bebras Computing Challenge 2021",
+		"award": "116/180 Points",
+		"link": "",
+		"organizer_link": "https://www.bebraschallenge.org",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: Bebras",
+		"details": "Engaging challenges about informatics and computational thinking",
+		"tags": "computer_science",
+		"ignore": false
+	},
+	{
 		"date": "2021-10-25",
 		"name": "British Physics Olympiad Physics Challenge",
 		"award": "Merit",
