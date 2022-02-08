@@ -65,8 +65,8 @@ a:visited {
 	transition-duration: 0.2s;
 	text-align: left;
 	font-size: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
+	margin: 0px;
+	padding: 20px;
 }
 
 .hovertext:hover,
