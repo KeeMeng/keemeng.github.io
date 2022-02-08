@@ -216,6 +216,11 @@ function load() {
 	setTimeout(function() {$("#wrapper2").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(function() {$("#title").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(add_transition, 500);
+
+	window.addEventListener('popstate', function(event) {
+		$("#wrapper").fadeIn(0);
+		$("#wrapper2").fadeIn(0);
+	})
 }
 
 function add_transition() {
@@ -295,9 +300,3 @@ function fade_out() {
 	$("#wrapper").fadeTo(750, 0);
 	$("#wrapper2").fadeTo(1250, 0);
 }
-
-
-window.addEventListener('popstate', function(event) {
-	$("#wrapper").fadeTo(0, 1);
-	$("#wrapper2").fadeTo(0, 1);
-})
