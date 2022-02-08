@@ -293,5 +293,11 @@ function view() {
 
 function fade_out() {
 	$("#wrapper").fadeTo(750, 0);
-	$("#wrapper2").fadeTo(1250, 0)
+	$("#wrapper2").fadeTo(1250, 0);
 }
+
+
+window.addEventListener('popstate', function(event) {
+	$("#wrapper").fadeTo(0, 1);
+	$("#wrapper2").fadeTo(0, 1);
+})
