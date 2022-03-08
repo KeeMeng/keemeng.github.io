@@ -32,6 +32,9 @@ function calculate() {
 		}
 		var reactant_mass = document.getElementById(`reactant_mass${i}`).value
 		var product_mass = document.getElementById(`product_mass${i}`).value
+		if (!compound || !reactant_mass || !product_mass) {
+			continue;
+		}
 		var oxygens = 0
 		var oxygen_only = true;
 
