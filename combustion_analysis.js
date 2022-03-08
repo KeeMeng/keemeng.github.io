@@ -108,7 +108,7 @@ function calculate() {
 	temp = temp.sort()
 	for (var i = 0; i < temp.length; i++) {
 		if (temp[i].startsWith("H<sub>")) {
-			fancy_string = fancy_string + temp[0];
+			fancy_string = fancy_string + temp[i];
 			temp[i] = "";
 			break;
 		}
