@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Combustion Analysis</title>
+		<link rel="stylesheet" href="combustion_analysis.css">
+		<link rel="stylesheet" href="theme.css">
+		<link rel="stylesheet" href="buttons.css">
+		<link rel="stylesheet" href="body.css">
+		<script src="combustion_analysis.js"></script>
+		<script src="theme.js"></script>
+		<script src="/favicons/favicons.js"></script>
+	</head>
+	<body onload="load(); add_input()">
+		<button class="small_button" onclick="window.location.href='/';">Homepage</button>
+		<button id="mode" class="small_button" style="text-align: left; top: 50px; font-size: 16px;" onclick="dark_mode()">Dark Mode</button>
+		<center style="font-size: 64px">Combustion Analysis</center>
+		<br>
+		<p>Put an element in target only if the compound has more than 2 elements. eg 'N' to find nitrogen in 'HNO3'</p>
+		<p>Use the add row buttons to add more elements, and calculate to show to empirical formula and molar mass</p>
+		<br>
+		<div id="inputs">
+		</div>
+		<br>
+		<button class="small_button2" onclick="add_input()">Add Row</button>
+		<button class="small_button2" onclick="calculate()">Calculate</button>
+		<br>
+		<br>
+		<div id="display" style="font-size: 32px; font-weight: normal;">
+		</div>
+		<div id="display2" style="font-size: 32px; font-weight: normal;">
+		</div>
+		<br>
+		<div id="debug" style="font-size: 12px; font-weight: normal;">
+		</div>
+	</body>
+</html>
