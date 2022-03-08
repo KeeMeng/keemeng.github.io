@@ -1,0 +1,57 @@
+.small_button2 {
+	padding: 5px;
+	font-family: Futura, Arial;
+	font-size: 16px;
+	border-radius: 8px;
+	border-color: inherit;
+	margin: 5px;
+	/*display: block;*/
+	vertical-align:middle;
+	transform: perspective(1px);
+	transition-duration: 0.2s;
+	transition-property: transform;
+	color: inherit;
+	background-color: inherit;
+	cursor: pointer;
+}
+
+.small_button2:hover, 
+.small_button2:focus {
+	transform: scale(1.05);
+	color: inherit;
+}
+
+.small_button2:active {
+	animation-duration: 0.1s;
+	transform: scale(1.08);
+	color: inherit;
+}
+
+.darkmode {
+	background-color: black;
+	color: white;
+	transition: 0.5s;
+	border-color: white;
+}
+
+.lightmode {
+	background-color: white;
+	color: black;
+	transition: 0.5s;
+	border-color: black;
+}
+
+.textbox {
+	font-family: Futura, Arial;
+	color: inherit;
+	border-color: inherit;
+	border-width: 2.5px;
+	background-color: inherit;
+	width: 100px;
+	margin: 5px;
+	padding: 5px;
+}
+
+.textbox:hover, .textbox:focus, .textbox:active {
+	transform: none;
+}
