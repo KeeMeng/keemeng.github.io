@@ -1,5 +1,17 @@
 cv = `[
 	{
+		"date": "2022-03-29",
+		"name": "World Mathematics Championships",
+		"award": "Top quartile",
+		"link": "",
+		"organizer_link": "https://eunoia.ventures/verify/S020HT",
+		"organizer_link_name": "Verification",
+		"organizer": "Eunoia Ventures",
+		"details": "Competition with 12 rounds to assess student's six skills categories (Challenge, Knowledge, Collaboration, Strategy, Communication, Creativity)",
+		"tags": "stem",
+		"ignore": false
+	},
+	{
 		"date": "2021-11-15",
 		"name": "British Physics Olympiad Round 1",
 		"award": "Bronze I Award",
