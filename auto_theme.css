@@ -23,8 +23,6 @@ body.dark-theme {
 		font-weight: bold;
 		text-align: center; 
 		
-		/*--text-color: white;
-		--bkg-color: #121212;*/
 		background-color: black;
 		color: white;
 		transition-duration: 0.5s;
@@ -32,8 +30,6 @@ body.dark-theme {
 		border-color: white;
 	}
 	body.light-theme {
-		/*--text-color: #222;
-		--bkg-color: #fff;*/
 		background-color: white;
 		color: black;
 		transition-duration: 0.5s;
