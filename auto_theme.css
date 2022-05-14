@@ -1,0 +1,43 @@
+body {
+	font-family: Futura, Verdana; 
+	font-weight: bold;
+	text-align: center; 
+
+	background-color: white;
+	color: black;
+	transition-duration: 0.5s;
+	box-shadow: black;
+	border-color: black;
+}
+body.dark-theme {
+	background-color: black;
+	color: white;
+	transition-duration: 0.5s;
+	box-shadow: white;
+	border-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+	body { 
+		font-family: Futura, Verdana; 
+		font-weight: bold;
+		text-align: center; 
+		
+		/*--text-color: white;
+		--bkg-color: #121212;*/
+		background-color: black;
+		color: white;
+		transition-duration: 0.5s;
+		box-shadow: white;
+		border-color: white;
+	}
+	body.light-theme {
+		/*--text-color: #222;
+		--bkg-color: #fff;*/
+		background-color: white;
+		color: black;
+		transition-duration: 0.5s;
+		box-shadow: black;
+		border-color: black;
+	}
+}
