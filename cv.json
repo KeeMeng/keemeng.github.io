@@ -1,5 +1,17 @@
 cv = `[
 	{
+		"date": "2022-04-24",
+		"name": "WWDC22 Swift Student Challenge",
+		"award": "Award Recipient",
+		"link": "https://github.com/KeeMeng/swift-3d-polygons",
+		"organizer_link": "https://developer.apple.com/wwdc22/swift-student-challenge/",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: Apple",
+		"details": "Competition where students create a Swift Playgrounds app project on the topic of your choice",
+		"tags": "computer_science",
+		"ignore": false
+	},
+	{
 		"date": "2022-03-29",
 		"name": "World Mathematics Championships",
 		"award": "Top quartile",
