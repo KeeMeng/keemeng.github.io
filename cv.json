@@ -1,5 +1,29 @@
 cv = `[
 	{
+		"date": "2022-06-29",
+		"name": "Year 12 Mathematics Prize",
+		"award": "Highly Commended",
+		"link": "",
+		"organizer_link": "https://www.harrowschool.hk",
+		"organizer_link_name": "Organizer",
+		"organizer": "Awarded by: Harrow International School",
+		"details": "Upper School Speech Day Awards",
+		"tags": "education",
+		"ignore": false
+	},
+	{
+		"date": "2022-04-30",
+		"name": "Harrow 450 International Hackathon",
+		"award": "Silver Award",
+		"link": "",
+		"organizer_link": "",
+		"organizer_link_name": "Organizer",
+		"organizer": "Organized by: Harrow School",
+		"details": "",
+		"tags": "computer_science",
+		"ignore": false
+	},
+	{
 		"date": "2022-04-24",
 		"name": "WWDC22 Swift Student Challenge",
 		"award": "Award Recipient",
