@@ -15,8 +15,8 @@
 		<button id="mode" class="small_button" style="text-align: left; font-size: 16px" onclick="dark_mode(); flip_images(); log('Clicked: theme')">Dark Mode</button>
 		<button id="view" class="small_button" style="text-align: left; left: 10px; font-size: 16px; right: auto" onclick="view(); log('Clicked: view')">List View</button>
 		<center id="title" title="Click to change title text" style="padding: auto; margin: auto; margin-top: 10px; font-size: 64px; font-family: 'ETIAW v3'; cursor: pointer; max-width: calc(100% - 200px);" onclick="change_title()"></center>
-		<div id="wrapper" style="text-align: center; opacity: 0;">
-			<div class="projects" id="github" onclick="fade_out(); go_to('github','https://github.com/KeeMeng');" onmouseenter="show_text('github')" onmouseleave="hide_text('github')">
+		<div id="wrapper" style="text-align: center;">
+			<div class="projects" id="github" onclick="go_to('github','https://github.com/KeeMeng');" onmouseenter="show_text('github')" onmouseleave="hide_text('github')">
 				<img id="github_light" class="light"/>
 				<img id="github_dark" class="dark"/>
 				<p class="hovertext" id="github_text">
@@ -30,84 +30,84 @@
 					Extended Project Qualification (EPQ) about graph theory: Using Python to generate minimum spanning trees in planning a game of Mini Metro. Contact me to learn more!
 				</p>
 			</div>
-			<div class="projects" id="mkb" onclick="fade_out(); go_to('mkb','https://packagecontrol.io/packages/MKB');" onmouseenter="show_text('mkb')" onmouseleave="hide_text('mkb')">
+			<div class="projects" id="mkb" onclick="go_to('mkb','https://packagecontrol.io/packages/MKB');" onmouseenter="show_text('mkb')" onmouseleave="hide_text('mkb')">
 				<img id="mkb_light" class="light"/>
 				<img id="mkb_dark" class="dark"/>
 				<p class="hovertext" id="mkb_text">
 					Macro Keybind Mod (for minecraft) syntax highlighter for Sublime Text 3. Contains autocomplete and popup hints for all actions and variables from many different modules, auto indenter, linter, mini wiki, and many more features. 
 				</p>
 			</div>
-			<div class="projects" id="swift" onclick="fade_out(); go_to('swift','https://github.com/KeeMeng/swift-kaleidoscope');" onmouseenter="show_text('swift')" onmouseleave="hide_text('swift')">
+			<div class="projects" id="swift" onclick="go_to('swift','https://github.com/KeeMeng/swift-kaleidoscope');" onmouseenter="show_text('swift')" onmouseleave="hide_text('swift')">
 				<img id="swift_light" class="light"/>
 				<img id="swift_dark" class="dark"/>
 				<p class="hovertext" id="swift_text">
 				My submission for WWDC21 Swift Student Challenge, where you can draw nice symmetrical shapes!
 				</p>
 			</div>
-			<div class="projects" id="swift2" onclick="fade_out(); go_to('swift2','https://github.com/KeeMeng/swift-3d-polygons');" onmouseenter="show_text('swift')" onmouseleave="hide_text('swift')">
+			<div class="projects" id="swift2" onclick="go_to('swift2','https://github.com/KeeMeng/swift-3d-polygons');" onmouseenter="show_text('swift')" onmouseleave="hide_text('swift')">
 				<img id="swift2_light" class="light"/>
 				<img id="swift2_dark" class="dark"/>
 				<p class="hovertext" id="swift2_text">
 				My submission for WWDC22 Swift Student Challenge. This app functions as a interactive gallery to view 3d polygon designs created using spheres only. These shapes are based on real life magnet balls. 
 				</p>
 			</div>
-			<div class="projects" id="runnertag" onclick="fade_out(); go_to('runnertag','https://runnertag.com');" onmouseenter="show_text('runnertag')" onmouseleave="hide_text('runnertag')">
+			<div class="projects" id="runnertag" onclick="go_to('runnertag','https://runnertag.com');" onmouseenter="show_text('runnertag')" onmouseleave="hide_text('runnertag')">
 				<img id="runnertag_light" class="light"/>
 				<img id="runnertag_dark" class="dark"/>
 				<p class="hovertext" id="runnertag_text">
 					Website that I revamped that uses Vue.JS and Bootstrap for my internship.
 				</p>
 			</div>
-			<div class="projects" id="spotify" onclick="fade_out(); go_to('spotify','spotify.html');" onmouseenter="show_text('spotify')" onmouseleave="hide_text('spotify')">
+			<div class="projects" id="spotify" onclick="go_to('spotify','spotify.html');" onmouseenter="show_text('spotify')" onmouseleave="hide_text('spotify')">
 				<img id="spotify_light" class="light"/>
 				<img id="spotify_dark" class="dark"/>
 				<p class="hovertext" id="spotify_text">
 					Spotify audio features of current playing song. Requires oauth token from spotify premium. 
 				</p>
 			</div>
-			<div class="projects" id="cubes" onclick="fade_out(); go_to('cubes','cubes.html');" onmouseenter="show_text('cubes')" onmouseleave="hide_text('cubes')">
+			<div class="projects" id="cubes" onclick="go_to('cubes','cubes.html');" onmouseenter="show_text('cubes')" onmouseleave="hide_text('cubes')">
 				<img id="cubes_light" class="light"/>
 				<img id="cubes_dark" class="dark"/>
 				<p class="hovertext" id="cubes_text">
 					3d render of cubes. You can input the colors, and change the x,y,z positions. You can also rotate the cubes in different ways. 
 				</p>
 			</div>
-			<div class="projects" id="points" onclick="fade_out(); go_to('points','points.html');" onmouseenter="show_text('points')" onmouseleave="hide_text('points')">
+			<div class="projects" id="points" onclick="go_to('points','points.html');" onmouseenter="show_text('points')" onmouseleave="hide_text('points')">
 				<img id="points_light" class="light"/>
 				<img id="points_dark" class="dark"/>
 				<p class="hovertext" id="points_text">
 					Computer Science Society points tracker for beginner, intermediate and advanced challenges. Everytime someone completes a challenge (with or without restrictions), the points that you can get is divided by 2. 
 				</p>
 			</div>
-			<div class="projects" id="screensaver" onclick="fade_out(); go_to('screensaver','hackku/homepage.html');" onmouseenter="show_text('screensaver')" onmouseleave="hide_text('screensaver')">
+			<div class="projects" id="screensaver" onclick="go_to('screensaver','hackku/homepage.html');" onmouseenter="show_text('screensaver')" onmouseleave="hide_text('screensaver')">
 				<img id="screensaver_light" class="light"/>
 				<img id="screensaver_dark" class="dark"/>
 				<p class="hovertext" id="screensaver_text">
 					Screensavers made for Hackku Hackathon. You can customize the screensavers by inputting images from online, such as google. Make sure the link leads directly to the image. 
 				</p>
 			</div>
-			<div class="projects" id="converter" onclick="fade_out(); go_to('converter','converter.html');" onmouseenter="show_text('converter')" onmouseleave="hide_text('converter')">
+			<div class="projects" id="converter" onclick="go_to('converter','converter.html');" onmouseenter="show_text('converter')" onmouseleave="hide_text('converter')">
 				<img id="converter_light" class="light"/>
 				<img id="converter_dark" class="dark"/>
 				<p class="hovertext" id="converter_text">
 				SI prefixes converter. You can use this by entering 2 units and seeing the conversion. 
 				</p>
 			</div>
-			<div class="projects" id="mr" onclick="fade_out(); go_to('mr','mr.html');" onmouseenter="show_text('mr')" onmouseleave="hide_text('mr')">
+			<div class="projects" id="mr" onclick="go_to('mr','mr.html');" onmouseenter="show_text('mr')" onmouseleave="hide_text('mr')">
 				<img id="mr_light" class="light"/>
 				<img id="mr_dark" class="dark"/>
 				<p class="hovertext" id="mr_text">
 					Calculates the molar mass of the inputted molecule. Supports brackets multipliers too. 
 				</p>
 			</div>
-			<div class="projects" id="combustion_analysis" onclick="fade_out(); go_to('combustion_analysis','combustion_analysis.html');" onmouseenter="show_text('combustion_analysis')" onmouseleave="hide_text('combustion_analysis')">
+			<div class="projects" id="combustion_analysis" onclick="go_to('combustion_analysis','combustion_analysis.html');" onmouseenter="show_text('combustion_analysis')" onmouseleave="hide_text('combustion_analysis')">
 				<img id="combustion_analysis_light" class="light"/>
 				<img id="combustion_analysis_dark" class="dark"/>
 				<p class="hovertext" id="mr_text">
 					Calculates the empirical formula of any compound from the combustion data. (Reactant and product masses)
 				</p>
 			</div>
-			<div class="projects" id="pt" onclick="fade_out(); go_to('pt','pt.html');" onmouseenter="show_text('pt')" onmouseleave="hide_text('pt')">
+			<div class="projects" id="pt" onclick="go_to('pt','pt.html');" onmouseenter="show_text('pt')" onmouseleave="hide_text('pt')">
 				<img id="pt_light" class="light"/>
 				<img id="pt_dark" class="dark"/>
 				<p class="hovertext" id="pt_text">
@@ -115,13 +115,13 @@
 				</p>
 			</div>
 		</div>
-		<div id="wrapper2" style="text-align: center; opacity: 0;">
-			<div class="small_projects" id="quit_warn" onmouseenter="log('Hovered: quit_warn');" onclick="fade_out(); go_to('quit_warn','quit_warn.html');">
+		<div id="wrapper2" style="text-align: center">
+			<div class="small_projects" id="quit_warn" onmouseenter="log('Hovered: quit_warn');" onclick="go_to('quit_warn','quit_warn.html');">
 				<div style="font-size: 20px; font-weight: bold; display: flex; justify-content: center; align-items: center; height: 100%">
 					<p>Browser Quit Warning</p>
 				</div>
 			</div>
-			<div class="small_projects" id="font" onmouseenter="log('Hovered: font');" onclick="fade_out(); go_to('font','font.html');">
+			<div class="small_projects" id="font" onmouseenter="log('Hovered: font');" onclick="go_to('font','font.html');">
 				<div style="font-size: 20px; font-weight: bold; display: flex; justify-content: center; align-items: center; height: 100%">
 					<p>Mylo Xyloto Font</p>
 				</div>

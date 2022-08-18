@@ -12,14 +12,14 @@ function flip_images() {
 	var previews = document.getElementsByClassName("projects");
 	if (localStorage.getItem("mode") == "light") {
 		for (var i = 0; i < previews.length; i++) {
-			$(`#${previews[i].id}_dark`).fadeOut(500);
-			$(`#${previews[i].id}_light`).fadeIn(500);
+			document.getElementById(`${previews[i].id}_dark`).style.opacity = 0;
+			document.getElementById(`${previews[i].id}_light`).style.opacity = 100;
 		}
 	}
 	else if (localStorage.getItem("mode") == "dark") {
 		for (var i = 0; i < previews.length; i++) {
-			$(`#${previews[i].id}_light`).fadeOut(500);
-			$(`#${previews[i].id}_dark`).fadeIn(500);
+			document.getElementById(`${previews[i].id}_dark`).style.opacity = 100;
+			document.getElementById(`${previews[i].id}_light`).style.opacity = 0;
 		}
 	}
 }
@@ -117,12 +117,12 @@ function load() {
 	var previews = document.getElementsByClassName("projects");
 	if (localStorage.getItem("mode") == "light") {
 		for (var i = 0; i < previews.length; i++) {
-			$(`#${previews[i].id}_dark`).fadeOut(0);
+			document.getElementById(`${previews[i].id}_dark`).style.opacity = 0;
 		}
 	}
 	else if (localStorage.getItem("mode") == "dark") {
 		for (var i = 0; i < previews.length; i++) {
-			$(`#${previews[i].id}_light`).fadeOut(0);
+			document.getElementById(`${previews[i].id}_light`).style.opacity = 0;
 		}
 	}
 
@@ -196,31 +196,20 @@ function load() {
 		document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
 	}
 	
-	document.getElementById("title").style.opacity = "0";
 	change_title("KeeMeng's Gallery", true)
 
 	var chart = `
-		<br>
-		<br>
+		<br><br>
 		<center style="font-size: 32px">My Github Contribution Chart!</center>
 		<br>
 		<a href="https://github.com/KeeMeng" style="background-color: white; border-radius: 24px; display: inline-block; padding: 32px">
 			<img src="https://ghchart.rshah.org/FF00FF/KeeMeng" alt="KeeMeng's Github chart" style="width: 70vw" />
 		</a>
-		<br>
-		<br>
+		<br><br>
 	`;
 	document.body.insertAdjacentHTML("beforeend", chart);
 
-	setTimeout(function() {$("#wrapper").fadeTo(750, 1);}, 100, "linear");
-	setTimeout(function() {$("#wrapper2").fadeTo(750, 1);}, 100, "linear");
-	setTimeout(function() {$("#title").fadeTo(750, 1);}, 100, "linear");
 	setTimeout(add_transition, 500);
-
-	window.addEventListener('popstate', function(event) {
-		$("#wrapper").fadeIn(0);
-		$("#wrapper2").fadeIn(0);
-	})
 }
 
 function add_transition() {
@@ -294,9 +283,4 @@ function view() {
 			projects[i].style.height = "150px";
 		}
 	}
-}
-
-function fade_out() {
-	$("#wrapper").fadeTo(750, 0);
-	$("#wrapper2").fadeTo(1250, 0);
 }
