@@ -7,15 +7,14 @@
 		<link rel="stylesheet" href="buttons.css">
 		<link rel="stylesheet" href="body.css">
 		<link rel="stylesheet" href="font.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="index.js"></script>
 		<script src="/favicons/favicons.js"></script>
 	</head>
 	<body onload="load();">
-		<button id="mode" class="small_button" style="text-align: left; font-size: 16px" onclick="dark_mode(); flip_images(); log('Clicked: theme')">Dark Mode</button>
-		<button id="view" class="small_button" style="text-align: left; left: 10px; font-size: 16px; right: auto" onclick="view(); log('Clicked: view')">List View</button>
-		<center id="title" title="Click to change title text" style="padding: auto; margin: auto; margin-top: 10px; font-size: 64px; font-family: 'ETIAW v3'; cursor: pointer; max-width: calc(100% - 200px);" onclick="change_title()"></center>
-		<div id="wrapper" style="text-align: center;">
+		<button id="mode" class="small_button" onclick="dark_mode(); flip_images(); log('Clicked: theme')">Dark Mode</button>
+		<button id="view" class="small_button" style="left: 10px; right: auto" onclick="view(); log('Clicked: view')">List View</button>
+		<center id="title" title="Click to change title text" style="margin: 10px auto auto auto; font-size: 64px; font-family: 'ETIAW v3'; cursor: pointer; max-width: calc(100% - 200px);" onclick="change_title()"></center>
+		<div id="wrapper">
 			<div class="projects" id="github" onclick="go_to('github','https://github.com/KeeMeng');" onmouseenter="show_text('github')" onmouseleave="hide_text('github')">
 				<img id="github_light" class="light"/>
 				<img id="github_dark" class="dark"/>
@@ -115,7 +114,7 @@
 				</p>
 			</div>
 		</div>
-		<div id="wrapper2" style="text-align: center">
+		<div id="wrapper2">
 			<div class="small_projects" id="quit_warn" onmouseenter="log('Hovered: quit_warn');" onclick="go_to('quit_warn','quit_warn.html');">
 				<div style="font-size: 20px; font-weight: bold; display: flex; justify-content: center; align-items: center; height: 100%">
 					<p>Browser Quit Warning</p>
