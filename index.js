@@ -225,18 +225,6 @@ function add_transition2() {
 	}
 }
 
-function show_text(id) {
-	log(`Hovered: ${id}`);
-	if (grid_view == "grid") {
-		document.getElementById(`${id}_light`).style.filter = "blur(10px)";
-		document.getElementById(`${id}_dark`).style.filter = "blur(10px)";
-	}
-}
-
-function hide_text(id) {
-	document.getElementById(`${id}_light`).style.filter = "none";
-	document.getElementById(`${id}_dark`).style.filter = "none";
-}
 
 function view() {
 	if (grid_view == "grid") {
