@@ -14,19 +14,13 @@ a:visited {
 	height: 350px;
 	margin: 32px;
 	position: relative;
-	transition-duration: 0.2s;
+	transition-duration: 0.5s;
 	text-shadow: inherit;
 }
 
 .projects:hover,
 .projects:focus {
 	transform: scale(1.1);
-	transition-duration: 0.2s;
-	transition-timing-function: ease-in-out;
-}
-
-.projects:active {
-	transform: scale(1.05);
 	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
 }
@@ -39,7 +33,7 @@ a:visited {
 	height: 100px;
 	margin: 32px;
 	position: relative;
-	transition-duration: 0.2s;
+	transition-duration: 0.5s;
 	text-shadow: inherit;
 	cursor: pointer;
 	border-width: 10px;
@@ -50,12 +44,6 @@ a:visited {
 .small_projects:hover,
 .small_projects:focus {
 	transform: scale(1.1);
-	transition-duration: 0.2s;
-	transition-timing-function: ease-in-out;
-}
-
-.small_projects:active {
-	transform: scale(1.05);
 	transition-duration: 0.2s;
 	transition-timing-function: ease-in-out;
 }

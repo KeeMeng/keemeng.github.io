@@ -9,17 +9,17 @@ if (localStorage.getItem("view") === null) {
 var grid_view = localStorage.getItem("view");
 
 function flip_images() {
-	var previews = document.getElementsByClassName("projects");
+	var projects = document.getElementsByClassName("projects");
 	if (localStorage.getItem("mode") == "light") {
-		for (var i = 0; i < previews.length; i++) {
-			document.getElementById(`${previews[i].id}_dark`).style.opacity = 0;
-			document.getElementById(`${previews[i].id}_light`).style.opacity = 100;
+		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}_dark`).style.opacity = 0;
+			document.getElementById(`${projects[i].id}_light`).style.opacity = 100;
 		}
 	}
 	else if (localStorage.getItem("mode") == "dark") {
-		for (var i = 0; i < previews.length; i++) {
-			document.getElementById(`${previews[i].id}_dark`).style.opacity = 100;
-			document.getElementById(`${previews[i].id}_light`).style.opacity = 0;
+		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}_dark`).style.opacity = 100;
+			document.getElementById(`${projects[i].id}_light`).style.opacity = 0;
 		}
 	}
 }
@@ -43,7 +43,6 @@ function dark_mode() {
 		for (var i = 0; i < projects.length; i++) {
 			setTimeout(function(i) {
 				var projects = document.getElementsByClassName("projects");
-				projects[i].style.transitionDuration = "0.5s";
 				projects[i].style.backgroundColor = "#102344";
 				if (grid_view == "grid") {
 					texts[i].style.textShadow = "0 0 25px #102344, 0 0 25px #102344, 0 0 25px #102344";
@@ -54,7 +53,6 @@ function dark_mode() {
 				texts[i].style.color = "white";
 			}, 25*i, i);
 		}
-		setTimeout(add_transition2, 500);
 		document.querySelector("meta[name=theme-color]").setAttribute("content", "#000000");
 	}
 	else if (dark == "light") {
@@ -64,7 +62,6 @@ function dark_mode() {
 		for (var i = 0; i < projects.length; i++) {
 			setTimeout(function(i) {
 				var projects = document.getElementsByClassName("projects");
-				projects[i].style.transitionDuration = "0.5s";
 				projects[i].style.backgroundColor = "#e4f8ff";
 				if (grid_view == "grid") {
 					texts[i].style.textShadow = "0 0 25px #e4f8ff, 0 0 25px #e4f8ff, 0 0 25px #e4f8ff";
@@ -75,7 +72,6 @@ function dark_mode() {
 				texts[i].style.color = "black";
 			}, 25*i, i);
 		}
-		setTimeout(add_transition2, 500);
 		document.querySelector("meta[name=theme-color]").setAttribute("content", "#FFFFFF");
 	}
 	document.body.classList.toggle("darkmode");
@@ -114,21 +110,25 @@ function change_title(title=undefined, ignore=false) {
 function load() {
 	set_images();
 
-	var previews = document.getElementsByClassName("projects");
+	var projects = document.getElementsByClassName("projects");
 	if (localStorage.getItem("mode") == "light") {
-		for (var i = 0; i < previews.length; i++) {
-			document.getElementById(`${previews[i].id}_dark`).style.opacity = 0;
+		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}`).style.transitionDuration = "0s";
+			document.getElementById(`${projects[i].id}_dark`).style.transitionDuration = "0s";
+			document.getElementById(`${projects[i].id}_dark`).style.opacity = 0;
 		}
 	}
 	else if (localStorage.getItem("mode") == "dark") {
-		for (var i = 0; i < previews.length; i++) {
-			document.getElementById(`${previews[i].id}_light`).style.opacity = 0;
+		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}`).style.transitionDuration = "0s";
+			document.getElementById(`${projects[i].id}_light`).style.transitionDuration = "0s";
+			document.getElementById(`${projects[i].id}_light`).style.opacity = 0;
 		}
 	}
 
 	document.body.style.transitionDuration = "0s";
 	document.getElementById("wrapper").style.transitionDuration = "0s";
-	document.getElementById("wrapper2").style.transitionDuration = "0s";
+document.getElementById("wrapper2").style.transitionDuration = "0s";
 	if (dark == "dark") {
 		document.body.classList.toggle("darkmode");
 		document.getElementById("mode").innerHTML = "Light Mode";
@@ -209,20 +209,17 @@ function load() {
 	`;
 	document.body.insertAdjacentHTML("beforeend", chart);
 
-	setTimeout(add_transition, 500);
-}
-
-function add_transition() {
-	document.body.style.transitionDuration = "0.5s";
-	document.getElementById("wrapper").style.transitionDuration = "0.5s";
-	document.getElementById("wrapper2").style.transitionDuration = "0.5s";
-}
-
-function add_transition2() {
-	var projects = document.getElementsByClassName("projects");
-	for (var i = 0; i < projects.length; i++) {
-		projects[i].style.transitionDuration = "0.2s"
-	}
+	setTimeout(function() {
+		document.body.style.transitionDuration = "";
+		document.getElementById("wrapper").style.transitionDuration = "";
+		document.getElementById("wrapper2").style.transitionDuration = "";
+		var projects = document.getElementsByClassName("projects");
+		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}`).style.transitionDuration = "";
+			document.getElementById(`${projects[i].id}_dark`).style.transitionDuration = "";
+			document.getElementById(`${projects[i].id}_light`).style.transitionDuration = "";
+		}
+	}, 500)
 }
 
 
