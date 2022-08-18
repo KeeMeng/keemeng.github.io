@@ -8,22 +8,6 @@ if (localStorage.getItem("view") === null) {
 
 var grid_view = localStorage.getItem("view");
 
-function flip_images() {
-	var projects = document.getElementsByClassName("projects");
-	if (localStorage.getItem("mode") == "light") {
-		for (var i = 0; i < projects.length; i++) {
-			document.getElementById(`${projects[i].id}_dark`).style.opacity = 0;
-			document.getElementById(`${projects[i].id}_light`).style.opacity = 100;
-		}
-	}
-	else if (localStorage.getItem("mode") == "dark") {
-		for (var i = 0; i < projects.length; i++) {
-			document.getElementById(`${projects[i].id}_dark`).style.opacity = 100;
-			document.getElementById(`${projects[i].id}_light`).style.opacity = 0;
-		}
-	}
-}
-
 
 var dark = localStorage.getItem("mode");
 function dark_mode() {
@@ -35,12 +19,13 @@ function dark_mode() {
 		dark = "light";
 		localStorage.setItem("mode", "light");
 	}
-	log(`View: ${dark}`);
+	var projects = document.getElementsByClassName("projects");
 	if (dark == "dark") {
 		document.getElementById("mode").innerHTML = "Light Mode";
-		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}_dark`).style.opacity = 100;
+			document.getElementById(`${projects[i].id}_light`).style.opacity = 0;
 			setTimeout(function(i) {
 				var projects = document.getElementsByClassName("projects");
 				projects[i].style.backgroundColor = "#102344";
@@ -57,9 +42,10 @@ function dark_mode() {
 	}
 	else if (dark == "light") {
 		document.getElementById("mode").innerHTML = "Dark Mode";
-		var projects = document.getElementsByClassName("projects");
 		var texts = document.getElementsByClassName("hovertext");
 		for (var i = 0; i < projects.length; i++) {
+			document.getElementById(`${projects[i].id}_dark`).style.opacity = 0;
+			document.getElementById(`${projects[i].id}_light`).style.opacity = 100;
 			setTimeout(function(i) {
 				var projects = document.getElementsByClassName("projects");
 				projects[i].style.backgroundColor = "#e4f8ff";
@@ -78,13 +64,6 @@ function dark_mode() {
 	document.body.classList.toggle("lightmode");
 }
 
-function set_images() {
-	var images = document.getElementsByTagName('img'); 
-	for(var i = 0; i < images.length; i++) {
-		images[i].src = `images/${images[i].id}.png`;
-	} 
-}
-
 function change_title(title=undefined, ignore=false) {
 	if (title == undefined) {
 		title = prompt("Please enter title");
@@ -101,14 +80,14 @@ function change_title(title=undefined, ignore=false) {
 		}
 
 		document.getElementById("title").innerHTML = output_title;
-		if (!ignore) {
-			log(`Title: ${output_title}`);
-		}
 	}
 }
 
 function load() {
-	set_images();
+	var images = document.getElementsByTagName('img'); 
+	for(var i = 0; i < images.length; i++) {
+		images[i].src = `images/${images[i].id}.png`;
+	}
 
 	var projects = document.getElementsByClassName("projects");
 	if (localStorage.getItem("mode") == "light") {
@@ -128,7 +107,7 @@ function load() {
 
 	document.body.style.transitionDuration = "0s";
 	document.getElementById("wrapper").style.transitionDuration = "0s";
-document.getElementById("wrapper2").style.transitionDuration = "0s";
+	document.getElementById("wrapper2").style.transitionDuration = "0s";
 	if (dark == "dark") {
 		document.body.classList.toggle("darkmode");
 		document.getElementById("mode").innerHTML = "Light Mode";
