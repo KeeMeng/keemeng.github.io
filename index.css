@@ -69,6 +69,12 @@ a:visited {
 	opacity: 1;
 }
 
+@media (pointer:none), (pointer:coarse) {
+	.hovertext {
+		opacity: 1;
+	}
+}
+
 .light_image {
 	position: absolute;
 	left: 4%;
