@@ -1,7 +1,19 @@
 cv = `[
 	{
+		"date": "2022-07-29",
+		"name": "St John College x HKSTP Hackathon",
+		"award": "Participant",
+		"link": "",
+		"organizer_link": "https://resources.finalsite.net/images/v1658992268/stjohnshk/owd3t7zx1ogxgi24aqh3/HACKATHONBROCHURE23.pdf",
+		"organizer_link_name": "Organizer",
+		"organizer": "St John College (HKU)",
+		"details": "",
+		"tags": "education",
+		"ignore": false
+	},
+	{
 		"date": "2022-06-29",
-		"name": "Year 12 Mathematics Prize",
+		"name": "Year 13 Mathematics Prize",
 		"award": "Highly Commended",
 		"link": "",
 		"organizer_link": "https://www.harrowschool.hk",
