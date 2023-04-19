@@ -7,18 +7,20 @@
 			
 			function check() {
 				var count = 0;
+				var total = 0
 				let input = document.getElementById("input").value.split(" ")
 				console.log(input)
-				for (var i = 0; i < input.length; i++) {
+				for (var i = 0; i < Math.min(input.length, correct.length); i++) {
 					if (input[i] == correct[i]) {
 						count++;
 					}
+					total++;
 				}
-				document.getElementById("output").innerHTML = count+"/1156"
+				document.getElementById("output").innerHTML = count+"/"+total
 			}
 		</script>
 	</head>
-	<body onload="">
+	<body>
 		<input type="text" id="input" onchange="check()">
 		<p id="output"></p>
 	</body>
